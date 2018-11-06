@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    //     rem()
+//     // 实现弹性布局
+// // 这个函数是为了解决，当进行浏览器窗口大小操作时，rem还是之前的值，如果想要看到效果，需要进行一次手动刷新
+// // 所以，为了解决不手动刷新我们需要在浏览器窗口变化的时候，进行监听，如果浏览器窗口变化了，就进行rem的重新计算
+// // （也算是一个bug）
+// window.onresize = function () {
+//     rem()
+// }
+// rem()
+// // 进行rem的计算 因为是已1920px为基准进行计算的，所以为了方便，把1rem等于100px
+// function rem() {
+//     var width = document.body.clientWidth
+//     alert(width)
+//     var fontSize = document.getElementsByTagName('html')[0].style.fontSize = width / 19.2 + "px"
+// }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>托管交易</title>
+    <!-- <link rel="stylesheet" href="base.css"> -->
+    <!-- <link rel="stylesheet" href="./libs/swiper/swiper.min.css"> -->
+    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <link rel="stylesheet/less" type="text/css" href="./css/personal.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <ul>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+            </ul>
+        </div>
+        <div class="toolBar indexBar container">
+            <div class="logo">
+                <a>
+                    <img src="./imgs/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="top_list">
+                <ul>
+                    <li><a href="">交易中心</a></li>
+                    <li><a href="">c2c交易</a></li>
+                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
+                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
+                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                </ul>
+
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="registration.html">注册</a></li>
+                    
+                    <li class="national-mouse">
+                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+
+                        <div class="national">
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="personal_center">
+                <div class="info_img">
+                        <img src="./imgs/personalname.png" alt="">
+                </div>
+                
+                <div class="accont_numb">
+                    <div class="text">
+                            <a href="">182****3452</a>
+                    </div>
+                     
+                    <div class="personal_list">
+                            <ul>
+                                <li><a href="">个人中心</a></li>
+                                <li><a href="">财务中心</a></li>
+                                <li><a href="">安全中心</a></li>
+                                <li><a href="">推荐好友</a></li>
+                            </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="content">
+            <div class="title">
+                <ul>
+                    <li><a href="">我的信息</a></li>
+                    <li><a href="personalwallet.html">钱包地址</a></li>
+                    <li class="active"><a href="">托管交易</a></li>
+                    <li><a href="">我的银行卡</a></li>
+                </ul>
+            </div>
+            <!-- 去实名 -->
+            <div class="autonym" style="display:none">
+                <div class="bg"></div><img src="./imgs/dredge.png" alt="">
+                <div class="autonym_text">
+                    <p><span>开通项目：</span><span>量化系统</span></p>
+                    <p><span>付费模式：</span><span>量化系统</span></p>
+                    <p><span>有效期限：</span><span>量化系统</span></p>
+                    <p><span>应付金额：</span><span>量化系统 &nbsp&nbsp&nbsp111111</span></p>
+                    <h5>完成高级实名认证企业才可以购买量化系统</h5>
+                    <input type="button" value="去实名认证">
+                </div>
+            </div>
+            <!-- 开通量化系统交易服务 -->
+            <div class="play" style="display:none">
+                <div class="play_img">
+                        <img src="./imgs/exclamation.png" alt="">
+                </div>
+                
+                <h3>您还未开通量化系统交易服务</h3>
+                <p>量化系统是CoinHome为VIP客户提供的自动对冲交易服务，采用了最优的</p>
+                <p>交易策略，具有自动化交易，自动低买高卖，即时止损等功能。</p>
+                <input type="botton" value="点击开通">
+            </div>
+            <!-- 机器人设置 -->
+            <div class="robot">
+                <form  class="form" action="">
+                    <span class="danger-tips">请设置机器人名称</span>
+                    <div class="list_item">
+                        <label for="">设置标签 :</label> <input placeholder="设置机器人名称" type="text">
+                    </div>    
+                    <div class="list_select">
+
+                            <span>托管主机 :</span>
+                            <select name="jSelect" class="bj-input-box">
+                                    <option value="2012-01-01">2012-01-01</option>
+                                    <option value="2012-02-02">2012-02-02</option>
+                                    <option value="2012-03-03">2012-03-03</option>
+                                    <option value="2012-04-04">2012-04-04</option>
+                                    <option value="2012-05-05">2012-05-05</option>
+                            </select>
+                    </div>       
+                    <div class="list_select">
+                            <span>运行策略 :</span>
+                            <select name="jSelect" class="bj-input-box">
+                                    <option value="2012-01-01">2012-01-01</option>
+                                    <option value="2012-02-02">2012-02-02</option>
+                                    <option value="2012-03-03">2012-03-03</option>
+                                    <option value="2012-04-04">2012-04-04</option>
+                                    <option value="2012-05-05">2012-05-05</option>
+                            </select>
+                    </div> 
+                    <div class="strategy_params">
+                            <span>策略参数 :</span>
+                            <div class="params_content">
+                                <p>参数</p>
+                                <h5>开仓方向</h5>
+                                
+                                <select name="jSelect" class="bj-input-box">
+                                        <option value="2012-01-01">2012-01-01</option>
+                                        <option value="2012-02-02">2012-02-02</option>
+                                        <option value="2012-03-03">2012-03-03</option>
+                                        <option value="2012-04-04">2012-04-04</option>
+                                        <option value="2012-05-05">2012-05-05</option>
+                                </select>
+                    
+                                <h5>开仓金额</h5>
+                                <select name="jSelect" class="bj-input-box">
+                                        <option value="2012-01-01">2012-01-01</option>
+                                        <option value="2012-02-02">2012-02-02</option>
+                                        <option value="2012-03-03">2012-03-03</option>
+                                        <option value="2012-04-04">2012-04-04</option>
+                                        <option value="2012-05-05">2012-05-05</option>
+                                </select>
+                            </div>
+                    </div> 
+                    <div class="list_select">
+                            <span>K 线周期 :</span>
+                            <select name="jSelect" class="bj-input-box">
+                                    <option value="2012-01-01">2012-01-01</option>
+                                    <option value="2012-02-02">2012-02-02</option>
+                                    <option value="2012-03-03">2012-03-03</option>
+                                    <option value="2012-04-04">2012-04-04</option>
+                                    <option value="2012-05-05">2012-05-05</option>
+                            </select>
+                    </div>    
+                    <div class="list_select">
+                            <span>交易平台 :</span>
+                            <select name="jSelect" class="bj-input-box">
+                                    <option value="2012-01-01">2012-01-01</option>
+                                    <option value="2012-02-02">2012-02-02</option>
+                                    <option value="2012-03-03">2012-03-03</option>
+                                    <option value="2012-04-04">2012-04-04</option>
+                                    <option value="2012-05-05">2012-05-05</option>
+                            </select>
+                    </div>    
+                    <div class="list_select">
+                            <span>交 &nbsp;易&nbsp; 对 :</span>
+                            <select name="jSelect" class="bj-input-box">
+                                    <option value="2012-01-01">2012-01-01</option>
+                                    <option value="2012-02-02">2012-02-02</option>
+                                    <option value="2012-03-03">2012-03-03</option>
+                                    <option value="2012-04-04">2012-04-04</option>
+                                    <option value="2012-05-05">2012-05-05</option>
+                            </select>
+                    </div>          
+                   <!-- 按钮 重置 删除 提交 -->
+                   <div class="btn">
+                        <button type="button" class="btn_reset">重置</button>
+                        <button type="button" class="btn_remove">删除</button>
+                        <button type="button" class="btn_stop">停止</button>
+                        
+                   </div>
+                </form>
+                <!-- 机器人日志 -->
+                <p class="robot_title"><span>日期</span><span>平台</span>
+                    <span>类型</span>
+                    <span>价格</span><span>数量</span><span>信息</span>
+                </p>
+                <ul>
+                    <li><span>2018-10-01 14:21:56</span><span>CoinHome</span><span>信息</span><span>正在退出，尝试取消所有挂单</span><span>1</span><span>1</span></li>
+                    <li><span>2018-10-01 14:21:56</span><span>CoinHome</span><span>信息</span><span>正在退出，尝试取消所有挂单</span><span>1</span><span>1</span></li>
+                    <li><span>2018-10-01 14:21:56</span><span>CoinHome</span><span>信息</span><span>正在退出，尝试取消所有挂单</span><span>1</span><span>1</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="list_title container">
+            <div class="link">
+                <div class="logo"><img src="./imgs/logo2.png" alt=""></div>
+                <p>全球领先的数字资产金融服务商</p>
+                <ul>
+                    <li><img src="./imgs/wchat.png" alt=""></li>
+                    <li><img src="./imgs/QQ.png" alt=""></li>
+                    <li><img src="./imgs/facebook.png" alt=""></li>
+                    <li><img src="./imgs/bird.png" alt=""></li>
+                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
+                    <li><img src="./imgs/navigation.png" alt=""></li>
+
+                </ul>
+            </div>
+            <div class="about">
+                <ul class="title">
+                    <li>平台相关</li>
+                    <li>法律条款</li>
+                    <li>服务支持</li>
+                    <li>友情链接</li>
+                    <li>联系我们</li>
+                </ul>
+                <ul class="list">
+                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
+                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
+                    <li><span><a href="">平台费率</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
+                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
+                    <li><span><a href="">加入我们</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
+                                href=""></a></span><span>客服QQ：3601558306</span></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved
+            币家| 新加坡新达塔双淡马锡大道9号04</p>
+    </footer>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/common/jSelect.js"></script>
+    <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/common/common.js"></script>
+    <script>
+        $(function () {
+            //自定义输入框初始化
+            $(".bj-input-box").jSelect();
+
+            //监听屏幕滚动的高度 执行动画
+            $(window).scroll(function (event) {
+                var winPos = $(window).scrollTop();
+                
+                //顶部信息栏变色
+                var topBox= $(".navbar-top").height();
+                if(winPos>=topBox){
+                    console.log(topBox);
+                    
+                    $('.navbar-top').addClass('navbar_fadein').removeClass('navbar_fadeout')
+                }else{
+                    $('.navbar-top').addClass('navbar_fadeout').removeClass('navbar_fadein')
+                }
+            });
+            
+            // 国旗显示隐藏
+            $('.national-mouse').on('mouseenter',function(){
+                $('.up-down').stop().addClass('to_up');
+                $('.national').stop().slideDown();
+
+            }).on('mouseleave',function(){
+                $('.up-down').stop().removeClass('to_up');
+                $('.national').stop().slideUp();
+            })
+        })
+    </script>
+</body>
+</html>

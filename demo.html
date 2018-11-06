@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jquery导航置顶 - HoverTree</title>
+    <base target="_blank" />
+    <link href="http://hovertree.com/texiao/jquery/6/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="http://hovertree.com/texiao/jquery/6/css/html5s.css" rel="stylesheet" type="text/css" />
+    <script src="http://hovertree.com/ziyuan/jquery/jquery-1.11.3.min.js"></script>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <div class="cont_news">
+        <div class="tab_menu">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="tab_box">
+            <div></div>
+            <div class="hide"></div>
+            <div class="hide"></div>
+        </div>
+    </div>
+    
+    <div class="arrow">文字文字</div>
+    <div></div>
+    <script>
+        var $tab_li = $('.tab_menu ul li');
+        $tab_li.mouseenter(function () {
+            $(this).addClass('selected')
+                .siblings().removeClass('selected');
+            var index = $tab_li.index(this);
+            $('.tab_box > div').eq(index).show().siblings().hide();
+        });
+    </script>
+</body>
+
+</html>

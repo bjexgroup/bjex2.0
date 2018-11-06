@@ -1,0 +1,807 @@
+
+// -----------------交通工具页面 start-----------------------
+body{
+    background-color: #f2f2f2;
+}
+.navbar{
+        background-color: #00557d;
+        .top_list{
+            ul{
+                li{
+                    a{
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+        .login{
+            ul{
+                li{
+                    a{
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+}
+.main{
+    .content{
+        margin: 24px auto 40px;
+        background-color: #ffffff;
+        width: 1200px;
+        ul{
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .title{
+            li{
+                line-height: 60px;
+                height: 60px;
+                display: inline-block;
+                margin-left: 67px;
+                font-size: 16px;
+                padding: 0 8px 0 8px;
+            }
+            li:first-child{
+                margin-left: 40px;
+            }
+            .active{               
+                border-bottom: 3px solid #00557d;
+                font-size: 24px;
+                a{
+                    color: #00557d;
+                }
+            }
+        }
+        // 去实名
+        .autonym{
+            padding-bottom: 86px;
+            padding-top: 58px;
+            padding-left: 165px;
+            position: relative;
+            .bg{
+                img{
+                    width: 870px;
+                    height: 448px;
+                
+                }
+            }
+           .autonym_text{
+               position: absolute;
+               left: 615px;
+               top: 120px;
+               p{
+                   line-height: 40px;
+                   font-size: 16px;
+                   color: #5e5e5e;
+                   span:last-child{
+                       margin-left: 28px;
+                   }
+               }
+               h5{
+                   color:#a9a9a9;
+                   font-size: 12px;
+                   line-height: 47px;
+               }
+               input{
+                   width: 270px;
+                   height: 50px;
+                   margin-top: 44px;
+                   background-color: #1d9fe0;
+                   text-align: center;
+                   color: #ffffff;
+                   font-size: 16px;
+                   cursor: pointer;
+               }
+           }
+              
+        }
+        // 开通量化交易服务
+        .play{
+           text-align: center;
+            .play_img{
+                margin: 78px 560px 48px;
+                img{
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+            h3{
+                color: #00557d;
+                font-size: 24px;
+                line-height: 72px;
+            }
+            p{
+                font-size: 12px;
+                color:#a9a9a9;
+                line-height: 24px;
+            }
+            input{
+                width: 270px;
+                height: 50px;
+                margin-top: 100px;
+                background-color: #00557d;
+                text-align: center;
+                color: #ffffff;
+                font-size: 16px;
+                cursor: pointer;
+                margin-bottom: 92px;
+            }
+            
+        }
+        .robot{
+            .form{
+            
+                padding: 127px 0 70px 225px;
+                .danger-tips{
+                    color: red;
+                    font-size: 14px;
+                    line-height: 28px;
+                    margin-left: 118px;
+                    position: absolute;
+                    top: 100px;
+                    left: 224px;
+                    display: none;
+                   
+                }
+                .list_item{
+                    padding-bottom: 5px;
+                    
+                }
+                label{
+                    font-size: 16px;
+                    color:#5e5e5e;
+                    margin-right: 28px;
+                }
+                input{
+                    display: inline-block;
+                    width: 640px;
+                    height: 40px;
+                    border: 1px solid #bbbbbb;
+                    padding-left: 12px;
+                    border-radius: 2px;
+                    
+                }
+                //设置placeholder字体颜色
+                ::-webkit-input-placeholder{/*Webkit browsers*/
+                    color:#bbbbbb;
+                    font-size:14px;
+                }
+                :-moz-placeholder{/*Mozilla Firefox 4 to 8*/
+                   color:#bbbbbb;
+                   font-size:14px;
+                }
+                ::moz-placeholder{/*Mozilla Firefox 19+*/
+                   color:#bbbbbb;
+                   font-size:14px;
+                }
+                :-ms-input-placeholder{/*Internet Explorer 10+*/
+                    color:#bbbbbb;
+                    font-size:14px;
+                }
+                .list_select{
+                    margin-top: 12px;
+                    position: relative;
+                    span{
+                        position: absolute;
+                        line-height: 44px;
+                        left: 0;
+                        top: 0;
+                        font-size: 16px;
+                        color:#5e5e5e;
+                        
+                    }
+                    // .bj-input-box{
+                    //     padding-top: 2px;
+                    // }
+                    .j-container{
+                        left: 104px;
+                        top: 1;
+                    }
+                }
+                .strategy_params{
+                    margin-top: 12px;
+                    position: relative;
+                    span{
+                        position: relative;
+                        display: inline-block;
+                        line-height: 44px;
+                        left: 0;
+                        top: -184px;
+                        font-size: 16px;
+                        color:#5e5e5e;
+                    }
+                    .params_content{
+                        position: relative;
+                        display: inline-block;
+                        left: 28px;
+                        top: 0px;
+                        width: 652px;
+                        height: 232px;
+                        border: 1px solid #bbbbbb;
+                        margin-bottom: 0px;
+                        box-sizing: border-box;
+
+                        font-size: 14px;
+                        p{
+                            padding: 11px 0 11px 12px;
+                            border-bottom: 1px solid #bbbbbb;
+                        }
+                        h5{
+                            line-height: 40px;
+                            padding-left: 24px;
+                        }
+                        .j-container{
+                            width: 622px!important;
+                            margin-left: 13px;
+                        }
+                        
+                    }
+                }
+                .btn{
+                    margin: 35px 0 0 104px;
+                    
+                    button{
+                        font-size: 14px;
+                        line-height: 38px;
+                        width: 102px;
+                        height: 38px;
+                        color: #5e5e5e;
+                        border: 1px solid #bbbbbb;
+                        cursor: pointer;
+                        margin-right: 24px;
+                        border-radius: 5px;
+                        background-color: #fff;
+                        box-shadow: 2px 2px 2px #ddd8d8;
+                    }
+            
+                    button:active{
+                        color: #5e5e5e;
+                        // background: #f8f6f6; 
+                        opacity: 0.5;    //这里重要，就是通过这个透明度来设置
+                    }
+                    .btn_stop{
+                        background-color: #00557d;
+                        color: #ffffff;
+                    }
+                }
+            }
+            // 机器人日志
+            .robot_title{
+                height: 62px;
+                line-height: 62px;
+                border-top: 1px solid #e5e5e5;
+                font-size: 16px;
+                padding: 0 123px;
+                span:nth-child(1){
+                    margin-right: 140px;
+                }
+                span:nth-child(2){ 
+                    margin-right: 140px;
+                }
+                span:nth-child(3){
+                    margin-right: 120px;
+                }
+                span:nth-child(4){
+                    margin-right: 212px;
+                }
+                span:nth-child(5){
+                    margin-right: 140px;
+                }
+                
+            }
+            ul{
+                border-bottom: 1px solid #e5e5e5;
+                font-size: 16px;
+                li{
+                    line-height: 62px;
+                    border-top: 1px solid #e5e5e5;
+                    padding: 0 47px;
+                    span{
+                        display: inline-block;
+                    }
+                    span:nth-child(1){
+                       width: 230px;
+                    }
+                    span:nth-child(2){ 
+                        width: 194px;
+                        
+                    }
+                    span:nth-child(3){
+                        width: 155px;
+                    }
+                    span:nth-child(4){
+                        width: 253px;
+                    }
+                    span:nth-child(5){
+                        width: 176px;
+                    }
+                }
+            }
+            padding-bottom: 84px;
+        }
+    }
+}
+// -----------------交通工具页面 end-----------------------
+
+
+// -----------------钱包地址页面 start-----------------------
+.main{
+    .content{
+        .addmoney{
+            width: 624px;
+            margin: 75px auto;
+            padding-bottom: 95px;
+            .wallet_item{
+                margin-bottom: 40px;
+                span{
+                    font-size: 16px;
+                    color: #5e5e5e;
+                    margin-right: 20px;
+                    
+                }
+                input{
+                    width: 518px;
+                    font-size: 16px;
+                    color: #5e5e5e;
+                    border-bottom: 1px solid #e5e5e5;
+                }
+                .wall_select{
+                    position: relative;
+                    left: 90px;
+                    top: 0px;
+                    .j-container{
+                        width: 518px;
+                        border: 1px solid #e5e5e5e5;
+                        .j-select-arrrowDown::after{
+                            border-color: #747474;
+                            z-index: 9999;
+                        }
+                        div{
+                            background-color: #e5e5e5e5;
+                            // border-radius: 4px;
+                            border-color: #e5e5e5e5;
+                        }
+
+                    }
+                }
+                .wall_text{
+                    position: relative;
+                    top: 30px;
+                    left: 0;
+                }
+            }
+            .wallet_btn{
+                margin-left: 166px;
+                margin-top: 100px;
+            }
+        }
+    }
+}
+
+// -----------------钱包地址页面end -----------------------
+
+
+// -----------------钱包地址 添加页面start -----------------------
+.main{
+    .content{
+        .addmoney_address{
+            padding-bottom: 93px;
+            .address_title{
+                margin-top: 34px;
+                .j-container{
+                    width: 178px;
+                    height: 34px;
+                    background-color: #e5e5e5;
+                    border-color: #e5e5e5;
+                    .j-select-arrrowDown{
+                        top: -2px;
+                        right: -10px;
+                    }
+                }
+                .input{
+                    margin-left: 48px;
+                    display: inline-block;
+                    position: relative;
+                    top: 10px;
+                }
+                span{
+                    margin-left: 156px;
+                    font-size: 16px;
+                    line-height: 34px;
+                    
+                }
+            }
+           ul{
+               border-bottom: 1px solid #e5e5e5;
+               margin-top: 16px;
+               li{
+                   font-size: 16px;
+                   border-top: 1px solid #e5e5e5;
+                   span{
+                       display: inline-block;
+                       line-height: 56px;
+                   }
+                   span:nth-child(1){
+                        width: 306px;
+                        padding-left: 86px;
+                        box-sizing: border-box;
+
+                   }
+                   span:nth-child(2){
+                    width: 230px;
+                    text-align: center;
+
+                    }
+                    span:nth-child(3){
+                        width: 215px;
+                        text-align: center;
+    
+                        }
+                        span:nth-child(4){
+                            width: 234px;
+                            text-align: center;
+        
+                        }
+
+                        span:nth-child(5){
+                                width: 176px;
+                                text-align: center;
+            
+                        }
+               }
+           }
+           .address_btn{
+               margin-top: 98px;
+               margin-left: 465px;
+               
+           }
+        }
+    }
+}
+
+
+// -----------------钱包地址添加页面end -----------------------
+
+
+// -----------------我的银行卡信息页面 start -----------------------
+
+.main{
+    .content{
+        .pay_bind{
+            .bank_title{
+                background-color: #f2f2f2;
+                span{
+                    font-size: 16px;
+                    line-height: 70px;
+                    display: inline-block;
+                    &:nth-child(1){
+                        margin-left: 52px;
+                        margin-right: 52px;
+                    }
+                    &:nth-child(3){
+                        margin-left: 55px;
+                        margin-right: 55px;
+                    }
+                    &:nth-child(5){
+                        margin-left: 86px;
+                        margin-right: 115px;
+                    }
+                    &:nth-child(7){
+                        margin-left: 146px;
+                        margin-right: 110px;
+                    }
+                }
+            }
+            .bank_list{
+                
+                li{
+                    line-height: 56px;
+                    height: 56px;
+                    span{
+                        display: inline-block;
+                        font-size: 16px;
+                        text-align: center;
+                        &:nth-child(1){
+                            width: 96px;
+                            padding-left: 12px; 
+                            
+                        }
+                        &:nth-child(2){
+                            width: 117px;
+                        }
+                        &:nth-child(3){
+                            width: 122px;
+                        }
+                        &:nth-child(4){
+                            width: 132px;
+                        }
+                        &:nth-child(5){
+                            width: 172px;
+                        }
+                        &:nth-child(6){
+                            width: 208px;
+                        }
+                        &:nth-child(7){
+                            width: 220px;
+                        }
+                        &:nth-child(8){
+                            width: 96px;
+                            color: #00557d;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .pay_type{
+                padding: 84px 0px 40px 48px;
+                span{
+                    font-size: 30px;
+                    color: #00557d;
+                    img{
+                       width: 48px;
+                       height: 36px; 
+                       margin-right: 15px;
+                       vertical-align: bottom;
+                    }
+                    .alipay_img{
+                        height: 48px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .bankcard_add{
+                margin: 75px 0 0 464px;
+            }
+            .wechat{
+                padding-bottom: 55px;
+            }
+            .alipay{
+                .title,.lsit{
+                    li{
+                       margin: 0;
+                       padding: 0;
+                        font-size: 16px;
+                        
+                        span{
+                            display: inline-block;
+                            text-align: center;
+                            &:nth-child(1){
+                                width: 143px;
+                                
+                            }
+                            &:nth-child(2){
+                                width: 221px;
+                            }
+                            &:nth-child(3){
+                                width: 195px;
+                            }
+                            &:nth-child(4){
+                                width: 230px;
+                            }
+                            &:nth-child(5){
+                                width: 232px;
+                            }
+                            &:nth-child(6){
+                                width: 154px;
+                                
+                            }
+                        }
+                    }
+                }
+                .title{
+                    background-color: #f2f2f2;
+                    border: none;
+                    li{
+                        height: 69px;
+                        line-height: 69px;
+                        
+                    }
+                }
+                .lsit{
+                    li{
+                        height: 69px;
+                        line-height: 69px;
+                        span{
+                            &:nth-child(6),&:nth-child(4){
+                                cursor: pointer;
+                                color: #00557d;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------我的银行卡信息页面 end -----------------------
+
+
+// -----------------支付绑定 添加银行卡 页面 start -----------------------
+
+.main{
+    .content{
+        .addmoney{
+            .bank_label{
+                
+                &:first-child{
+                    margin-right: 74px;
+                   
+                    span{
+                        font-size: 16px;
+                        text-align: right;
+                        margin-right: 31px;
+                    }
+                }
+                display: inline-block;
+                input{
+                    width: 176px;
+                }
+            }
+        }
+    }
+}
+
+// -----------------支付绑定 添加银行卡 页面 end -----------------------
+
+// -----------------支付绑定 添加支付宝 页面 start -----------------------
+
+.main{
+    .content{
+        .alipay{
+            .wallet_item{
+                input{
+                    width: 500px;
+                }
+            }
+            .alipay_name{
+                margin-top: 160px;
+                input{
+                    width: 484px;
+                }
+                
+            }
+            .alipay_btn{
+                margin-top: 24px;
+            }
+            .file_input{
+                // position: relative;
+                // left: 0;
+                // top: 0;
+                span{
+                    // position: relative;
+                    top: -24px;
+                    left: 0;
+                    line-height: 44px;
+                }
+                .updataImg{
+                    position: relative;
+                    left: 108px;
+                    top: -39px;
+                    // display: inline-block;
+                    input,a{
+                        cursor: pointer;
+                        width: 502px;
+                        height: 34px;
+                        border-radius: 4px;
+                        display: block;
+                        background-color: #e5e5e5e5;
+                    }
+                    input{
+                        opacity: 0;
+                        position: absolute;
+                        left: 0px;
+                        top: 0;
+                        background-color: black;
+                    }
+                    a{
+                        line-height: 34px;
+                        text-align: center;
+                        opacity: 1;
+                        
+                    }
+                    .img{
+                        display: none;
+                        margin-left: 35px;
+                        margin-top: 30px;
+                        img{
+                            width: 430px;
+                            height: 430px;
+                        }
+                        // position: relative;
+                        // top: 65px;
+                        // left: 38px;
+                    }
+                }
+               
+            }
+            .alipay_btn{
+                margin-left: 223px;
+            }
+        }
+    }
+}
+
+// -----------------支付绑定 添加支付宝 页面 end -----------------------
+
+
+// -----------------支付绑定 添加微信 页面 start -----------------------
+
+// -----------------支付绑定 添加微信 页面 end -----------------------
+
+
+// -----------------个人信息 我的信息 页面 start -----------------------
+
+.main{
+    .content{
+        .message_head{
+            height: 212px;
+            margin-top: 56px;
+            margin-left: 50px;
+            
+            .box{
+                display: inline-block;
+                vertical-align: middle;
+                img{
+                    width: 83px;
+                    height: 96px;
+                }
+            }
+            .text{
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 50px;
+                p{
+                    font-size: 16px;
+                    color: #5e5e5e;
+                    line-height: 34px;
+                    .danger{
+                        color: #e54b4b;
+                        margin-left: 16px;
+                    }
+                }
+                h5{
+                    font-size: 12px;
+                    color: #5e5e5e;
+                    line-height: 34px;
+                }
+            }
+        }
+        .message_body{
+            // height: 637px;
+            padding: 78px 0 89px 182px;
+            border-top: 1px solid #e5e5e5e5; 
+            .list{
+                border: none;
+                li{
+                    font-size: 16px;
+                    line-height: 48px;
+                    height: 48px;
+                    span{
+                        display: inline-block;
+                    }
+                    span:nth-child(2){
+                        width: 160px;
+                        margin-left: 30px;
+                    }
+                    span:nth-child(3){
+                        width: 350px;
+                        
+                    }
+                    img{
+                        width: 22px;
+                        height: 22px;
+                        vertical-align: middle;
+                    }
+                    a{
+                        color: #00557d;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// -----------------个人信息 我的信息 页面 end -----------------------

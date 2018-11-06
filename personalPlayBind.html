@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    //     rem()
+//     // 实现弹性布局
+// // 这个函数是为了解决，当进行浏览器窗口大小操作时，rem还是之前的值，如果想要看到效果，需要进行一次手动刷新
+// // 所以，为了解决不手动刷新我们需要在浏览器窗口变化的时候，进行监听，如果浏览器窗口变化了，就进行rem的重新计算
+// // （也算是一个bug）
+// window.onresize = function () {
+//     rem()
+// }
+// rem()
+// // 进行rem的计算 因为是已1920px为基准进行计算的，所以为了方便，把1rem等于100px
+// function rem() {
+//     var width = document.body.clientWidth
+//     alert(width)
+//     var fontSize = document.getElementsByTagName('html')[0].style.fontSize = width / 19.2 + "px"
+// }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>支付绑定</title>
+    <!-- <link rel="stylesheet" href="base.css"> -->
+    <!-- <link rel="stylesheet" href="./libs/swiper/swiper.min.css"> -->
+    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <link rel="stylesheet/less" type="text/css" href="./css/personal.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <ul>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+            </ul>
+        </div>
+        <div class="toolBar indexBar container">
+            <div class="logo">
+                <a>
+                    <img src="./imgs/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="top_list">
+                <ul>
+                    <li><a href="">交易中心</a></li>
+                    <li><a href="">c2c交易</a></li>
+                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
+                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
+                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                </ul>
+
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="registration.html">注册</a></li>
+                    
+                    <li class="national-mouse">
+                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+
+                        <div class="national">
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="personal_center">
+                <div class="info_img">
+                        <img src="./imgs/personalname.png" alt="">
+                </div>
+                
+                <div class="accont_numb">
+                    <div class="text">
+                            <a href="">182****3452</a>
+                    </div>
+                     
+                    <div class="personal_list">
+                            <ul>
+                                <li><a href="">个人中心</a></li>
+                                <li><a href="">财务中心</a></li>
+                                <li><a href="">安全中心</a></li>
+                                <li><a href="">推荐好友</a></li>
+                            </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="content">
+            <div class="title">
+                <ul>
+                    <li><a href="">我的信息</a></li>
+                    <li><a href="personalwallet.html">钱包地址</a></li>
+                    <li><a href="personaltool.html">托管交易</a></li>
+                    <li class="active"><a href="">支付绑定</a></li>
+                </ul>
+            </div>
+           <!-- 支付绑定 -->
+           <div class="pay_bind">
+               <div class="pay_type">
+                   <span><img src="./imgs/bankcard.png" alt=""></span><span>银行卡</span>
+               </div>    
+                <div class="bank_title">
+                    <span>标签</span>
+                    <span>开户银行</span>
+                    <span>开户省份</span>
+                    <span>开户城市</span>
+                    <span>开户支行</span>
+                    <span>银行卡号</span>
+                    <span>添加时间</span>
+                    <span>操作</span>
+                </div>
+                <ul class="bank_list">
+                    <li><span>银行卡1</span> <span>中国银行</span><span>广东</span><span>深圳市</span><span>沙河街道白石洲支行</span><span>655454524542542</span><span>2015-15-12 10:52:01</span><span>删除</span></li> 
+                </ul>
+                <div class="bankcard_add">
+                    <button type="button">添加银行卡</button>
+                </div>
+                <!-- 支付宝 -->
+                <div class="pay_type">
+                    <span><img class="alipay_img" src="./imgs/alipay.png" alt=""></span><span>银行卡</span>
+                </div> 
+                <div class="alipay">
+                    <ul class="title">
+                        <li>
+                                <span>标签</span>
+                                <span>账户</span>
+                                <span>真实姓名</span>
+                                <span>收款二维码</span>
+                                <span>添加时间</span>
+                                <span>操作</span>
+                        </li>
+                    </ul>
+                    <ul class="lsit">
+                        <li>
+                                <span>支付宝</span>
+                                <span>1254215424</span>
+                                <span>王宝强</span>
+                                <span>二维码</span>
+                                <span>2018-10-12 10:12:56</span>
+                                <span>删除</span>
+                        </li>
+                    </ul>
+                        
+                </div>
+                <div class="bankcard_add">
+                        <button type="button"><a href="">添加支付宝</a> </button>
+                </div>
+                <div class="pay_type">
+                        <span><img class="alipay_img" src="./imgs/wcat.png" alt=""></span><span>银行卡</span>
+                </div> 
+                <div class="alipay">
+                        <ul class="title">
+                            <li>
+                                    <span>标签</span>
+                                    <span>账户</span>
+                                    <span>真实姓名</span>
+                                    <span>收款二维码</span>
+                                    <span>添加时间</span>
+                                    <span>操作</span>
+                            </li>
+                        </ul>
+                        <ul class="lsit">
+                            <li>
+                                    <span>支付宝</span>
+                                    <span>1254215424</span>
+                                    <span>王宝强</span>
+                                    <span>二维码</span>
+                                    <span>2018-10-12 10:12:56</span>
+                                    <span>删除</span>
+                            </li>
+                        </ul>
+                            
+                    </div>
+                    <div class="bankcard_add wechat">
+                            <button type="button"><a href="">添加支付宝</a> </button>
+                    </div>
+           </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="list_title container">
+            <div class="link">
+                <div class="logo"><img src="./imgs/logo2.png" alt=""></div>
+                <p>全球领先的数字资产金融服务商</p>
+                <ul>
+                    <li><img src="./imgs/wchat.png" alt=""></li>
+                    <li><img src="./imgs/QQ.png" alt=""></li>
+                    <li><img src="./imgs/facebook.png" alt=""></li>
+                    <li><img src="./imgs/bird.png" alt=""></li>
+                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
+                    <li><img src="./imgs/navigation.png" alt=""></li>
+
+                </ul>
+            </div>
+            <div class="about">
+                <ul class="title">
+                    <li>平台相关</li>
+                    <li>法律条款</li>
+                    <li>服务支持</li>
+                    <li>友情链接</li>
+                    <li>联系我们</li>
+                </ul>
+                <ul class="list">
+                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
+                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
+                    <li><span><a href="">平台费率</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
+                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
+                    <li><span><a href="">加入我们</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
+                                href=""></a></span><span>客服QQ：3601558306</span></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved
+            币家| 新加坡新达塔双淡马锡大道9号04</p>
+    </footer>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/common/jSelect.js"></script>
+    <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/common/common.js"></script>
+    <script>
+        $(function () {
+            //自定义输入框初始化
+            $(".bj-input-box").jSelect();
+
+            //监听屏幕滚动的高度 执行动画
+            $(window).scroll(function (event) {
+                var winPos = $(window).scrollTop();
+                
+                //顶部信息栏变色
+                var topBox= $(".navbar-top").height();
+                if(winPos>=topBox){
+                    console.log(topBox);
+                    
+                    $('.navbar-top').addClass('navbar_fadein').removeClass('navbar_fadeout')
+                }else{
+                    $('.navbar-top').addClass('navbar_fadeout').removeClass('navbar_fadein')
+                }
+            });
+            
+            // 国旗显示隐藏
+            $('.national-mouse').on('mouseenter',function(){
+                $('.up-down').stop().addClass('to_up');
+                $('.national').stop().slideDown();
+
+            }).on('mouseleave',function(){
+                $('.up-down').stop().removeClass('to_up');
+                $('.national').stop().slideUp();
+            })
+        })
+    </script>
+</body>
+</html>

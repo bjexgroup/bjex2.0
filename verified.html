@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机认证</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <ul>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+            </ul>
+        </div>
+        <div class="toolBar indexBar container">
+            <div class="logo">
+                <a>
+                    <img src="./imgs/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="top_list">
+                <ul>
+                    <li><a href="">交易中心</a></li>
+                    <li><a href="">c2c交易</a></li>
+                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
+                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
+                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                </ul>
+
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="registration.html">注册</a></li>
+                    
+                    <li class="national-mouse">
+                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+
+                        <div class="national">
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="personal_center">
+                <div class="info_img">
+                        <img src="./imgs/personalname.png" alt="">
+                </div>
+                
+                <div class="accont_numb">
+                    <div class="text">
+                            <a href="">182****3452</a>
+                    </div>
+                     
+                    <div class="personal_list">
+                            <ul>
+                                <li><a href="">个人中心</a></li>
+                                <li><a href="">财务中心</a></li>
+                                <li><a href="">安全中心</a></li>
+                                <li><a href="">推荐好友</a></li>
+                            </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="content">
+            <div class="title">
+                <ul>
+                    <li class="active"><a>实名认证</a></li>
+                    <li><a href="googlenick.html">谷歌认证</a></li>
+                    <li><a href="mobileAut.html">手机认证</a></li>
+                    <li><a href="loginPw.html">登陆密码</a></li>
+                    <li><a href="tranPw.html">交易密码</a></li>
+                    <li><a href="security.html">安全策略</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="verified">
+                    <h3>实名认证</h3>
+                    <div class="control">
+                        <span>证件类型：</span>
+                        <input type="radio" name="type" id="idCode">
+                        <em class="idCode">身份证</em>
+                        <input type="radio" name="type" id="passport">
+                        <em class="passport">护照</em>
+                    </div>
+                    <div class="control width">
+                        <span>真实姓名：</span>
+                        <input type="text">
+                    </div>
+                    <div class="control width">
+                        <span>证件号码：</span>
+                        <input type="text">
+                    </div>
+                    <button type="button" id="enter">确认</button>
+                </div>
+                <div class="pass">
+                    <div class="pic">
+                        <img src="./imgs/pass.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p>已通过实名认证</p>
+                        <a href="">查看</a>
+                        <a href="">关闭</a>
+                    </div>
+                </div>
+                <div class="pass notPass">
+                    <div class="pic">
+                        <img src="./imgs/notPass.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p>未通过实名认证</p>
+                        <a href="">返回</a>
+                    </div>
+                </div>
+                <div class="passInfo">
+                    <h3>已通过初级实名认证</h3>
+                    <p>证件类型：<span>身份证</span></p>
+                    <p>真实姓名：<span>嘻嘻嘻</span></p>
+                    <p>证件号码：<span>231321321312321321</span></p>
+                    <button type="button">去高级实名认证</button>
+                </div>
+                <div class="addPic">
+                    <div class="updata">
+                        <div class="button">
+                            <div class="pic">
+                                <img src="" alt="" class="addPic1">
+
+                            </div>
+                            <a>点击添加图片</a>
+                            <input type="file" accept="image/*" class="addPicBtn1">
+                            <span>手持证件正面照（不大于1M）</span>
+
+                        </div>
+                        <div class="button">
+                            <div class="pic">
+                                <img src="" alt="" class="addPic2">
+                            </div>
+                            <a>点击添加图片</a>
+                            <input type="file" accept="image/*" class="addPicBtn2">
+                            <span>手持证件反面照（不大于1M）</span>
+
+                        </div>
+                        <button type="button">上传</button>
+                    </div>
+                    <div class="loading">
+                        <div class="loading">
+                            <img src="./imgs/loading.png" alt="">
+                        </div>
+                        <h3>已上传照片等待审核</h3>
+                    </div>
+                    <div class="description">
+                        <h3>高级实名认证信息流程：</h3>
+                        <p>1.请上传您本人手持身份证正反面的照片，务必与上方认证信息一致，务必保证身份证上的文字信息无遮挡且清晰可读，否则影响您的身份认证。</p>
+                        <p>2.审核更改申请；审核完成后，客服通知您申请是否通过</p>
+                        <p>3.申请失败，则请您根据提示信息重新提交申请</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="list_title container">
+            <div class="link">
+                <div class="logo"><img src="./imgs/CoinHome-LOGO2.png" alt=""></div>
+                <p>全球领先的数字资产金融服务商</p>
+                <ul>
+                    <li><img src="./imgs/wchat.png" alt=""></li>
+                    <li><img src="./imgs/QQ.png" alt=""></li>
+                    <li><img src="./imgs/facebook.png" alt=""></li>
+                    <li><img src="./imgs/bird.png" alt=""></li>
+                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
+                    <li><img src="./imgs/navigation.png" alt=""></li>
+
+                </ul>
+            </div>
+            <div class="about">
+                <ul class="title">
+                    <li>平台相关</li>
+                    <li>法律条款</li>
+                    <li>服务支持</li>
+                    <li>友情链接</li>
+                    <li>联系我们</li>
+                </ul>
+                <ul class="list">
+                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
+                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
+                    <li><span><a href="">联系我们</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
+                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
+                    <li><span><a href="">平台费率</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
+                                href=""></a></span><span>客服QQ：3601558306</span></li>
+                    <li><span><a href="">加入我们</a></span><span><a href=""></a></span><span><a href=""></a></span><span><a
+                                href=""></a></span><span></span></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+    </footer>
+
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/common/common.js"></script>
+    <script>
+        var file = $(".addPicBtn1");
+        var file1 = $(".addPicBtn2");
+        file.change(function() {
+            $(".addPic1").attr("src", getObjectURL(file[0].files[0]));
+        });
+        file1.change(function() {
+            $(".addPic2").attr("src", getObjectURL(file1[0].files[0]));
+        });
+
+        function getObjectURL(file) {
+            var url = null;
+            if (window.createObjcectURL != undefined) {
+                url = window.createOjcectURL(file);
+            } else if (window.URL != undefined) {
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) {
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        }
+    </script>
+</body>
+
+</html>

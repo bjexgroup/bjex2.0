@@ -1,0 +1,438 @@
+@import "base.css";
+@import "swiper.min.css";
+.navbar .navbar_fadein {
+    animation: fadein 2s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    from {
+        background-color: #fff;
+        color: #5e5e5e;
+    }
+    to {
+        background-color: #00557d;
+        color: #ffff;
+    }
+}
+
+.navbar .navbar_fadeout {
+    animation: fadeout 1s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+    from {
+        background-color: #00557d;
+        color: #ffff;
+    }
+    to {
+        background-color: #fff;
+        color: #5e5e5e;
+    }
+}
+
+.navbar .navbar-top {
+    height: 64px;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 64px;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+}
+
+.navbar .navbar-top li {
+    display: inline-block;
+    margin-left: 54px;
+}
+
+.navbar .navbar-top li .red {
+    color: #ff0101;
+}
+
+.navbar .navbar-top li .green {
+    color: #009e73;
+}
+
+.navbar .indexBar {
+    margin-top: 64px;
+}
+
+.slider {
+    height: 515px;
+    margin-bottom: 55px;
+    position: relative;
+    width: 100%;
+}
+
+.slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999999;
+}
+
+.main .thead ul {
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.main .thead ul .active {
+    border-bottom: solid 1px #5e5e5e;
+}
+
+.main .thead ul .active a {
+    color: #1070e0;
+}
+
+.main .thead ul li {
+    display: inline-block;
+    width: 200px;
+    height: 38px;
+    text-align: center;
+}
+
+.main .thead ul li a {
+    font-size: 16px;
+    line-height: 38px;
+}
+
+.main .thead_title ul li {
+    font-size: 16px;
+    height: 54px;
+    line-height: 54px;
+    display: inline-block;
+    color: #5e5e5e;
+    width: 190px;
+}
+
+.main .thead_title ul li:nth-child(1) {
+    width: 44px;
+}
+
+.main .thead_title ul li:nth-child(2) {
+    width: 180px;
+}
+
+.main .thead_title ul li em {
+    position: relative;
+}
+
+.main .thead_title ul li em i {
+    position: absolute;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: 10px;
+    cursor: pointer;
+}
+
+.main .thead_title ul li em .up {
+    top: 3px;
+    border-width: 0 5px 5px;
+    border-color: transparent transparent #93929c;
+}
+
+.main .thead_title ul li em .down {
+    bottom: 3px;
+    border-width: 5px 5px 0;
+    border-color: #93929c transparent transparent;
+}
+
+.main .thead_title ul li em .active {
+    border-bottom-color: #5e5e5e;
+}
+
+.main .price {
+    display: none;
+}
+
+.main .price li {
+    border-bottom: 1px solid #e5e5e5;
+    height: 54px;
+    line-height: 54px;
+    font-size: 16px;
+}
+
+.main .price li:nth-child(1) {
+    border-top: 1px solid #e5e5e5;
+}
+
+.main .price li:last-child {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.main .price li i {
+    width: 14px;
+    height: 13px;
+    margin-left: 16px;
+    margin-right: 12px;
+    display: inline-block;
+    background: url("../imgs/fivestar.png") no-repeat center;
+}
+
+.main .price li a span {
+    display: inline-block;
+    width: 190px;
+}
+
+.main .price li a span:nth-child(1) {
+    width: 180px;
+}
+
+.main .price li:hover {
+    background-color: #fffbf3;
+    color: #93929c;
+}
+
+.main .price_anmated {
+    animation: priceanmate 1s ease;
+}
+
+@keyframes priceanmate {
+    0% {
+        margin-left: 1600px;
+    }
+}
+
+.main .seleted {
+    display: block;
+}
+
+.device {
+    margin-top: 230px;
+    position: relative;
+    height: 1200px;
+}
+
+.device .device_box {
+    position: absolute;
+    left: 120px;
+    top: 90px;
+}
+
+.device .device_box .device_text h2 {
+    font-size: 30px;
+    color: #5e5e5e;
+}
+
+.device .device_box .device_text h5 {
+    font-size: 16px;
+    line-height: 60px;
+}
+
+.device .device_box .img_list {
+    margin-top: 20px;
+}
+
+.device .device_box .img_list li {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.device .device_box .img_list li a {
+    display: inline-block;
+    width: 166px;
+    height: 44px;
+}
+
+.device .device_box .img_list li img {
+    position: absolute;
+    top: 74px;
+    z-index: 999999;
+    width: 166px;
+    height: 166px;
+    display: none;
+}
+
+.device .device_box .img_list .ios a {
+    background: url('../imgs/APPStore.png') no-repeat center;
+}
+
+.device .device_box .img_list .ios:hover a {
+    background: url('../imgs/APPStore2.png') no-repeat center;
+}
+
+.device .device_box .img_list .ios .ios_code {
+    left: 0;
+}
+
+.device .device_box .img_list .android a {
+    background: url('../imgs/Android.png') no-repeat center;
+}
+
+.device .device_box .img_list .android:hover a {
+    background: url('../imgs/Android1.png') no-repeat center;
+}
+
+.device .device_box .img_list .android .android_code {
+    left: 185px;
+}
+
+.device .device_box .img_list .windows a {
+    background: url('../imgs/Windows.png') no-repeat center;
+}
+
+.device .device_box .img_list .mac a {
+    background: url('../imgs/Mac.png') no-repeat center;
+}
+
+.device .device_box_anmated {
+    position: absolute;
+    animation: leftanmate 2s ease;
+}
+
+@keyframes leftanmate {
+    0% {
+        left: -270px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.device .computer {
+    position: absolute;
+    right: 120px;
+    top: 10px;
+}
+
+.device .computer img {
+    width: 651px;
+    height: 407px;
+}
+
+.device .com_anmated {
+    animation-delay: 1s;
+    animation-duration: 2s;
+    /*动画时间*/
+    animation-fill-mode: both;
+    /*播放后的状态*/
+    animation-iteration-count: 2s;
+    animation-name: container;
+    /*动画的名称*/
+    transform-origin: center bottom;
+    /*设置动画旋转元素的基点为：居中靠下*/
+    cursor: pointer;
+}
+
+@keyframes container {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+        transform: translate3d(0, 0, 0);
+        /*设置只在Z轴上移动*/
+    }
+    40%,
+    43% {
+        transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+        transform: translate3d(0, -180px, 0);
+    }
+    70% {
+        transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -90px, 0);
+    }
+    90% {
+        transform: translate3d(0, -24px, 0);
+    }
+}
+
+.device .mobile {
+    position: absolute;
+    top: 504px;
+    left: 194px;
+}
+
+.device .mobile img {
+    width: 441px;
+    height: 554px;
+}
+
+.device .mobile_anmated {
+    animation-delay: 1s;
+    animation-duration: 2s;
+    /*动画时间*/
+    animation-fill-mode: both;
+    /*播放后的状态*/
+    animation-iteration-count: 2s;
+    animation-name: mobile;
+    /*动画的名称*/
+    transform-origin: center bottom;
+    /*设置动画旋转元素的基点为：居中靠下*/
+    cursor: pointer;
+}
+
+@keyframes mobile {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+        transform: translate3d(0, 0, 0);
+        /*设置只在Z轴上移动*/
+    }
+    40%,
+    43% {
+        transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+        transform: translate3d(0, -180px, 0);
+    }
+    70% {
+        transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -90px, 0);
+    }
+    90% {
+        transform: translate3d(0, -24px, 0);
+    }
+}
+
+.device .mobile_text {
+    position: absolute;
+    top: 756px;
+    left: 804px;
+}
+
+.device .mobile_text h2 {
+    font-size: 30px;
+    color: #5e5e5e;
+}
+
+.device .mobile_text h5 {
+    font-size: 16px;
+    line-height: 60px;
+}
+
+.device .mobile_text_anmated {
+    animation: mobileText 2s ease;
+}
+
+@keyframes mobileText {
+    0% {
+        left: 1304px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.partner img {
+    width: 100%;
+    height: 390px;
+}

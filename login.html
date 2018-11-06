@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+    <style>
+        body {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar">
+        
+        <div class="toolBar container">
+            <div class="logo">
+                <a>
+                    <img src="./imgs/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="top_list">
+                <ul>
+                    <li><a href="">交易中心</a></li>
+                    <li><a href="">c2c交易</a></li>
+                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
+                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
+                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                </ul>
+
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="registration.html">注册</a></li>
+                    
+                    <li class="national-mouse">
+                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+
+                        <div class="national">
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="personal_center">
+                <div class="info_img">
+                        <img src="./imgs/personalname.png" alt="">
+                </div>
+                
+                <div class="accont_numb">
+                    <div class="text">
+                            <a href="">182****3452</a>
+                    </div>
+                     
+                    <div class="personal_list">
+                            <ul>
+                                <li><a href="">个人中心</a></li>
+                                <li><a href="">财务中心</a></li>
+                                <li><a href="">安全中心</a></li>
+                                <li><a href="">推荐好友</a></li>
+                            </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <!-- 登录框 -->
+    <section class="form">
+        <div class="login">
+            <div class="control icon number">
+                <input placeholder="电子邮件/手机号" type="text" id="account">
+                <em></em>
+            </div>
+            <div class="control icon password">
+                <input placeholder="密码" type="text" id="password">
+
+                <em></em><i class="secret"></i>
+            </div>
+            <div class="control code">
+                <input placeholder="图形验证码" type="text" id="verification">
+                <img id="getVerificationImg">
+            </div>
+            <button id="login"><a>登录</a></button>
+            <div class="bar">
+                <a href="registration.html">没有账户？立即创建</a>
+                <a class="forget" href="forget.html">忘记密码？</a>
+            </div>
+            <div class="other">
+                <div class="line">
+                    <p>或使用以下方式登陆账户</p>
+                    <i></i>
+                </div>
+                <div class="list">
+                    <a class="google"><span></span></a>
+                    <a class="facebook"><span></span></a>
+                    <a class="linkedin" id="linkedIn"><span></span></a>
+                </div>
+                <div class="remember">
+                    <i></i><span>记住用户名</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/common/common.js"></script>
+    <script>
+        $("#linkedIn").click(function() {
+            linkedIn();
+        })
+
+        function linkedIn() {
+            let param = {};
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/linkedIn/toLogin.action",
+                dataType: 'JSONP',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+
+                }
+            });
+        }
+        $("#getVerificationImg").click(function() {
+            let num = Math.random()
+            $(this).attr("src", baseLink + "/user/imageCode.action?d=" + num)
+        })
+
+        $(".secret").click(function() {
+            $(this).toggleClass("active");
+            var typeOf = $(this).siblings("input").attr("type")
+            if (typeOf == "text") {
+                $(this).siblings("input").attr("type", "password");
+            } else {
+                $(this).siblings("input").attr("type", "text");
+            }
+        })
+
+        $(".remember").click(function() {
+            $(this).find("i").toggleClass("active");
+        })
+
+        $("#login").click(function() {
+            var smsCode = '';
+            var emailCode = '';
+            var account = $('#account').val();
+            if (account == '') {
+                layer.msg('请输入账号');
+                return
+            }
+            var password = $('#password').val();
+            if (password == '') {
+                layer.msg('请输入密码');
+                return
+            }
+            var verification = $('#verification').val();
+            if (verification == '') {
+                layer.msg('请输入验证码');
+                return
+            }
+            // if (verification == '') {
+            //     layer.msg('验证码错误，请重新输入');
+            //     return
+            // }
+            var param = {
+                account: account,
+                password: password,
+                imageCode: verification, //图形验证码
+                smsCode: smsCode, //短信验证码
+                emailCode: emailCode //邮箱验证码
+            }
+            console.log(param);
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/login.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log("返回的数据: ");
+                    if (data.retcode == 10001) {
+                        layer.msg(data.msg);
+                        return
+                    } else if (data.retcode == 10002) {
+
+                    } else {
+                        localStorage.setItem("account", data.data.account);
+                        localStorage.setItem("user_id", data.data.id);
+                        // window.location.href = "index.html"
+                    }
+                }
+            });
+        })
+        $(function() {
+            //图片验证码 
+            $("#getVerificationImg").attr("src", baseLink + "/user/imageCode.action")
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    //     rem()
+    //     // 实现弹性布局
+    // // 这个函数是为了解决，当进行浏览器窗口大小操作时，rem还是之前的值，如果想要看到效果，需要进行一次手动刷新
+    // // 所以，为了解决不手动刷新我们需要在浏览器窗口变化的时候，进行监听，如果浏览器窗口变化了，就进行rem的重新计算
+    // // （也算是一个bug）
+    // window.onresize = function () {
+    //     rem()
+    // }
+    // rem()
+    // // 进行rem的计算 因为是已1920px为基准进行计算的，所以为了方便，把1rem等于100px
+    // function rem() {
+    //     var width = document.body.clientWidth
+    //     alert(width)
+    //     var fontSize = document.getElementsByTagName('html')[0].style.fontSize = width / 19.2 + "px"
+    // }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="base.css"> -->
+    <!-- <link rel="stylesheet" href="./libs/swiper/swiper.min.css"> -->
+    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <ul>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span>24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+            </ul>
+        </div>
+        <div class="toolBar indexBar container">
+            <div class="logo">
+                <a>
+                    <img src="./imgs/logo3.png" alt="">
+                </a>
+            </div>
+            <div class="top_list">
+                <ul>
+                    <li><a href="">交易中心</a><img src="./imgs/pull.png"></li>
+                    <li><a href="">c2c交易</a><img src="./imgs/pull.png"></li>
+                    <li><a href="">区块商城</a><img src="./imgs/pull.png"></li>
+                    <li><a href="">消息中心</a><img src="./imgs/pull.png"></li>
+                    <li><a href="">帮助中心</a><img src="./imgs/pull.png"></li>
+                </ul>
+
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="registration.html">注册</a></li>
+                    
+                    <li class="national-mouse">
+                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+
+                        <div class="national">
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href=""><img class="up-down" src="./imgs/pull.png" alt=""></a>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="personal_center">
+                <div class="info_img">
+                        <img src="./imgs/personalname.png" alt="">
+                </div>
+                
+                <div class="accont_numb">
+                    <div class="text">
+                            <a href="">182****3452</a>
+                    </div>
+                     
+                    <div class="personal_list">
+                            <ul>
+                                <li><a href="">个人中心</a></li>
+                                <li><a href="">财务中心</a></li>
+                                <li><a href="">安全中心</a></li>
+                                <li><a href="">推荐好友</a></li>
+                            </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <!-- 轮播图 -->
+    <section class="swiper-container slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./imgs/banner.png" alt=""></div>
+            <div class="swiper-slide"><img src="./imgs/banner.png" alt=""></div>
+            <div class="swiper-slide"><img src="./imgs/banner.png" alt=""></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <!-- <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div> -->
+
+        <!-- 如果需要滚动条 -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+        <img src="./imgs/banner2.png" alt="">
+    </section>
+    <!-- 币的行情列表 -->
+    <section class="main container">
+        <div class="thead">
+            <ul>
+                <li class="thead-item active"><a href="javasript:;">CNT</a></li>
+                <li class="thead-item"><a href="javasript:;">BTC</a></li>
+                <li class="thead-item"><a href="javasript:;">自选</a></li>
+                <li class="thead-item"><a href="javasript:;">涅槃交易区</a></li>
+            </ul>
+            <!-- <div class="sear_box">
+                <input type="text" name="" id="searchParams" value="" placeholder="请输入交易币种" class="sear_in">
+                <input type="search" name="" id="" value="" class="searbtn">
+            </div> -->
+        </div>
+        <div class="thead_title">
+            <ul>
+                <li>名称</li>
+                <li>默认排序</li>
+                <li class="tips">
+                    最新价
+                    <em><i class="up active"></i><i class="down"></i></em>
+                </li>
+                <li>折合CNY</li>
+                <li>折合CNY</li>
+                <li class="tips"><em>24H涨跌幅</em>
+                    <em><i class="up"></i><i class="down"></i></em>
+                </li>
+                <li>24H最高价
+                </li>
+                <li>24H最低价</li>
+                <li class="tips">
+                    <em>24H成交量</em>
+                    <em><i class="up"></i><i class="down"></i></em>
+                </li>
+            </ul>
+        </div>
+        <!-- cnt -->
+        <ul class="price seleted price_anmated">
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+        </ul>
+        <!-- btc -->
+        <ul class="price">
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+        </ul>
+        <!-- 自选 -->
+        <ul class="price">
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+        </ul>
+        <!-- 涅槃交交易区 -->
+        <ul class="price">
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+            <li>
+                <i></i>
+                <a href="">
+                    <span>BTC/CNT</span>
+                    <span>1700.00000</span>
+                    <span>175555663</span>
+                    <span>12.00%</span>
+                    <span>0.0000</span>
+                    <span>0.255</span>
+                    <span>15553</span>
+                    <span>15553</span>
+                </a>
+            </li>
+        </ul>
+        <!-- loading 加载框 -->
+        <div class="loading_box">
+            <div class="">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+        </div>
+    </section>
+    <!-- 多平台接入广告 -->
+    <section class="device container">
+        <div class="device_box">
+
+            <div class="device_text">
+                <h2>多平台终端接入</h2>
+                <h5>覆盖IOS、Android、Windows、Mac多个平台，支持全业务功能</h5>
+            </div>
+            <ul class="img_list">
+                <li class="ios">
+                    <a href=""></a>
+                    <img class="ios_code" src="./imgs/banner.png" alt="">
+                </li>
+                <li class="android">
+                    <a href=""></a>
+                    <img class="android_code" src="./imgs/banner.png" alt="">
+                </li>
+                <li class="windows">
+                    <a href=""></a>
+                </li>
+                <li class="mac">
+                    <a href=""></a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="computer">
+            <img src="./imgs/more.png" alt="">
+        </div>
+        <div class="mobile">
+            <img src="./imgs/num.png" alt="">
+        </div>
+        <div class="mobile_text">
+            <h2>数字资产 尽在掌控</h2>
+            <h5>私钥自持,无信任第三方即可完成操作;智能合约撮合,即时交易,高效透明</h5>
+        </div>
+    </section>
+    <!-- 合作伙伴 -->
+    <section class="partner">
+        <img src="./imgs/cooperation.png" alt="">
+    </section>
+    <footer class="footer">
+        <div class="list_title container">
+            <div class="link">
+                <div class="logo"><img src="./imgs/logo2.png" alt=""></div>
+                <p>全球领先的数字资产金融服务商</p>
+                <ul>
+                    <li><img src="./imgs/wchat.png" alt=""></li>
+                    <li><img src="./imgs/QQ.png" alt=""></li>
+                    <li><img src="./imgs/facebook.png" alt=""></li>
+                    <li><img src="./imgs/bird.png" alt=""></li>
+                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
+                    <li><img src="./imgs/navigation.png" alt=""></li>
+
+                </ul>
+            </div>
+            <div class="about">
+                <ul class="title">
+                    <li>平台相关</li>
+                    <li>法律条款</li>
+                    <li>服务支持</li>
+                    <li>友情链接</li>
+                    <li>联系我们</li>
+                </ul>
+                <ul class="list">
+                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
+                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
+                    <li><span><a href="">平台费率</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
+                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
+                    <li><span><a href="">加入我们</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
+                                href=""></a></span><span>客服QQ：3601558306</span></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+    </footer>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/swiper/swiper.min.js"></script>
+    <script src="./libs/common/common.js"></script>
+    <script>
+        $(function() {
+            //轮播图初始化
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'vertical', // 垂直切换选项
+                loop: true, // 循环模式选项
+
+                //开启自动轮播
+                // autoplay:true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            })
+
+//监听屏幕滚动的高度 执行动画
+$(window).scroll(function (event) {
+        var winPos = $(window).scrollTop();
+        var computer = $('.computer').offset().top; //获取盒子偏移量top
+        var computerBox = $(".computer").height(); //获取电脑图片盒子的高度
+        var maxTop = computerBox + computer;
+        var minTop = computer - computerBox;
+        if (minTop < winPos < maxTop) {
+            $(".computer").attr("class", "computer com_anmated");
+            $(".device_box").attr("class", "device_box device_box_anmated");
+        };
+        if (winPos < minTop || winPos > maxTop) {
+            console.log('111111111111');
+
+            $(".computer").attr("class", "computer")
+            $(".device_box").attr("class", "device_box")
+        }
+        console.log("电脑滚动的高度:" + winPos + "最小" + minTop + "最大" + maxTop + "盒子的top" + computer + "盒子自己的高度" + computerBox);
+
+        var minTop2 = maxTop - computerBox / 2; //到这个高度动画执行
+        var mobBox = $(".mobile").height(); //获取手机图片盒子的高度
+        var mobTop = $('.mobile').offset().top; //获取手机图片盒子偏移量top
+        var maxTop2 = mobBox + mobTop;
+        if (minTop2 < winPos < maxTop2) {
+            console.log('添加类名');
+            $(".mobile").attr("class", "mobile mobile_anmated");
+            $(".mobile_text").attr("class", "mobile_text mobile_text_anmated");
+        };
+        if (winPos < minTop2 || winPos > maxTop2) {
+            console.log('移除类名');
+
+            $(".mobile").attr("class", "mobile")
+            $(".mobile_text").attr("class", "mobile_text")
+        }
+
+    });
+
+            // 二维码显示隐藏
+            $('.ios').mouseenter(function() {
+                $(this).stop().find('.ios_code').stop().fadeIn();
+            }).mouseleave(function() {
+                $(this).stop().find('.ios_code').stop().fadeOut();
+            })
+
+            $('.android').mouseenter(function() {
+                $(this).stop().find('.android_code').stop().fadeIn();
+            }).mouseleave(function() {
+                $(this).stop().find('.android_code').stop().fadeOut();
+            })
+
+            // tab栏切换
+            $('.thead-item').on('click', function() {
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+              
+        })
+    </script>
+</body>
+
+</html>

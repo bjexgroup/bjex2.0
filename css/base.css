@@ -1,0 +1,781 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+strong,
+span,
+h6,
+form,
+fieldset,
+table,
+td,
+span,
+img,
+div,
+dl,
+dt,
+dd,
+input,
+footer,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "microsoft yahei", "SimHei", Arial;
+    color: #5e5e5e;
+    font-size: 16px;
+    background: #ffffff;
+}
+
+:focus {
+    outline: 0
+}
+
+a img {
+    border: 0
+}
+
+.container {
+    /* min-width: 100%; */
+    width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    vertical-align: top;
+    border: none;
+}
+
+ul,
+ol,
+li,
+submit {
+    list-style: none;
+    border: none;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: none;
+    border: none;
+    background: none;
+    font-family: "microsoft yahei", "SimHei";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+em,
+i {
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*清除复选框的选择按钮*/
+
+select {}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+    color: #5e5e5e;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #5e5e5e;
+}
+
+
+/*清除浮动*/
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+
+/*兼容ie6,ie7*/
+
+.clearfix {
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+}
+
+.clr {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.fn {
+    float: none
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+
+/* -------箭头start-------- */
+
+
+/* 第一种 */
+
+.down_arrow {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.down_arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 12px;
+    width: 12px;
+    border-width: 0 1px 1px 0;
+    border-color: #5e5e5e;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform-origin: center;
+    transition: transform .3s;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -10px;
+}
+
+
+
+/* 下拉单选框箭头 */
+.bj_ipnut_dow {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.bj_ipnut_dow::after {
+    display: inline-block;
+    content: " ";
+    height: 12px;
+    width: 12px;
+    border-width: 0 1px 1px 0;
+    border-color: #5e5e5e;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform-origin: center;
+    transition: transform .3s;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -10px;
+}
+
+/* // 加上active旋转成 上箭头 */
+
+.down_arrow.active::after {
+    transform-origin: center;
+    transform: rotate(-135deg);
+    transition: transform .3s;
+}
+
+.bj_ipnut_dow.active::after {
+    transform-origin: center;
+    transform: rotate(-135deg);
+    transition: transform .3s;
+}
+
+/* 第二种 */
+
+div {
+    position: relative;
+}
+
+.arrow:after,
+.arrow:before {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: orange;
+    position: absolute;
+    content: "";
+}
+
+.arrow:before {
+    top: 0;
+    left: 70px;
+    /*根据实际情况调整 */
+    border-left-color: white;
+}
+
+
+/* -------箭头end-------- */
+
+
+/* ---------------------按钮样式-start----------------------- */
+
+button[type=button]{
+    font-size: 14px;
+                        line-height: 38px;
+                        width: 270px;
+                        height: 50px;
+                        color: #ffffff;
+                        border: 1px solid #bbbbbb;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        box-shadow: 2px 2px 2px #ddd8d8;
+                        background-color: #00557d;
+}
+button[type=button] a{
+    color: #ffffff;
+}
+button[type=button]:active a{
+    color: #5e5e5e;
+}
+button[type=button]:active{
+    color: #5e5e5e;
+   
+    opacity: 0.5;
+}
+
+/* ---------------------按钮样式--end---------------------- */
+
+
+
+/* ----------loading start------------- */
+
+.loading_box {
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes loading-3 {
+    50% {
+        transform: scale(.4);
+        opacity: .3
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.loading {
+    position: relative;
+}
+
+.loading i {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #00557d;
+    position: absolute
+}
+
+.loading i:nth-child(1) {
+    top: 13px;
+    left: 0;
+    -webkit-animation: loading-3 1s ease 0s infinite
+}
+
+.loading i:nth-child(2) {
+    top: 9px;
+    left: 9px;
+    -webkit-animation: loading-3 1s ease -.12s infinite
+}
+
+.loading i:nth-child(3) {
+    top: 0;
+    left: 13px;
+    -webkit-animation: loading-3 1s ease -.24s infinite
+}
+
+.loading i:nth-child(4) {
+    top: -9px;
+    left: 9px;
+    -webkit-animation: loading-3 1s ease -.36s infinite
+}
+
+.loading i:nth-child(5) {
+    top: -13px;
+    left: 0;
+    -webkit-animation: loading-3 1s ease -.48s infinite
+}
+
+.loading i:nth-child(6) {
+    top: -9px;
+    left: -9px;
+    -webkit-animation: loading-3 1s ease -.6s infinite
+}
+
+.loading i:nth-child(7) {
+    top: 0;
+    left: -13px;
+    -webkit-animation: loading-3 1s ease -.72s infinite
+}
+
+.loading i:nth-child(8) {
+    top: 9px;
+    left: -9px;
+    -webkit-animation: loading-3 1s ease -.84s infinite
+}
+
+
+/* ----------loading end------------- */
+
+/* -----------JSelect自定义下拉单选框样式 start---------------*/
+.j-container {
+	position:relative;
+	width:652px;
+	height:40px;
+	border:#bbbbbb solid 1px;
+	border-radius: 2px;
+    overflow:hidden;
+    display: inline-block;
+}
+
+.j-select-arrrowDown {
+	/* background:#CCC;
+	width:10px;
+	height:13px;*/
+	right:2px;
+	top:0px; 
+	display: inline-block;
+    /* position: relative; */
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}
+.j-select-arrrowDown::after{
+	display: inline-block;
+    content: " ";
+    height: 12px;
+    width: 12px;
+    border-width: 0 1px 1px 0;
+    border-color: #5e5e5e;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform-origin: center;
+    transition: transform .3s;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -10px;
+}
+
+.j-select-arrrowDown.active::after{
+	transform-origin: center;
+    transform: rotate(-135deg);
+    transition: transform .3s;
+}
+
+.j-select-arrrowDown:hover {
+	/* background:#F00; */
+}
+
+.j-container div {
+	color:#747474;
+	/* color: red; */
+	font-size: 14px;
+	padding-left:12px;
+	line-height:40px;
+}
+
+.j-select-list {
+	z-index: 1000;
+	border:#e5e5e5 solid 1px;
+	text-align:left;
+	background:#e5e5e5e5;
+}
+
+.j-select-list li {
+	color:#747474;
+	padding-left:12px;
+	line-height:40px;
+	height:40px;
+    overflow:hidden;
+}
+
+.j-select-list li.active {
+	background:#eeeeee;
+	/* color:#FFF; */
+}
+/* -----------JSelect 自定义下拉单选框样式 end---------------*/
+
+
+/* ------------------头部 start------------------------- */
+textarea {
+    width: 400px;
+    height: 300px;
+    font-size: 12px;
+  }
+  .navbar .navbar_fadein {
+    animation: fadein 2s ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadein {
+    from {
+    background-color: #fff;
+    color: #5e5e5e;
+  }
+  to {
+    background-color: #00557d;
+    color: #ffff;
+  }
+  
+  }
+  .navbar .navbar_fadeout {
+    animation: fadeout 1s ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeout {
+    from {
+    background-color: #00557d;
+    color: #ffff;
+  }
+  to {
+    background-color: #fff;
+    color: #5e5e5e;
+  }
+  
+  }
+  .navbar .navbar-top {
+    height: 64px;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 64px;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    text-align: center;
+    /* 无论屏幕多大 顶部行情信息栏盒子里的内容都居中 超出隐藏 */
+  
+    overflow: hidden;
+  }
+  .navbar .navbar-top li {
+    display: inline-block;
+    margin-left: 54px;
+  }
+  .navbar .navbar-top li .red {
+    color: #ff0101;
+  }
+  .navbar .navbar-top li .green {
+    color: #009e73;
+  }
+  .navbar .indexBar {
+    margin-top: 64px;
+  }
+  .navbar .toolBar {
+    line-height: 82px;
+    height: 83px;
+  }
+  .navbar .toolBar .logo {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    margin-top: 10px;
+  }
+  .navbar .toolBar .logo img {
+    width: 290px;
+    height: 56px;
+  }
+  .navbar .toolBar .top_list {
+    position: absolute;
+    left: 350px;
+  }
+  .navbar .toolBar .top_list li {
+    float: left;
+    margin-left: 40px;
+  }
+  .navbar .toolBar .top_list li:hover {
+    cursor: pointer;
+    color: #5e5e5e;
+  }
+  .navbar .toolBar .top_list li:hover img {
+    transform: rotate(180deg);
+  }
+  .navbar .toolBar .top_list li a {
+    font-size: 16px;
+  }
+  .navbar .toolBar .top_list li img {
+    margin-top: 38px;
+    margin-left: 8px;
+  }
+  .navbar .toolBar .login {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .navbar .toolBar .login ul li {
+    display: inline-block;
+    float: left;
+  }
+  .navbar .toolBar .login ul li:first-child {
+    margin-right: 18px;
+  }
+  .navbar .toolBar .login ul li:nth-child(2) {
+    margin-right: 40px;
+  }
+  .navbar .toolBar .login ul li:nth-child(3) img {
+    display: inline-block;
+    width: 37px;
+    height: 24px;
+    margin-top: 27px;
+  }
+  .navbar .toolBar .login ul li:nth-child(3) .national {
+    position: absolute;
+    display: block;
+    z-index: 999999;
+    top: 51px;
+    right: 30px;
+    display: none;
+  }
+  .navbar .toolBar .login ul li:nth-child(3) .national img {
+    display: block;
+    width: 37px;
+    height: 24px;
+    margin-top: 2px;
+  }
+  .navbar .toolBar .login ul li:nth-child(4) {
+    margin-left: 18px;
+  }
+  .navbar .toolBar .login ul li:nth-child(4) img {
+    margin-top: 36px;
+  }
+  .navbar .toolBar .login ul li:nth-child(4) .to_up {
+    transform: rotate(180deg);
+  }
+  .navbar .toolBar .login ul li a {
+    font-size: 16px;
+  }
+  .navbar .toolBar .personal_center {
+    position: absolute;
+    top: 0;
+    right: 90px;
+    z-index: 9999;
+    display: none;
+  }
+  .navbar .toolBar .personal_center .info_img {
+    position: absolute;
+    right: 184px;
+    top: -2px;
+  }
+  .navbar .toolBar .personal_center .info_img img {
+    width: 20px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  .navbar .toolBar .personal_center .accont_numb {
+    width: 163px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #eeeeee;
+    border-radius: 15px;
+    margin-left: 16px;
+    position: absolute;
+    border-radius: 15px;
+    top: 26px;
+    right: 0;
+    z-index: 99999;
+    cursor: pointer;
+  }
+  .navbar .toolBar .personal_center .accont_numb .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+    width: 163px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .navbar .toolBar .personal_center .personal_list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    display: none;
+  }
+  .navbar .toolBar .personal_center .personal_list ul {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+  }
+  .navbar .toolBar .personal_center .personal_list ul li {
+    width: 163px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .navbar .toolBar .personal_center .personal_list ul li:hover {
+    background-color: #e5e5e5e5;
+  }
+  
+  
+/* ------------------头部 end------------------------- */
+
+/* -------------------底部 start---------------------------- */
+
+.footer {
+    position: relative;
+    height: 455px;
+}
+
+.footer .list_title {
+    height: 380px;
+}
+
+.footer .list_title .link {
+    position: absolute;
+    top: 96px;
+    left: 170px;
+}
+
+.footer .list_title .link .logo img {
+    width: 290px;
+    height: 56px;
+    margin-left: -8px;
+}
+
+.footer .list_title .link p {
+    font-size: 20px;
+    color: #bbbbbb;
+    margin-top: 6px;
+}
+
+.footer .list_title .link ul {
+    display: block;
+    width: 280px;
+    margin-top: 28px;
+}
+
+.footer .list_title .link ul li {
+    display: inline-block;
+    margin-right: 18px;
+    margin-top: 18px;
+}
+
+.footer .list_title .link ul li.five {
+    margin-right: 0;
+}
+
+.footer .list_title .link ul li img {
+    width: 38px;
+    height: 38px;
+}
+
+.footer .list_title .about {
+    position: absolute;
+    top: 112px;
+    left: 744px;
+    height: 220px;
+}
+
+.footer .list_title .about .title li {
+    font-size: 14px;
+    color: #5e5e5e;
+    display: inline-block;
+    width: 103px;
+}
+
+.footer .list_title .about .list {
+    margin-top: 23px;
+    height: 200px;
+    color: #a9a9a9;
+    font-size: 14px;
+}
+
+.footer .list_title .about .list li span {
+    display: inline-block;
+    width: 107px;
+    line-height: 28px;
+}
+
+.footer .list_title .about .list li span:last-child {
+    width: 240px;
+}
+
+.footer .list_title .about .list li span a {
+    color: #a9a9a9;
+}
+
+.footer hr {
+    margin: 0;
+    background-color: #e5e5e5;
+    height: 1px;
+    border: none;
+}
+
+.footer .address {
+    font-size: 16px;
+    height: 74px;
+    line-height: 74px;
+    text-align: center;
+    color: #bbbbbb;
+}
+
+/* -----------------底部end ---------------------------------- */

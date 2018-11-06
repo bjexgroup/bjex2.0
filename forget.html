@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar log">
+        <div class="toolBar container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./imgs/logo_white.png" alt="">
+
+                </a>
+            </div>
+            <div class="login">
+                <ul>
+                    <li style="visibility:hidden;"><a>登录</a></li>
+                    <li style="visibility:hidden;"><a>注册</a></li>
+                    <li>
+                        <a><img src="./imgs/pennant.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a><img src="./imgs/down.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- 重置框 -->
+    <section class="form">
+        <div class="login forget">
+            <div class="control icon number">
+                <input placeholder="电子邮件/手机号" type="text" id="account">
+
+            </div>
+            <div class="control icon password">
+                <input placeholder="请设置6-16位数字或字母的登陆密码" type="password" id="password">
+                <i class="secret"></i>
+            </div>
+            <div class="control icon password">
+                <input placeholder="重复密码" type="password" id="confirm">
+            </div>
+            <div class="control code">
+                <input placeholder="图形验证码" type="text" id="verification">
+                <img id="getVerificationImg" title="点击更换验证码">
+            </div>
+            <div class="control code verification">
+                <input placeholder="手机验证码" type="text" id="verificationText">
+                <!-- <span id="getVerificationText">获取短信验证码</span> -->
+                <input value="获取短信验证码" id="getVerificationText" class="getVerificationText" type="button">
+            </div>
+            <button id="reset"><a>重置登陆密码</a></button>
+        </div>
+
+    </section>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/layer/layer.js"></script>
+    <script>
+        var countdown = 3;
+        $("#getVerificationText").click(function() {
+            settime($(this));
+        })
+
+        function settime(obj) {
+            if (countdown == 0) {
+                // $(this).removeClass("disabled");
+                obj.attr('disabled', false);
+                obj.removeClass("disabled");
+                obj.val("免费获取验证码");
+                countdown = 3;
+                return;
+            } else {
+                obj.attr('disabled', true);
+                obj.addClass("disabled");
+                obj.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                settime(obj)
+            }, 1000)
+        }
+        $(".secret").click(function() {
+            $(this).toggleClass("active");
+            $("#confirm").toggleClass("active");
+            var typeOf = $(this).siblings("input").attr("type")
+            if (typeOf == "text") {
+                $(this).siblings("input").attr("type", "password");
+                $("#confirm").attr("type", "password");
+            } else {
+                $(this).siblings("input").attr("type", "text");
+                $("#confirm").attr("type", "text");
+
+            }
+        })
+        $(".remember").click(function() {
+            $(this).find("i").toggleClass("active");
+        })
+        $("#reset").click(function() {
+            var account = $('#account').val();
+            if (account == '') {
+                layer.tips('请输入账号', '#account', {
+                    tips: 3
+                });
+                return
+            }
+            var password = $('#password').val();
+            if (password == '') {
+                layer.tips('请输入密码', '#password', {
+                    tips: 3
+                });
+                return
+            }
+            var confirm = $('#confirm').val();
+            if (confirm == '') {
+                layer.tips('请重复密码', '#confirm', {
+                    tips: 3
+                });
+                return
+            } else if (confirm != password) {
+                layer.tips('两次输入的密码不一致', '#confirm', {
+                    tips: 3
+                });
+                return
+            }
+            var verification = $('#verification').val();
+            if (verification == '') {
+                layer.tips('请输入图片验证码', '#verification', {
+                    tips: 3
+                });
+                return
+            }
+            // if (verification == '') {
+            //     layer.msg('验证码错误，请重新输入');
+            //     return
+            // }
+            var verificationText = $('#verificationText').val();
+            if (verificationText == '') {
+                layer.tips('请输入验证码', '#verificationText', {
+                    tips: 3
+                });
+                return
+            }
+            var param = {
+                account: account,
+                password: password,
+                verification: verification
+            }
+            $.ajax({
+                type: "GET",
+                url: "data.php",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log("返回的数据: ");
+                    console.log(data);
+                }
+            });
+        })
+        $(function() {
+            //图片验证码 
+            $("#getVerificationImg").attr("src", baseLink + "/user/imageCode.action")
+        })
+    </script>
+</body>
+
+</html>
