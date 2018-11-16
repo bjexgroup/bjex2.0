@@ -10,7 +10,19 @@
     <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
     <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
     <script type="text/javascript" src="./libs/less/less.min.js"></script>
-
+    <style>
+        .main .content ul {
+            border: none;
+        }
+        
+        .main .content .option .title .loginBtn {
+            background: #999;
+        }
+        
+        .main .content .option .title .loginBtn.selected {
+            background: #00557d;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +35,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -31,7 +43,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -39,7 +51,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -47,68 +59,79 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img
+                            src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -129,26 +152,26 @@
                 <div class="title login">
                     <h3>登陆策略</h3>
                     <p>登陆交易所的验证方式</p>
-                    <a class="loginBtn">修改</a>
+                    <a class="loginBtn loginBtn1" value="1" data=''>修改</a>
                 </div>
                 <div class="h20"></div>
-                <div class="optList">
+                <div class="optList optList1">
                     <ul>
-                        <li class="active">
+                        <li value="1">
                             登录密码
                             <em>当前登录策略</em>
                         </li>
-                        <li>
+                        <li value="2">
                             登录密码+短信验证
                             <span>(你还没绑定手机号码)</span>
                             <em>当前登录策略</em>
                         </li>
-                        <li>
+                        <li value="3">
                             登录密码+谷歌验证码
                             <span>(你还没开启谷歌验证)</span>
                             <em>当前登录策略</em>
                         </li>
-                        <li>
+                        <li value="4">
                             登录密码+谷歌验证码+短信验证
                             <span>(你还没开启谷歌验证+手机号码)</span>
                             <em>当前登录策略</em>
@@ -158,26 +181,26 @@
                 <div class="title transaction">
                     <h3>交易策略</h3>
                     <p>登陆交易所的验证方式</p>
-                    <a class="loginBtn">修改</a>
+                    <a class="loginBtn loginBtn2" value="2" data="">修改</a>
                 </div>
                 <div class="h20"></div>
-                <div class="optList">
+                <div class="optList optList2">
                     <ul>
-                        <li class="active">
+                        <li value="1">
                             登录密码
                             <em>当前登录策略</em>
                         </li>
-                        <li>
+                        <li value="2">
                             登录密码+短信验证
                             <span>(你还没绑定手机号码)</span>
                             <em>当前登录策略</em>
                         </li>
-                        <li>
+                        <li value="3">
                             登录密码+谷歌验证码
                             <span>(你还没开启谷歌验证)</span>
                             <em>当前登录策略</em>
                         </li>
-                        <li>
+                        <li value="4">
                             登录密码+谷歌验证码+短信验证
                             <span>(你还没开启谷歌验证+手机号码)</span>
                             <em>当前登录策略</em>
@@ -189,69 +212,199 @@
     </section>
     <!-- footer -->
     <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/CoinHome-LOGO2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
+        <div class="list_title">
 
-                </ul>
-            </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">联系我们</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span>客服QQ：3601558306</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href=""></a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span></span></li>
-                </ul>
-            </div>
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span
+                        data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span
+                        data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家|
+                            新加坡新达塔双淡马锡大道9号04</p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
+            </div>   
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+        
     </footer>
 
     <script src="./libs/jquery/jquery.min.js"></script>
     <script src="./libs/layer/layer.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
-        var file = $(".addPicBtn1");
-        var file1 = $(".addPicBtn2");
-        file.change(function() {
-            $(".addPic1").attr("src", getObjectURL(file[0].files[0]));
-        });
-        file1.change(function() {
-            $(".addPic2").attr("src", getObjectURL(file1[0].files[0]));
-        });
+        var loginBtn1 = '';
+        var loginBtn2 = '';
+        $(".optList1 li").click(function() {
+            $(".loginBtn1").addClass("selected")
+            loginBtn1 = $(this).val();
+            $(".optList1 li").removeClass("selected")
+            $(this).addClass("selected")
+        })
+        $(".optList2 li").click(function() {
+            $(".loginBtn2").addClass("selected")
+            loginBtn2 = $(this).val();
+            $(".optList2 li").removeClass("selected")
+            $(this).addClass("selected")
+        })
 
-        function getObjectURL(file) {
-            var url = null;
-            if (window.createObjcectURL != undefined) {
-                url = window.createOjcectURL(file);
-            } else if (window.URL != undefined) {
-                url = window.URL.createObjectURL(file);
-            } else if (window.webkitURL != undefined) {
-                url = window.webkitURL.createObjectURL(file);
+        function querySecurityStrategyInfo() { //查询安全策略
+            let param = {
+                strategyPurpose: ''
             }
-            return url;
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/Authentication/querySecurityStrategyInfo.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log("查一下")
+                    console.log(data.data)
+                    $(".optList li").removeClass("active");
+                    $(".optList1 li").eq(data.data[0].strategyType - 1).addClass("active")
+                    $(".optList2 li").eq(data.data[1].strategyType - 1).addClass("active")
+                        // alert(1)
+                }
+            });
         }
+
+        function isBindMobilePhone() { //是否绑定手机
+            let param = {
+                    id: localStorage.getItem("user_id")
+                        // id: 621642
+                }
+                // console.log("穿的参数")
+                // console.log(param)
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/isBindMobilePhone.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data)
+                    if (data.data == true) {} else {
+                        $(".optList1 li").eq(1).find("span").show()
+                        $(".optList2 li").eq(1).find("span").show()
+                    }
+                    list(data.data) //是否绑定谷歌
+                        // console.log(data.data[0].strategyType - 1);
+                        // if (strategyPurpose == 1) {
+                        //     $(".optList1 li").removeClass("active");
+                        //     $(".optList1 li").eq(data.data[0].strategyType).addClass("active")
+
+                    // } else {
+                    //     $(".optList2 li").removeClass("active");
+                    //     $(".optList2 li").eq(data.data[0].strategyType).addClass("active")
+
+                    // } 
+                }
+            });
+        }
+
+        function list(isMob) {
+            console.log(isMob) //是否开启手机认证
+            let param = {
+                userid: localStorage.getItem("user_id")
+                    // userid: 621642
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/google/list.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log("是否google")
+                    console.log(data)
+                    console.log(data.data.isnick)
+                    if (data.data.isnick == "F") { //未开启谷歌认证
+                        // alert(1)
+                        $(".optList1 li").eq(2).find("span").show()
+                        $(".optList2 li").eq(2).find("span").show()
+                        if (isMob == false) {
+                            $(".optList1 li").eq(3).find("span").show().text("（你还没开启谷歌验证、手机验证）")
+                            $(".optList2 li").eq(3).find("span").show().text("（你还没开启谷歌验证、手机验证）")
+
+                        } else {
+                            $(".optList1 li").eq(3).find("span").show()
+                            $(".optList2 li").eq(3).find("span").show()
+                            $(".optList1 li").eq(3).find("span").text("（你还没开启谷歌验证）")
+                            $(".optList2 li").eq(3).find("span").text("（你还没开启谷歌验证）")
+                        }
+                    } else {
+                        if (isMob == false) {
+                            $(".optList1 li").eq(3).find("span").text("（你还没开启手机验证）")
+                            $(".optList2 li").eq(3).find("span").text("（你还没开启手机验证）")
+                        }
+                    }
+                }
+            });
+        }
+
+        $(".loginBtn1").click(function() {
+            if (loginBtn1 == '' || loginBtn1 == undefined) {
+                layer.msg("请选择修改成哪种登陆策略")
+                return
+            }
+            saveSecurityStrategy($(this).attr("value"), loginBtn1)
+        })
+        $(".loginBtn2").click(function() {
+            if (loginBtn2 == '' || loginBtn2 == undefined) {
+                layer.msg("请选择修改成哪种登陆策略")
+                return
+            }
+            saveSecurityStrategy($(this).attr("value"), loginBtn2)
+        })
+
+        function saveSecurityStrategy(strategyPurpose, strategyType) { //修改安全策略 
+            let param = {
+                strategyPurpose: strategyPurpose, //1-登陆,2交易
+                strategyType: strategyType //1 2 3 4 
+            }
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/Authentication/saveSecurityStrategy.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data)
+                    $(".loginBtn").removeClass("selected")
+                    if (data.retcode == 10000) {
+                        layer.msg("修改成功")
+                        querySecurityStrategyInfo()
+                    } else {
+                        layer.msg(data.msg)
+                    }
+
+                }
+            });
+        }
+        $(function() {
+            querySecurityStrategyInfo() //登陆策略
+                // querySecurityStrategyInfo('', 2) //交易策略
+            isBindMobilePhone() //是否绑定手机
+
+        })
     </script>
 </body>
+
 
 </html>

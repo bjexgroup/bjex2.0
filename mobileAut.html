@@ -5,12 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>交易密码</title>
+    <title>手机认证</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
     <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
     <script type="text/javascript" src="./libs/less/less.min.js"></script>
-
+    <style>
+        .main .content .box {
+            padding-bottom: 50px;
+        }
+        
+        .main .content .box .control {
+            position: relative;
+        }
+        
+        .main .content .box .mobile .cod .send {
+            /* color: red; */
+            width: auto;
+            border-bottom: none;
+            position: absolute;
+            right: -80px;
+            bottom: 14px;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +40,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -31,7 +48,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -39,7 +56,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -47,68 +64,78 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -129,22 +156,23 @@
                     <h3>手机认证</h3>
                     <div class="control mob">
                         <span>手机号：CN+86</span>
-                        <input type="text">
+                        <input type="text" id="mobNum">
                     </div>
                     <div class="control cod">
                         <span>短信验证码：</span>
-                        <input type="text">
-                        <a class="send">发送验证码</a>
+                        <input type="text" id="smsCode">
+                        <!-- <a class="send">发送验证码</a> -->
+                        <input type="text" class="send" value="发送验证码">
                     </div>
                     <button type="button" id="enter">确认</button>
                 </div>
-                <div class="pass">
+                <div class="pass yesPass">
                     <div class="pic">
                         <img src="./imgs/pass.png" alt="">
                     </div>
                     <div class="info">
                         <p>您已成功绑定手机</p>
-                        <a href="">查看</a>
+                        <a id="lookMob">查看</a>
                     </div>
                 </div>
                 <div class="pass notPass">
@@ -157,7 +185,7 @@
                     </div>
                 </div>
                 <div class="passInfo">
-                    <p>手机号码：<span>182****9999</span><em>修改</em></p>
+                    <p>手机号码：<span id="phone"></span><em>修改</em></p>
                     <p><span class="color">提示：</span>您可以在安全策略里选择其他登陆模式！</p>
                 </div>
             </div>
@@ -166,68 +194,208 @@
 
     <!-- footer -->
     <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/CoinHome-LOGO2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
+        <div class="list_title">
 
-                </ul>
-            </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">联系我们</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span>客服QQ：3601558306</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href=""></a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span></span></li>
-                </ul>
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04
+                </p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
             </div>
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+
     </footer>
 
     <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
     <script src="./libs/layer/layer.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
-        var file = $(".addPicBtn1");
-        var file1 = $(".addPicBtn2");
-        file.change(function() {
-            $(".addPic1").attr("src", getObjectURL(file[0].files[0]));
-        });
-        file1.change(function() {
-            $(".addPic2").attr("src", getObjectURL(file1[0].files[0]));
-        });
+        var countdown = 3; //倒计时
+        $("#lookMob").click(function() {
+            $(".yesPass").hide()
+            $(".passInfo").show()
+            $("#phone").text(localStorage.getItem("account"))
+        })
+        $("#enter").click(function() {
+            bindMobilePhone() //点击绑定手机
+        })
+        $(".send").click(function() {
+            getCode() //点击获取验证码
+        })
 
-        function getObjectURL(file) {
-            var url = null;
-            if (window.createObjcectURL != undefined) {
-                url = window.createOjcectURL(file);
-            } else if (window.URL != undefined) {
-                url = window.URL.createObjectURL(file);
-            } else if (window.webkitURL != undefined) {
-                url = window.webkitURL.createObjectURL(file);
+        function getCode() {
+            var account = $('#mobNum').val(); //手机号
+            var verificationImg = $('#verificationImg').val(); //图片
+            var reg = /^1[3|4|5|6|7|8|9][0-9]\d{4,8}$/; //定义手机号正则表达式
+            var regEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            console.log(verificationImg);
+            if (account == '') {
+                layer.tips('请输入账号', '#mobNum', {
+                    tips: 3
+                });
+                return
             }
-            return url;
+            if (!(reg.test(account))) {
+                layer.tips('账号格式不正确', '#mobNum', {
+                    tips: 3
+                });
+                return false;
+            }
+            // if (!(regEmail.test(account))) {
+            //     layer.tips('账号格式不正确2', '#account', {
+            //         tips: 3
+            //     });
+            //     return false;
+            // }
+
+            // if (verificationImg == '') {
+            //     layer.tips('请输入图片验证码', '#verificationImg', {
+            //         tips: 3
+            //     });
+            //     return
+            // }
+            var param = {
+                phone: account,
+                type: 4, //1:注册,2:找回密码，3:转出资产,4:绑定手机
+                userid: localStorage.getItem("user_id"),
+                imageCodes: '' //绑定手机不用传
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/user/getCode.action",
+                dataType: 'JSON', //JSON
+                data: param,
+                success: function(data) {
+                    console.log(data)
+                    if (data.retcode == 10001) {
+                        layer.msg(data.msg);
+                        // let num = Math.random()
+                        // $("#getVerificationImg").attr("src", baseLink + "/user/imageCode.action?d=" + num)
+                        $("#verificationImg").val("");
+                    } else {
+                        layer.msg(data.msg);
+                        settime($(".send"));
+                    }
+                }
+            });
         }
+
+        function settime(obj) {
+            if (countdown == 0) {
+                // $(this).removeClass("disabled");
+                obj.attr('disabled', false);
+                obj.removeClass("disabled");
+                obj.val("发送验证码");
+                countdown = 3;
+                return;
+            } else {
+                obj.attr('disabled', true);
+                obj.addClass("disabled");
+                obj.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                settime(obj)
+            }, 1000)
+        };
+
+        function bindMobilePhone() { //用户绑定手机
+            let phone = $("#mobNum").val() //手机号
+            if (phone == '') {
+                layer.msg("请输入手机号码")
+                return
+            }
+            let code = $("#smsCode").val() //验证码
+            if (code == '') {
+                layer.msg("请输入验证码")
+                return
+            }
+
+            let param = {
+                id: localStorage.getItem("user_id"),
+                code: code,
+                phone: phone,
+            }
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/bindMobilePhone.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.retcode == 10000) {
+                        layer.msg(data.msg)
+                        setTimeout(function() {
+                            isBindMobilePhone()
+                        }, 1000)
+                    } else {
+                        layer.msg(data.msg)
+                    }
+                }
+            });
+        }
+
+        function isBindMobilePhone() {
+            let param = {
+                id: localStorage.getItem("user_id")
+                    // id: 1
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/isBindMobilePhone.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.data == true) { //已经认证
+                        $(".yesPass").show();
+                        $(".mobile").hide();
+                    } else { //未认证
+                        $(".mobile").show();
+                    }
+                    // if (data.data == true) {} else {
+                    //     // 弹窗
+                    //     layer.confirm('请先完成高级实名认证', {
+                    //         btn: ['确认'],
+                    //         btnAlign: 'c',
+                    //         closeBtn: 0,
+                    //     }, function(index, layero) {
+                    //         window.location.href = "verified.html"
+                    //     });
+                    // }
+                }
+            });
+        }
+        $(function() {
+            console.log(localStorage.getItem("user_id"))
+            isBindMobilePhone() //是否绑定手机
+        })
     </script>
 </body>
 

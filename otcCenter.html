@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-i18n="tradeCenter.title">OTC交易</title>
+    <!-- <link rel="stylesheet" href="base.css"> -->
+    <!-- <link rel="stylesheet" href="./libs/swiper/swiper.min.css"> -->
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
+    <link rel="stylesheet/less" type="text/css" href="./less/zh/otc_zh.less" />
+    <script type="text/javascript" src="./libs/less/less.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <ul>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+            </ul>
+        </div>
+        <div class="toolBar indexBar container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./imgs/logo1.png" alt="">
+                </a>
+            </div>
+            <div class="top_list">
+                <ul>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img
+                            src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
+                </ul>
+
+            </div>
+            <div class="login">
+                <ul>
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
+                    <li class="national-mouse">
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
+
+                        <div class="national">
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="personal_center">
+                <div class="info_img">
+                    <img src="./imgs/personalname1.png" alt="">
+                </div>
+
+                <div class="accont_numb">
+                    <div class="text">
+                        <a href="">182****3452</a>
+                    </div>
+
+                    <div class="personal_list">
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section class="otc_trading">
+        <div class="content clearfix">
+           <div class="left_title">
+               <h3> <a class="active" href="">我要买入</a> </h3>
+               <p><a href="">CNT</a></p>
+               <p><a href="">BBM</a></p>
+               <h3><a href="">我要卖出</a></h3>
+               <p><a href="">CNT</a></p>
+               <p><a href="">BBM</a></p>
+               <h3><a href="">支付设置</a></h3>
+               <p><a href="">支付绑定</a></p>
+               <p><a href="">交易记录</a></p>
+               <p><a href="">新手教程</a></p>
+           </div>
+           <!-- 占位灰线 -->
+           <div class="occupied"></div>
+           <div class="right_list">
+               <!-- CNT -->
+               <div class="otc_cnt" style="display:block">
+                    <div class="list_head">
+                        <span>CNT/CNY</span> <span>¥1.00</span> <span>+155%</span> <span><i>最低：</i><em>¥654</em></span>
+                            <span><i>最高：</i><em>¥654</em></span> <span> <i>24H成交额：</i><em>¥654000055</em> </span>
+                            <div class="release_order">
+                                <a class="title">发布订单</a>
+                                <i class="arow"></i>
+                                <div class="down">
+                                    <a href="otcFiltrate.html">快速筛选</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="list_title">
+                        <span>商家 <em>(成交数/处理速度)</em></span>
+                        <span>数量</span>
+                        <span>金额</span>
+                        <span>单价</span>
+                        <span>支付</span>
+                        <span>手续费</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="deal_list clear">
+                        <ul>
+                            <li><span>徐志摩（201/3min）</span><span>54436</span><span>5414</span><span>54354</span>
+                                <span><i></i><em></em><b></b></span><span>0.12%</span><span><a href="">买入</a></span>
+                            </li>
+                            <li><span>徐志摩（201/3min）</span><span>54436</span><span>5414</span><span>54354</span>
+                                <span><i></i><em></em><b></b></span><span>0.12%</span><span><a href="">买入</a></span>
+                            </li>
+                            <li><span>徐志摩（201/3min）</span><span>54436</span><span>5414</span><span>54354</span>
+                                <span><i></i><em></em><b></b></span><span>0.12%</span><span><a href="">买入</a></span>
+                            </li>
+                            <li><span>徐志摩（201/3min）</span><span>54436</span><span>5414</span><span>54354</span>
+                                <span><i></i><em></em><b></b></span><span>0.12%</span><span><a href="">买入</a></span>
+                            </li>
+                            <li><span>徐志摩（201/3min）</span><span>54436</span><span>5414</span><span>54354</span>
+                                <span><i></i><em></em><b></b></span><span>0.12%</span><span><a href="">买入</a></span>
+                            </li>
+                            <li><span>徐志摩（201/3min）</span><span>54436</span><span>5414</span><span>54354</span>
+                                <span><i></i><em></em><b></b></span><span>0.12%</span><span><a href="">买入</a></span>
+                            </li>
+                          
+                        </ul>
+                    </div>
+               </div>
+               <!-- 买入 -->
+               <div style="display:none" class="otc_buy">
+                   <div class="title">
+                       <span>买入</span>
+                       <em>请放心交易，所有商家都经过CoinHome官方手续费，且手续费由广告发布者承担。</em>
+                   </div>
+                   <div class="deal">
+                       <ul>
+                           <li class="clearfix"><b>你想要多少CNT？</b><b class="text_ct">换算CNY</b><b class="text_ct">交易方式</b></li>
+                           <li class="clearfix"><span><input type="text"><em>CNT</em></span><span><input type="text"><em>CNT</em></span><span>微信/支付宝/银行卡</span></li>
+                       </ul>
+                   </div>
+                   <div class="particulars">
+                       <div class="label">
+                            <span>用户名：MAID</span>
+                            <span>交易次数：1000</span>
+                            <span>成交记录：655</span>
+                            <span>平均处理处理速度：1min</span>
+                       </div>
+                        <div class="order_list">
+                            <ul class="order_title">
+                                <li>
+                                    <span>单价</span>
+                                    <span>币种</span>
+                                    <span>交易总额</span>
+                                    <span>交易方式</span>
+                                    <span>付款期限</span>
+                                    <span>状态</span>
+                                </li>
+                            </ul>
+                            <ul class="order_list">
+                                <li><span>1.2 CN/CNT</span><span>1000CNT</span><span>100CNY</span><span>微信/支付宝/银行卡</span><span>30分钟</span><span>待付款</span></li>
+                            </ul>
+                            <div class="statement">
+                                <p>交易条款：</p>
+                                <p>1：请确保能在30分钟内进行转账再下单，超时之后，系统会自动注销订单。</p>
+                                <p>2：开始交易之后，卖家的币资产会自动存在系统托管中，请放心交易。</p>
+                            </div>
+                            <div class="submit"> 
+                                <button type="button">立即提交</button>
+                                <p> <input type="radio" name="affirm"> 我已阅读并确认了以上交易的详细信息</p>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+           </div> 
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="list_title">
+
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span
+                        data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span
+                        data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家|
+                            新加坡新达塔双淡马锡大道9号04</p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
+            </div>   
+        </div>
+        
+    </footer>
+    <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/common/jSelect.js"></script>
+    <!-- <script src="./libs/layer/layer.js"></script> -->
+    <script src="./libs/common/common.js"></script>
+   
+    <script>
+        $(function () {
+         
+
+            //自定义输入框初始化
+            $(".bj-input-box").jSelect();
+
+            // 单选框默认样式覆盖
+            $('.speed input,.pay input').on('click',function(){
+                console.log(this);  
+                $(this).siblings('em').addClass("active").parents('span').siblings('span').find('em').removeClass('active');
+            })
+          
+
+            // 弹出遮罩层
+            // $('#completePay').click(function(){
+            //     $(".message_inform").show();
+            //     // return false;
+            // });
+           
+            // $('body').on('click','#messageClose',function(){
+                
+            //     $(".message_inform").hide();
+            // })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,815 @@
+@import "../../css/base.css";
+@import "../../css/swiper.min.css";
+// .navbar {
+//     //顶部滚动动画
+//     .navbar_fadein {
+//         animation: fadein 2s ease;
+//         animation-fill-mode: forwards;
+//         @keyframes fadein {
+//             from {
+//                 background-color: #fff;
+//                 color: #5e5e5e;
+//             }
+//             to {
+//                 background-color: #00557d;
+//                 color: #ffff;
+//             }
+//         }
+//     }
+//     .navbar_fadeout {
+//         animation: fadeout 1s ease;
+//         animation-fill-mode: forwards;
+//         @keyframes fadeout {
+//             from {
+//                 background-color: #00557d;
+//                 color: #ffff;
+//             }
+//             to {
+//                 background-color: #fff;
+//                 color: #5e5e5e;
+//             }
+//         }
+//     }
+//     .navbar-top {
+//         height: 64px;
+//         border-bottom: 1px solid #e5e5e5;
+//         margin: 0 auto;
+//         font-size: 14px;
+//         line-height: 64px; // min-width: 1842px;
+//         width: 100%;
+//         position: fixed;
+//         z-index: 99999;
+//         left: 0;
+//         top: 0; // background-color: #00557d;
+//         // color: #ffff;
+//         text-align: center;/* 无论屏幕多大 顶部行情信息栏盒子里的内容都居中 超出隐藏 */
+//         overflow: hidden;
+//         li {
+//             display: inline-block;
+//             margin-left: 54px;
+//             .red {
+//                 color: #ff0101;
+//             }
+//             .green {
+//                 color: #009e73;
+//             }
+//         }
+//     } 
+//     // 头部 toolBar
+//     .indexBar {
+//         margin-top: 64px;
+//     }
+//     .toolBar {
+//         line-height: 82px;
+//         height: 83px;
+//         .logo {
+//             position: absolute;
+//             left: 40px;
+//             top: 0;
+//             margin-top: 10px;
+//             img {
+//                 width: 290px;
+//                 height: 56px;
+//             }
+//         }
+//         .top_list {
+//             position: absolute;
+//             left: 350px;
+//             li {
+//                 &:hover {
+//                     cursor: pointer;
+//                     .text{
+//                         color: #00557d;
+//                     }
+//                     img {
+//                         transform: rotate(180deg);
+//                     }
+//                 }
+//                 float: left;
+//                 margin-left: 40px;
+//                 a {
+//                     font-size: 16px;
+//                 }
+//                 img {
+//                     margin-top: 38px;
+//                     margin-left: 8px;
+//                 }
+//             }
+//             .list_position{
+//                 position: relative;
+//             }
+//             .mes_center{
+//                 padding-top: 15px;
+//                 position: absolute;
+//                 z-index: 99999;
+//                 display: none;
+//                 // left: 315px;
+//                 // top: 65px;
+//                 left: 50%;
+//                 transform: translateX(-50%);
+//                 top: 60px;
+//                 .arrow_icon{
+//                     position: absolute;
+//                     top: 0;
+//                     left: 50%;
+//                     transform: translateX(-50%);
+//                     z-index: 99999;
+//                     width:0; 
+//                     height:0; 
+//                     border-left:15px solid transparent;
+//                     border-right:15px solid transparent;
+//                     border-bottom:15px solid #eeeeee;
+//                 }
+//                 .mes_lsit{
+//                     border-radius: 15px;
+//                     width: 140px;
+//                     background-color: #eeeeee;
+//                     padding: 15px 0;
+//                     ul{
+//                         li{
+//                             margin:0;
+//                             width: 100%;
+//                             height: 40px;
+                           
+//                             &:hover{
+//                                 background-color: #e5e5e5;
+//                             }
+//                             a{
+//                                 display: block;
+//                                 line-height: 40px;
+//                                 text-align: center;
+//                             }
+//                         }
+//                     }
+//                 }
+                
+//             }
+//         }
+//         .login {
+//             position: absolute;
+//             top: 0;
+//             right: 0;
+//             ul {
+//                 li {
+//                     float: left;
+//                     &:first-child {
+//                         margin-right: 18px;
+//                     }
+//                     &:nth-child(2) {
+//                         margin-right: 40px;
+//                     }
+//                     &:nth-child(3) {
+//                         img {
+//                             display: inline-block;
+//                             width: 37px;
+//                             height: 24px;
+//                             margin-top: 27px;
+//                         }
+//                         .national {
+//                             position: absolute;
+//                             display: block;
+//                             z-index: 999999; // top: 55px;
+//                             top: 51px;
+//                             right: 30px;
+//                             display: none;
+//                             img {
+//                                 display: block;
+//                                 width: 37px;
+//                                 height: 24px;
+//                                 margin-top: 2px;
+//                             }
+//                         }
+//                     }
+//                     &:nth-child(4) {
+//                         margin-left: 18px;
+//                         img {
+//                             margin-top: 36px;
+//                         }
+//                         .to_up {
+//                             transform: rotate(180deg);
+//                         }
+//                     }
+//                     a {
+//                         font-size: 16px;
+//                     }
+//                 }
+//             }
+//         }
+//         .personal_center{
+//             position: absolute;
+//             top: 0;
+//             right: 90px;
+//             z-index: 9999;
+//             display: none;
+//             .info_img{
+//                 position: absolute;
+//                 right: 184px;
+//                 top: -2px;
+//                 img{
+//                     width: 20px;
+//                     height: 22px;
+//                     vertical-align: middle;
+//                 }
+//             }
+//             .accont_numb{
+                
+//                 width: 163px;
+//                 height: 26px;
+               
+//                 line-height: 26px;
+//                 background-color: #eeeeee;
+//                 border-radius: 15px;
+//                 margin-left: 16px;
+//                 position: absolute;
+//                 border-radius: 15px;
+//                 top: 26px;
+//                 right: 0;
+//                 z-index: 99999;
+//                 cursor: pointer;
+//                 .text{
+//                     position: absolute;
+//                     top: 0;
+//                     left: 0;
+//                     z-index: 99999999;
+                    
+//                 width: 163px;
+//                 height: 26px;
+//                 line-height: 26px;
+//                 border-radius: 15px;
+//                 text-align: center;
+//                 }
+//             }
+//             .personal_list{
+//                 position: absolute;
+//                 // top: 26px;
+//                 top: 0;
+//                 right: 0;
+//                 cursor: pointer;
+//                 display: none;
+//                 ul{
+//                     background-color: #eeeeee;
+//                     border-radius: 15px;
+//                     padding-top: 25px;
+//                     padding-bottom: 10px;
+                    
+//                     li{
+//                         width: 163px;
+//                         height: 40px;
+//                         line-height: 40px;
+//                         text-align: center;
+//                         &:hover{
+//                             background-color: #e5e5e5e5;
+//                         }
+//                     }
+//                 }
+                
+//             }
+//         }
+//     }
+// }
+
+// --------------头部 end ----------
+// .navbar .toolBar .top_list li a,
+// .navbar .toolBar .login ul li a {
+//     color: #5e5e5e;
+//   }
+
+.navbar .toolBar .top_list li a,
+  .navbar .toolBar .login ul li a {
+    color: #5e5e5e;
+}
+.navbar .toolBar .top_list li:hover .text {
+    color: #00557d;
+}
+// --------------轮播图 start ----------
+.slider {
+    height: 515px;
+    margin-bottom: 55px;
+    position: relative;
+    width: 100%;
+    .swiper-slide {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999999999;
+    }
+}
+
+// --------------轮播图 end ----------
+// --------------币的行情列表 start ----------
+.main {
+    .thead {
+        ul {
+            border-bottom: solid 1px #e5e5e5;
+            .active {
+                border-bottom: solid 1px #5e5e5e;
+                a {
+                    color: #1070e0;
+                }
+            }
+            li {
+                display: inline-block;
+                width: 200px;
+                height: 38px;
+                text-align: center;
+                a {
+                    font-size: 16px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+    .thead_title {
+        ul {
+            li {
+                font-size: 16px;
+                height: 54px;
+                line-height: 54px;
+                display: inline-block;
+                color: #5e5e5e;
+                width: 220px;
+                text-align: center;
+                &:nth-child(1) {
+                    width: 44px;
+                }
+                &:nth-child(2) {
+                    width: 180px;
+                    text-align: left;
+                }
+                em {
+                    position: relative;
+                    i {
+                        position: absolute;
+                        font-size: 0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        left: 10px;
+                        cursor: pointer;
+                    }
+                    .up {
+                        top: 3px;
+                        border-width: 0 5px 5px;
+                        border-color: transparent transparent #93929c;
+                    }
+                    .down {
+                        bottom: 3px;
+                        border-width: 5px 5px 0;
+                        border-color: #93929c transparent transparent;
+                    }
+                }
+            }
+            .selectd{
+                color: red;
+                em{
+                    .active{
+                        border-bottom-color:red;
+                        border-top-color:red;
+                    }
+                }
+            }
+            .item-click{
+                cursor: pointer;
+            }
+        }
+    }
+    .price {
+        display: none;
+        li {
+            border-bottom: 1px solid #e5e5e5;
+            height: 54px;
+            line-height: 54px;
+            font-size: 16px;
+            &:nth-child(1) {
+                border-top: 1px solid #e5e5e5;
+            }
+            &:last-child {
+                border-bottom: 1px solid #e5e5e5;
+            }
+            i {
+                width: 14px;
+                height: 13px;
+                margin-left: 16px;
+                margin-right: 12px;
+                display: inline-block;
+                background: url("../../imgs/fivestar.png") no-repeat center;
+            }
+            a {
+                span {
+                    display: inline-block;
+                    width: 220px;
+                    text-align: center;
+                    &:nth-child(1) {
+                        width: 180px;
+                        text-align: left;
+                    }
+                }
+            }
+            &:hover {
+                background-color: #fffbf3;
+                color: #93929c;
+            }
+        }
+    }
+    .price_anmated {
+        animation: priceanmate 1s ease;
+        @keyframes priceanmate {
+            // 0% {
+                // margin-left: 1600px; // opacity: 0;
+            // }
+            // 100% {
+                // opacity: 1;
+            // }
+        }
+    }
+    .seleted {
+        display: block;
+    }
+}
+
+// --------------币的行情列表 end ----------
+// --------------多平台接入广告 start ----------
+.device {
+    margin-top: 230px;
+    position: relative;
+    height: 1200px;
+    .device_box {
+        position: absolute;
+        left: 120px;
+        top: 90px;
+        .device_text {
+            h2 {
+                font-size: 30px;
+                color: #5e5e5e;
+            }
+            h5 {
+                font-size: 16px;
+                line-height: 60px;
+            }
+        }
+        .img_list {
+            margin-top: 20px;
+            li {
+                display: inline-block;
+                margin-right: 16px;
+                a {
+                    display: inline-block;
+                    width: 166px;
+                    height: 44px;
+                }
+                img {
+                    position: absolute;
+                    top: 180px;
+                    z-index: 999999;
+                    width: 166px;
+                    height: 166px;
+                    display: none;
+                }
+            }
+            .ios {
+                a {
+                    background: url('../../imgs/APPStore.png') no-repeat center;
+                }
+                &:hover {
+                    a {
+                        background: url('../../imgs/APPStore2.png') no-repeat center;
+                    }
+                }
+                .ios_code {
+                    left: 0;
+                }
+            }
+            .android {
+                a {
+                    background: url('../../imgs/Android.png') no-repeat center;
+                }
+                &:hover {
+                    a {
+                        background: url('../../imgs/Android1.png') no-repeat center;
+                    }
+                }
+                .android_code {
+                    left: 185px;
+                }
+            }
+            .windows {
+                a {
+                    background: url('../../imgs/Windows.png') no-repeat center;
+                }
+            }
+            .mac {
+                a {
+                    background: url('../../imgs/Mac.png') no-repeat center;
+                }
+            }
+        }
+    }
+    .device_box_anmated {
+        position: absolute;
+        animation: leftanmate 2s ease;
+        @keyframes leftanmate {
+            0% {
+                left: -270px;
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+    .computer {
+        position: absolute;
+        right: 120px;
+        top: 10px;
+        img {
+            width: 651px;
+            height: 407px;
+        }
+    }
+    .com_anmated {
+        animation-delay: 1s;
+        animation-duration: 2s;
+        /*动画时间*/
+        animation-fill-mode: both;
+        /*播放后的状态*/
+        animation-iteration-count: 2s;
+        animation-name: container;
+        /*动画的名称*/
+        transform-origin: center bottom;
+        /*设置动画旋转元素的基点为：居中靠下*/
+        cursor: pointer;
+        @keyframes container {
+            0% {
+                // opacity: 0;
+                // top: -150px;
+            }
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+                /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+                transform: translate3d(0, 0, 0);
+                /*设置只在Z轴上移动*/
+            }
+            40%,
+            43% {
+                transition-timing-function: cubic-bezier(0.755, 0.50, 0.855, 0.060); // transform: translate3d(0, -30px, 0);
+                transform: translate3d(0, -180px, 0);
+            }
+            70% {
+                transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060); // transform: translate3d(0, -15px, 0);
+                transform: translate3d(0, -90px, 0);
+            }
+            90% {
+                // transform: translate3d(0, -4px, 0);
+                transform: translate3d(0, -24px, 0); // opacity: 1;
+            }
+        }
+    }
+    .mobile {
+        position: absolute;
+        top: 504px;
+        left: 194px;
+        img {
+            width: 441px;
+            height: 554px;
+        }
+        .text{
+            position: absolute;
+            left: 70px;
+            top: 402px;
+            font-size: 20px;
+            color: #5e5e5e;
+        }
+    }
+    .mobile_anmated {
+        animation-delay: 1s;
+        animation-duration: 2s;
+        /*动画时间*/
+        animation-fill-mode: both;
+        /*播放后的状态*/
+        animation-iteration-count: 2s;
+        animation-name: mobile;
+        /*动画的名称*/
+        transform-origin: center bottom;
+        /*设置动画旋转元素的基点为：居中靠下*/
+        cursor: pointer;
+        @keyframes mobile {
+            0% {
+                // opacity: 0;
+                // top: -150px;
+            }
+            0%,
+            100%,
+            20%,
+            50%,
+            80% {
+                transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+                /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+                transform: translate3d(0, 0, 0);
+                /*设置只在Z轴上移动*/
+            }
+            40%,
+            43% {
+                transition-timing-function: cubic-bezier(0.755, 0.50, 0.855, 0.060); // transform: translate3d(0, -30px, 0);
+                transform: translate3d(0, -180px, 0);
+            }
+            70% {
+                transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060); // transform: translate3d(0, -15px, 0);
+                transform: translate3d(0, -90px, 0);
+            }
+            90% {
+                // transform: translate3d(0, -4px, 0);
+                transform: translate3d(0, -24px, 0); // opacity: 1;
+            }
+        }
+    }
+    .mobile_text {
+        position: absolute;
+        top: 756px;
+        left: 804px;
+        // width: 400px;
+        // height: 200px;
+        h2 {
+            font-size: 30px;
+            color: #5e5e5e;
+        }
+        h5 {
+            font-size: 16px;
+            line-height: 60px;
+        }
+    }
+    .mobile_text_anmated {
+        animation: mobileText 2s ease;
+        @keyframes mobileText {
+            0% {
+                left: 1304px;
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// --------------多平台接入广告 end ----------
+// --------------合作伙伴 start ----------
+.partner {
+    position: relative;
+    img {
+        width: 100%;
+        height: 390px;
+    }
+    .title{
+        position: absolute;
+        left: 50%;
+        top: 76px;
+        transform:translateX(-50%); 
+        color: #ffffff;
+        font-size: 36px;
+    }
+}
+
+// --------------合作伙伴 end ----------
+
+// ---------新闻 start---------------
+
+.news{
+    padding: 82px 0 88px;
+    .news_box{
+        width: 1354px;
+        margin: 0 auto;
+        .left,.middle,.right{
+            width: 344px;
+            color: #00557d;
+            line-height: 24px;
+            .content{
+                margin-top: 45px;
+                font-size: 14px;
+                a{
+                    float: right;
+                    color: #00557d;
+                    font-size: 16px;
+                }
+            }
+        }
+        .left,.middle{
+            float: left;
+            margin-right: 160px;
+        }
+        .right{
+            float: right;
+        }
+    }
+}
+
+// ---------新闻 end---------------
+
+// --------------底部 start ----------
+// .footer {
+//     position: relative;
+//     height: 460px;
+//     background-color: #00557d;
+//     .list_title {
+//         width: 1354px;
+//         margin: 0 auto;
+//         box-sizing: border-box;
+//         padding-top: 55px;
+//             .title {
+//                 li {
+                    
+//                     span{
+//                         line-height: 44px;
+//                         color: #fff;
+//                         font-size: 14px;
+//                         a{
+//                             color: #fff;
+//                             font-size: 14px;
+//                         }
+//                         float: left;
+//                         &:nth-child(1){
+//                             width: 265px;
+//                         }
+//                         &:nth-child(2){
+//                             width: 350px;
+//                         }
+//                         &:nth-child(3){
+//                             width: 255px;
+//                         }
+//                         &:nth-child(4){
+//                             width: 343px;
+//                         }
+//                         &:nth-child(5){
+//                             width: 140px;
+//                         }
+//                     } 
+//                 }
+//                 .size{
+//                     span{
+//                         font-size: 14px;
+//                        font-weight: bold;
+//                     }
+//                 }
+//             }
+//             .address{
+                
+//                 margin-top: 135px;
+//                 p{
+//                     float: left;
+//                     color: #bbbbbb;
+//                     font-size: 16px;
+//                     line-height: 76px;
+//                 }
+//                 .logo_list{
+//                     float: right;
+//                     height: 76px;
+//                     line-height: 76px;
+//                     margin-top: 10px;
+//                     i{
+//                         float: right;
+//                         vertical-align: middle;
+//                         width: 38px;
+//                         height: 38px;
+//                         margin-left: 23px;
+                       
+//                     }
+//                     i:nth-child(1){
+//                         background: url("../../imgs/wchat.png") no-repeat center;
+//                         background-size: cover;
+//                     }
+//                     i:nth-child(2){
+//                         background: url("../../imgs/QQ.png") no-repeat center;
+//                         background-size: cover;
+//                     } 
+//                     i:nth-child(3){
+//                         background: url("../../imgs/facebook.png") no-repeat center;
+//                         background-size: cover;
+//                     }  
+//                     i:nth-child(4){
+//                         background: url("../../imgs/bird.png") no-repeat center;
+//                         background-size: cover;
+//                     }  
+//                     i:nth-child(5){
+//                         background: url("../../imgs/weibo.png") no-repeat center;
+//                         background-size: cover;
+//                     }   
+//                     i:nth-child(6){
+//                         background: url("../../imgs/navigation.png") no-repeat center;
+//                         background-size: cover;
+//                     }    
+//                 }
+//             }
+//     }
+// }
+
+// --------------底部 end ----------

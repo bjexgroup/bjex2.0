@@ -19,64 +19,109 @@
 <body>
     <!-- 头部 -->
     <header class="navbar">
-        
-        <div class="toolBar container">
+        <div class="navbar-top">
+            <ul>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="red">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+                <li>
+                    <span>BTC/USDT</span>
+                    <span class="green">5.6845%</span>
+                    <span>6810.497</span>
+                    <span>￥6437.922</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
+                    <span>2899.5221</span>
+                </li>
+            </ul>
+        </div>
+        <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -88,7 +133,7 @@
                 <em></em>
             </div>
             <div class="control icon password">
-                <input placeholder="密码" type="text" id="password">
+                <input placeholder="密码" type="password" id="password">
 
                 <em></em><i class="secret"></i>
             </div>
@@ -119,6 +164,7 @@
 
     </section>
     <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
     <script src="./libs/layer/layer.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
@@ -160,7 +206,7 @@
 
         $("#login").click(function() {
             var smsCode = '';
-            var emailCode = '';
+            var googleCode = '';
             var account = $('#account').val();
             if (account == '') {
                 layer.msg('请输入账号');
@@ -179,13 +225,13 @@
             // if (verification == '') {
             //     layer.msg('验证码错误，请重新输入');
             //     return
-            // }
+            // } 
             var param = {
                 account: account,
                 password: password,
                 imageCode: verification, //图形验证码
                 smsCode: smsCode, //短信验证码
-                emailCode: emailCode //邮箱验证码
+                googleCode: googleCode //google验证码
             }
             console.log(param);
             $.ajax({
@@ -194,16 +240,29 @@
                 dataType: 'json',
                 data: param,
                 success: function(data) {
-                    console.log("返回的数据: ");
+                    console.log(data);
                     if (data.retcode == 10001) {
                         layer.msg(data.msg);
+                        let num = Math.random()
+                        $("#getVerificationImg").attr("src", baseLink + "/user/imageCode.action?d=" + num)
+                        $("#verification").val("");
                         return
                     } else if (data.retcode == 10002) {
-
+                        layer.msg(data.msg);
                     } else {
-                        localStorage.setItem("account", data.data.account);
+                        // layer.msg(data.msg); 
+                        // console.log()
+                        localStorage.setItem("account", data.data.phone);
+                        localStorage.setItem("account*", data.data.account);
                         localStorage.setItem("user_id", data.data.id);
-                        // window.location.href = "index.html"
+                        console.log(localStorage.getItem("user_id"));
+                        // return
+                        // window.location.href = "personalMessage.html"
+                        //   localStorage.getItem("user_id")
+                        // console.log(localStorage.getItem("user_id"))
+                        setTimeout(function() {
+                            window.location.href = "personalMessage.html"
+                        }, 1000)
                     }
                 }
             });

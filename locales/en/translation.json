@@ -1,10 +1,171 @@
 {
-    "app": {
-      "name": "i18next"
+    "index":{
+        "title":"CoinHome Exchange-Professional digital asset exchange platform under Coinhome-Coinhome Wallet",
+        "header":{
+            "volume":"24h Volume",
+            "trade":"Trading Center",
+            "c2c":"OTC Trading",
+            "block":"Blockchain Mall",
+            "information":"Information Center",
+            "help":"Help Center",
+            "login":"Login",
+            "sign":"Sign Up",
+            "personal":"My Account",
+            "finance":"Finance Center",
+            "safe":"Security Center",
+            "friend":"Recommend",
+            "proclamation":"Latest Annoucement",
+            "out":"安全退出"
+        },
+        "main":{
+            "select":"Favourites",
+            "nirvana":"Nirvana Trading",
+            "name":"Token",
+            "default":"Default Order",
+            "new":"Latest Price",
+            "yuan":"CNY",
+            "change":"24h Change",
+            "highest":"24h High",
+            "lowest":"24h Low",
+            "deal":"24h Volume"
+        },
+        "device":{
+            "end":"Join us and start trading today!",
+            "cover":"Support IOS, Android, Windows and Mac",
+            "digital":"Digital Assets, All in Control",
+            "key":"Hold your own private key, operate without a third-party, smart contract matchmaking, high efficiency and transparency",
+            "companion":"Strategic Partners",
+            "wallet":"Scan to Download Wallet App"
+        },
+        "footer":{
+            "global":"World Leading Digital Assets and Financial Service Provider",
+            "relate":"The Platform",
+            "legal":"Terms of Use",
+            "service":"Support",
+            "link":"links",
+            "contact":"Contact Us",
+            "introduction":"About US",
+            "business":"Partners",
+            "info":"User Contract",
+            "website":"zhtdcex.com",
+            "worktime":"09:00-18:00 (GMT + 8)",
+            "fee":"Fees",
+            "privacy":"Privacy Policy",
+            "support":"API Support",
+            "email":"service@bjex.vip",
+            "join":"Join Us",
+            "anti":"Anti-Money Laundary",
+            "customer":"QQ：3601558306",
+            "coin":"© 2018 https://www.bjex.vip All Rights Reserved Coin Home| 9 TEMASEK BOULEVARD #04-02 SUNTEC TOWER TWO SINGAPORE"
+        }
     },
-    "nav": {
-      "home": "Home",
-      "page1": "Page One",
-      "page2": "Page Two"
+    "tradeCenter":{
+        "title":"Trading Center",
+        "left":{
+            "class":"Category",
+            "currency":"Currency",
+            "new":"Latest Price",
+            "range":"Rise Range"
+            
+        },
+        "middle_top":{
+            "range":"Rise Range ",
+            "high":"High ",
+            "low":"Low ",
+            "volume":"24h Volume "
+        },
+        "middle_bottom":{
+            "buy":"Buy/Sell",
+            "price":"Price",
+            "number":"Amount",
+            "in":"Buy",
+            "best":"Best buy price",
+            "amount":"Amount bought",
+            "order":"Buy price",
+            "commision":"Commission fee",
+            "max":"Max Buy",
+            "total":"Aggregation",
+            "portion":"Buy Proportion",
+            "pin":"Trade Password",
+            "out":"Sell",
+            "outprice":"Best Sell Price",
+            "outnu":"Sell Amount",
+            "outdan":"Sell Price",
+            
+            "maxsell":"Max Sell",
+            
+            "rate":"Buy proportioin",
+            
+            "client":"My Commission",
+            "all":"Aggregation",
+            "time":"Commission Time",
+            "single":"Price",
+            "cnumber":"Commision Amount",
+            "money":"Turnover",
+            "operate":"Operate",
+            "cancel":"Cancel",
+            "look":"View",
+            "asset":"My Asset",
+            "convert":"Total Assets in CNY：",
+            "cny":"Assets in CNY",
+            "manage":"Asset Management",
+            "currency":"Currency Category",
+            "use":"Available",
+            "froze":"Frozen"
+
+        }
+    },
+    "forget":{
+        "title":"Forgot password",
+        "form":{
+            "phone":"E-mail/Phone number",
+            "set":"Please set the password between 6-16 characters with numbers or letters",
+            "repeat":"Confirm password",
+            "code":"Picture verification code",
+            "change":"Click to change",
+            "verify":"Mobile phone verification code",
+            "get":"Get the text verification code",
+            "reset":"Reset the login password"
+        }
+    },
+    "googlenick":{
+        "title":"Authenticate via google",
+        "real":"Realname authentication",
+        "google":"Google authentication",
+        "cell":"Mobile Phone authentication",
+        "log":"Login password",
+        "transact":"Trade password",
+        "private":"Secret key",
+        "ren":"Verification code",
+        "submit":"Submit",
+        "bind":"Use google authenticator scan to bind",
+        "guge":"Google authentication: After authentication complete, fund operation require google authentication, ensure keep the secret key",
+        "search":"Search Google Authenticator in App Store",
+        "android":"Search “Google Authenticator” in android app store, or search authenticator in Google",
+        "pass":"Passed the google authentication",
+        "look":"View",
+        "close":"Close",
+        "review":"Google authenticate view",
+        "ma":"Google authentication code：",
+        "confirm":"Confirm",
+        "shut":"Google authentication close",
+        "count":"Account login password：",
+        "bang":"Use google authenticator scan to bind",
+        "password":"Account login password："
+        
+    },
+    "invitation":{
+        "title":"Invitation method",
+        "recomend":"Recommend to offset the commission",
+        "sum":"Recommends sum",
+        "invite":"My invitation code：",
+        "copy":"Copy",
+        "click":"This is your exclusive ID, you can click(copy)the button to share to friends, let them enter your recommendation when they sign up",
+        "two":"Invitation method two: Recommendation link",
+        "lian":"Invitation link：",
+        "button":"This is your exclusive recommendation link, you can click(copy)the button to share to friends, let them enter your recommendation when they sign up",
+        "three":"Invitation method three: Scan the two-dimension code",
+        "save":"Save",
+        "cut":"This is your exclusive recommendation two-dimension code, you can screenshot or save the picture then send to your friends"
     }
 }

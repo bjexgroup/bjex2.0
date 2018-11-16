@@ -1,0 +1,1117 @@
+@import "../../css/base.css";
+@maincolor: #00557d;
+// -------------订单发布成功页面 快速帅选页面start--------------------
+body {
+  background-color: #fff;
+}
+.main {
+  height: 1159px;
+  padding: 22px 360px 40px 360px;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  .succeed {
+    height: 1097px;
+    width: 1200px;
+    background-color: #fff;
+    padding-left: 31px;
+    overflow: hidden;
+    position: relative;
+    .title {
+      margin-top: 30px;
+      img {
+        width: 36px;
+        height: 30px;
+        vertical-align: middle;
+        margin-top: -10px;
+      }
+      span {
+        font-size: 30px;
+        margin-left: 21px;
+        color: @maincolor;
+      }
+    }
+    .ok {
+      color: @maincolor;
+      position: absolute;
+      top: 127px;
+      left: 50%;
+      transform: translateY(-50%);
+      img {
+        width: 61px;
+        height: 61px;
+      }
+      h5 {
+        font-size: 24px;
+        margin-top: 48px;
+      }
+      p {
+        margin-top: 22px;
+        margin-left: 32px;
+        a {
+          font-size: 16px;
+          color: @maincolor;
+        }
+      }
+    }
+    .filter {
+      width: 406px;
+      height: 250px;
+      position: absolute;
+      top: 186px;
+      left: 50%;
+      transform: translateX(-50%);
+      .buy {
+        input {
+          width: 200px;
+          margin-left: 6px;
+          margin-right: 6px;
+          padding-left: 14px;
+          border-bottom: 1px solid @maincolor;
+        }
+        input::placeholder {
+          color: #bbbbbb;
+        }
+      }
+      .speed {
+        margin-top: 47px;
+        span {
+          &:nth-child(2) {
+            margin-left: 8px;
+            margin-right: 24px;
+          }
+          &:nth-child(3) {
+            margin-right: 24px;
+          }
+          position: relative;
+          input {
+            width: 76px;
+            height: 23px;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+          em {
+            width: 70px;
+            height: 23px;
+            display: inline-block;
+            padding-left: 8px;
+            border: 1px solid #fff;
+            cursor: pointer;
+          }
+          .active {
+            color: @maincolor;
+            border: 1px solid @maincolor;
+          }
+        }
+      }
+      .pay {
+        margin-top: 47px;
+        margin-bottom: 60px;
+        span {
+          position: relative;
+          input {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+          i {
+            width: 22px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          em {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: url("../../imgs/otcRadiomin.png") no-repeat;
+          }
+          .active {
+            background: url("../../imgs/otcRadioActivemin.png") no-repeat;
+          }
+        }
+
+        .alipay {
+          margin-left: 8px;
+          margin-right: 82px;
+          i {
+            background: url("../../imgs/otcPaymin1.png") no-repeat;
+          }
+        }
+        .chat {
+          margin-right: 82px;
+          i {
+            background: url("../../imgs/otcPaymin3.png") no-repeat;
+          }
+          em {
+            margin-right: 6px;
+          }
+        }
+        .bank {
+          i {
+            background: url("../../imgs/otcPaymin2.png") no-repeat;
+          }
+          em {
+            margin-right: 6px;
+          }
+        }
+      }
+      button {
+        width: 406px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// --------------订单发布成功页面 快速帅选页面end -------------------
+
+// --------------买入支付页面 start -------------------
+
+.otc_box {
+  height: 100%;
+  padding: 22px 360px 40px 360px;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  .succeed {
+    position: static;
+    height: 100%;
+    width: 1200px;
+    background-color: #fff;
+    padding-left: 31px;
+    overflow: hidden;
+    .title {
+      margin-top: 30px;
+      img {
+        width: 36px;
+        height: 30px;
+        vertical-align: middle;
+        margin-top: -10px;
+      }
+      span {
+        font-size: 30px;
+        margin-left: 21px;
+        color: @maincolor;
+      }
+    }
+    .buy_order {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 72px 78px 106px 47px;
+      .name {
+        font-size: 20px;
+        float: left;
+      }
+      .order {
+        font-size: 14px;
+        float: right;
+        margin-top: 10px;
+      }
+      .order_list {
+        margin-top: 60px;
+        .title {
+          background-color: #f2f2f2;
+          span {
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #5e5e5e;
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+          }
+          span:nth-child(1) {
+            width: 209px;
+          }
+          span:nth-child(2) {
+            width: 168px;
+          }
+          span:nth-child(3) {
+            width: 135px;
+          }
+          span:nth-child(4) {
+            width: 179px;
+          }
+          span:nth-child(5) {
+            width: 178px;
+          }
+          span:nth-child(6) {
+            width: 190px;
+          }
+        }
+        .list {
+          ul {
+            margin-top: 10px;
+            li {
+              span {
+                height: 50px;
+                line-height: 50px;
+                font-size: 16px;
+
+                display: inline-block;
+                text-align: center;
+                margin: 0;
+                box-sizing: border-box;
+              }
+              span:nth-child(1) {
+                width: 209px;
+              }
+              span:nth-child(2) {
+                width: 148px;
+              }
+              span:nth-child(3) {
+                width: 135px;
+              }
+              span:nth-child(4) {
+                width: 179px;
+              }
+              span:nth-child(5) {
+                width: 178px;
+              }
+              span:nth-child(6) {
+                width: 180px;
+              }
+            }
+          }
+        }
+        .warn {
+          font-size: 14px;
+          color: #bbbbbb;
+          margin-top: 60px;
+          width: 100%;
+          text-align: right;
+        }
+        h2 {
+          font-size: 26px;
+          color: @maincolor;
+          margin-top: 26px;
+          width: 100%;
+          text-align: right;
+          margin-bottom: 60px;
+        }
+      }
+      .agreement {
+        line-height: 30px;
+        height: 30px;
+        font-size: 12px;
+      }
+      .buy_play {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        button {
+          width: 180pxs;
+          a {
+            width: 180px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 20px;
+          }
+
+          border-radius: 0;
+        }
+      }
+      .pay_code {
+        margin-bottom: 114px;
+        span {
+          cursor: pointer;
+          margin-right: 76px;
+          i {
+            width: 31px;
+            height: 26px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 15px;
+          }
+          em {
+            width: 103px;
+            height: 29px;
+            display: inline-block;
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 29px;
+          }
+        }
+        span:nth-child(1) {
+          i {
+            background: url("../../imgs/ctcPay.png") no-repeat;
+          }
+          em {
+            color: #5a9ef7;
+            border-color: #5a9ef7;
+          }
+        }
+        span:nth-child(2) {
+          i {
+            background: url("../../imgs/otcWechat.png") no-repeat;
+          }
+          em {
+            color: #24db5a;
+            border-color: #24db5a;
+          }
+        }
+        span:nth-child(3) {
+          i {
+            background: url("../../imgs/otcBankCard.png") no-repeat;
+          }
+          em {
+            color: #ffa000;
+            border-color: #ffa000;
+          }
+        }
+      }
+      .submit {
+        height: 38px;
+        width: 100%;
+        button {
+          float: right;
+          width: 140px;
+          padding: 0;
+          height: 38px;
+          a {
+            height: 35px;
+            line-height: 35px;
+            font-size: 16px;
+          }
+        }
+        .true {
+          background-color: #fff;
+          border-color: @maincolor;
+          a {
+            color: #00557d;
+          }
+          margin-right: 26px;
+        }
+      }
+    }
+  }
+  .message_inform {
+    display: none;
+    position: fixed;
+    width: 500px;
+    height: 250px;
+    background-color: #f2f2f2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 5555;
+    p {
+      width: 100%;
+      text-align: center;
+      color: @maincolor;
+      margin-top: 26px;
+      margin-bottom: 40px;
+    }
+    h5 {
+      width: 100%;
+      text-align: center;
+      line-height: 32px;
+      font-size: 18px;
+    }
+    button {
+      width: 180px;
+      height: 42px;
+      border-radius: 0;
+      font-size: 18px;
+      margin-left: 160px;
+      margin-top: 24px;
+    }
+  }
+}
+
+// --------------买入支付页面 end -------------------
+
+// --------------我要申诉 start---------------------
+
+.otc_box {
+  .appeal {
+    position: relative;
+    height: 820px;
+    padding-bottom: 56px;
+    .appeal_message {
+      position: absolute;
+      left: 50%;
+      top: 130px;
+      transform: translateX(-50%);
+      p {
+        font-size: 20px;
+        input {
+          box-sizing: border-box;
+          width: 500px;
+          height: 20px;
+          border-bottom: 1px solid #5e5e5e;
+          font-size: 16px;
+          color: #5e5e5e;
+          padding-left: 8px;
+        }
+      }
+      .content {
+        font-size: 20px;
+        margin-top: 67px;
+        margin-bottom: 67px;
+        span {
+          vertical-align: top;
+        }
+        textarea {
+          width: 494px;
+          height: 180px;
+          border: 1px solid #5e5e5e;
+          overflow: auto;
+          font-size: 20px;
+          color: #5e5e5e;
+        }
+      }
+      button {
+        margin: 110px 0 85px 110px;
+        width: 500px;
+        height: 40px;
+        box-sizing: border-box;
+        font-size: 16px;
+        line-height: 24px;
+        a {
+          line-height: 40px;
+          font-size: 16px;
+          height: 40px;
+        }
+      }
+      h4 {
+        margin-bottom: 52px;
+        color: @maincolor;
+      }
+      .more_chat {
+        span {
+          margin-right: 117px;
+          &:last-child {
+            margin-right: 0;
+          }
+          i {
+            width: 36px;
+            height: 36px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+          }
+          em {
+            font-size: 16px;
+          }
+        }
+        span:nth-child(1) {
+          i {
+            background: url("../../imgs/appealWcaht.png") no-repeat;
+          }
+          em {
+            color: #24db5a;
+          }
+        }
+        span:nth-child(2) {
+          i {
+            background: url("../../imgs/appealFase.png") no-repeat;
+          }
+          em {
+            color: #425f9b;
+          }
+        }
+        span:nth-child(3) {
+          i {
+            background: url("../../imgs/otctelegram.png") no-repeat;
+          }
+          em {
+            color: #01aae3;
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------我要申诉 end---------------------
+
+// --------------otc交易主页 start---------------------
+
+.otc_trading {
+    background-color: #f2f2f2;
+    padding: 22px 0 40px;
+    box-sizing: border-box;
+    .content {
+      position: relative;
+      overflow: hidden;
+        width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        .left_title {
+            width: 220px;
+            float: left;
+            box-sizing: border-box;
+            padding: 0 25px;
+            padding-bottom: 30px;
+            h3{
+                margin-top: 6px;
+                margin-bottom: 6px;
+                a{
+                    width: 100%;
+                    height: 40px;
+                    display: block;
+                    background-color: #f2f2f2;
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 40px;
+                }
+                &:first-child{
+                    margin-top: 30px;
+                }
+                .active{
+                    color: @maincolor;
+                    font-size: 20px;
+                }
+            }
+            
+            p{
+                a{
+                    width: 100%;
+                    height: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    display: block;
+                }
+                .active{
+                    color: @maincolor;
+                }
+            }
+        }
+        .occupied{
+          width: 10px;
+          height: 100000px;
+          background-color: #f2f2f2;
+          position: absolute;
+          left: 230px;
+          right: 0;
+          
+        }
+        .right_list{
+            width: 970px;
+            font-size: 16px;
+            float: right;
+            // ------cnt-----
+            .otc_cnt{
+                .list_head{
+                    height: 105px;
+                    span{
+                        float: left;
+                        line-height: 105px;
+                        font-size: 14px;
+                        margin-left: 22px;
+                        &:nth-child(1){
+                            font-size: 30px;
+                            color: @maincolor;
+                            margin-left: 35px;
+                        }
+                        &:nth-child(2){
+                         
+                            color: @maincolor;
+                            margin-left: 35px;
+                        }
+                        &:nth-child(3){
+                         
+                            color: @maincolor;
+                        }
+                    }
+                    .release_order{
+                        float: right;
+                        position: relative;
+                        margin-top: 33px;
+                        .title{
+                            display: block;
+                            width: 140px;
+                            height: 28px;
+                            line-height: 28px;
+                            text-align: center;
+                            color: @maincolor;
+                            border: 1px solid @maincolor;
+                            border-radius: 4px;
+                            float: left;
+                        }
+                        .arow{
+                            float: right;
+                            margin: 12px 20px 0 14px;
+                            width: 12px;
+                            height: 8px;
+                            background: url("../../imgs/bluerow.png")
+                        }
+                        .active{
+                            transform-origin: center;
+                            transform: rotate(-180deg);
+                            transition: transform .3s;
+                        }
+                        .down{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            z-index: 99;
+                            display: none;
+                            a{
+                                display: block;
+                                padding-top: 28px;
+                                width: 140px;
+                                height: 28px;
+                                color: @maincolor;
+                                text-align: center;
+                                border-radius: 4px;
+                                border: 1px solid @maincolor;
+                            }
+                            
+                        }
+                    }
+                }
+                .list_title{
+                    margin-left: 10px;
+                    width: 950px;
+                    height: 50px;
+                    background-color: #f2f2f2;
+                    span{
+                        line-height: 50px;
+                        float: left;
+                        width: 110px;
+                        text-align: center;
+                        &:nth-child(1){
+                            width: 228px;
+                            em{
+                                font-size: 12px;
+                            }
+                        }
+                        &:nth-child(3){
+                            width: 140px;
+                        }
+                        &:nth-child(5){
+                            width: 150px;
+                        }
+                        &:nth-child(7){
+                            width: 92px;
+                        }
+                    }
+                }
+                .deal_list{
+                    margin-left: 10px;
+                    width: 950px;
+                    ul{
+                        li{
+                            span{
+                                line-height: 50px;
+                                float: left;
+                                width: 110px;
+                                text-align: center;
+                                &:nth-child(1){
+                                    width: 228px;
+                                    em{
+                                        font-size: 12px;
+                                    }
+                                }
+                                &:nth-child(3){
+                                    width: 140px;
+                                }
+                                &:nth-child(5){
+                                    width: 150px;
+                                }
+                                &:nth-child(7){
+                                    width: 92px;
+                                }
+                                i,em,b{
+                                    width: 22px;
+                                    height: 16px;
+                                    vertical-align: middle;
+                                    display: inline-block;
+                                }
+                                i{
+                                    background: url("../../imgs/otcPaymin1.png") no-repeat center;
+                                }
+                                em{
+                                    background: url("../../imgs/otcPaymin3.png") no-repeat center;
+                                    margin: 0 10px;
+                                }
+                                b{
+                                    background: url("../../imgs/otcPaymin2.png") no-repeat center;
+                                }
+                                a{
+                                    
+                                  
+                                    padding: 1px 15px 2px;
+                                    vertical-align: middle;
+                                    // line-height: 27px;
+                                    color: @maincolor;
+                                    border: 1px solid @maincolor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // ------买入---------
+            .otc_buy{
+                .title{
+                    margin-left: 35px;
+                    margin-top: 35px;
+                    span{
+                        font-size: 30px;
+                        color: @maincolor;
+                        margin-right: 30px;
+                    }
+                    em{
+                        font-size: 14px;
+                        color: #bbbbbb;
+                    }
+                }
+                .deal{
+                  li{
+                    &:first-child{
+                      margin-top: 53px;
+                      margin-bottom: 19px;
+                    }
+                    b,span{
+                      float: left;
+                      height: 32px;
+                      line-height: 32px;
+                      box-sizing: border-box;
+                    }
+                    b{
+                      color: #00557d;
+                    }
+                    b:nth-child(1),span:nth-child(1){
+                      width: 225px;
+                      margin-left: 128px;
+                    }
+                    b:nth-child(2),span:nth-child(2){
+                      width: 332px;
+                      
+                    }
+                    b:nth-child(2){
+                      padding-left: 29px;
+                    }
+                    b:nth-child(3){
+                      padding-left: 38px;
+                    }
+                    b:nth-child(3),span:nth-child(3){
+                      width: 260px;
+                      
+                    }
+                    input{
+                      width: 118px;
+                      height: 32px;
+                      border: 1px solid #bbbbbb;
+                      margin-right: 10px;
+                      box-sizing: border-box;
+                      padding-left: 8px;
+                    }
+                  }
+                }
+                .particulars{
+                  .label{
+                    height: 66px;
+                    line-height: 66px;
+                    box-sizing: border-box;
+                    padding-left: 128px;
+                    margin-top: 64px;
+                    background-color: #f2f2f2;
+                    span{
+                      float: left;
+                      width: 192px;
+                    }
+                  }
+                }
+                .order_list{
+                  .order_title{
+                    border-bottom: 1px solid #e5e5e5;
+                  }
+                  .order_title, .order_list{
+                    li{
+                      height: 60px;
+                      line-height: 60px;
+                      font-size: 14px;
+                      span{
+                        text-align: center;
+                        float: left;
+                        &:nth-child(1){
+                          width: 136px;
+                          margin-left: 75px;
+                        }
+                        &:nth-child(2){
+                          width: 110px;
+                        }
+                        &:nth-child(3){
+                          width: 161px;
+                        }
+                        &:nth-child(4){
+                          width: 148px;
+                        }
+                        &:nth-child(5){
+                          width: 161px;
+                        }
+                        &:nth-child(6){
+                          width: 110px;
+                        }
+                      }
+                    }  
+                  }
+                  .statement{
+                    margin-left: 36px;
+                    margin-top: 40px;
+                    p{
+                      font-size: 14px;
+                      line-height: 34px;
+                    }
+                  }
+                  .submit{
+                    margin-left: 350px;
+                    margin-top: 60px;
+                    margin-bottom: 61px;
+                    button{
+                      width: 270px;
+                      height: 50px;
+                      font-size: 18px;
+                    }
+                    p{
+                      padding-left: 8px;
+                      font-size: 14px;
+                      color: #bbbbbb;
+                      line-height: 54px;
+                    }
+                  }
+                }
+            }
+        }
+    }
+  
+}
+
+// --------------otc交易主页 end---------------------
+
+// --------------otc订单发布 start---------------------
+
+.otc_box{
+  .order_announce{
+    position: relative;
+    height: 1097px;
+    .flowpath{
+      position: absolute;
+      left: 238px;
+      top: 35px;
+      width: 148px;
+      .flowbox{
+        li{
+          margin-bottom: 35px;
+          &:last-child{
+            margin-top: 115px;
+          }
+          &:first-child{
+            margin-bottom: 70px;
+          }
+          select{
+            width: auto;
+            height: 34px;
+            border: 1px solid @maincolor;
+            font-size: 16px;
+            width: auto;
+            padding: 0 9%;
+            margin: 0;
+            cursor: pointer;
+            color: #00557d;
+            option{
+              text-align: center;
+              cursor: pointer;
+              color: #00557d;
+            }
+          }
+          span{
+            width: 148px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            display: block;
+            background-color: @maincolor;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .order_content{
+      position: absolute;
+      top: 36px;
+      left: 426px;
+      width: 538px;
+      .content_list{
+        li{
+          margin-bottom: 35px;
+          height: 34px;
+          line-height: 34px;
+          &:last-child{
+            margin-top: 115px;
+          }
+          &:first-child{
+            margin-bottom: 70px;
+          }
+          p{
+            
+            font-size: 12px;
+            color: #00557d;
+            line-height: 17px;
+            // font-weight: bold;
+            
+          }
+          select{
+            height: 34px;
+            border: 1px solid @maincolor;
+            font-size: 16px;
+            width: auto;
+            padding: 0 6%;
+            margin: 0;
+            cursor: pointer;
+            color: #00557d;
+            option{
+              text-align: center;
+              cursor: pointer;
+              color: #00557d;
+            }
+          }
+          .change_icon{
+            display: inline-block;
+            width: 32px;
+            height: 23px;
+            vertical-align: middle;
+            margin: 0 20px;
+            background: url("../../imgs/otcexchange.png") no-repeat center;
+          }
+          input{
+            width: 132px;
+            border-bottom: 1px solid @maincolor;
+            font-size: 16px;
+            text-align: center;
+            height: 34px;
+          }
+          span{
+            color: #00557d;
+            margin-left: 15px;
+            em{
+              font-size: 12px;
+              margin-left: 15px;
+            }
+            .custom{
+              margin-left: 3px;
+            }
+          }
+          textarea{
+            border: 1px solid @maincolor;
+            font-size: 16px;
+            width: 534px;
+            height: 105px;
+          }
+        }
+        .pay{
+          span {
+            position: relative;
+            margin-right: 40px;
+            input {
+              width: 65px;
+              height: 34px;
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%,-50%);
+            }
+            i {
+              
+              display: inline-block;
+              vertical-align: middle;
+              
+            }
+            em {
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+              background: url("../../imgs/otcRadiomin.png") no-repeat center;
+              background-size: cover;
+            }
+            .active {
+              background: url("../../imgs/otcRadioActivemin.png") no-repeat center;
+              background-size: cover;
+            }
+          }
+          .alipay {
+            margin-left: -16px;
+            i {
+              width: 31px;
+              height: 26px;
+              background: url("../../imgs/ctcPay.png") no-repeat center;
+              background-size: cover;
+            }
+          }
+          .chat {
+            
+            i {
+              width: 32px;
+              height: 26px;
+              background: url("../../imgs/otcWechat.png") no-repeat center;
+              background-size: cover;
+            }
+            em {
+              margin-right: 6px;
+            }
+          }
+          .bank {
+            i {
+              width: 32px;
+              height: 22px;
+              background: url("../../imgs/otcBankCard.png") no-repeat center;
+              background-size: cover;
+            }
+            em {
+              margin-right: 6px;
+            }
+          }
+          .pp {
+            i {
+              width: 28px;
+              height: 28px;
+              background: url("../../imgs/otcpaypal.png") no-repeat center;
+              background-size: cover;
+            }
+            em {
+              margin-right: 6px;
+            }
+          }
+        }
+        .comment{
+          p{
+            font-size: 12px;
+            color: #5e5e5e;
+            background-color: #f2f2f2;
+            line-height: 35px;
+            box-sizing: border-box;
+            padding-right: 15px;
+            padding-left: 30px;
+            text-indent: -13px;
+          }
+          p:first-child{
+            padding-top: 10px;
+          }
+          p:last-child{
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+    .publish{
+      position: absolute;
+      right: 370px;
+      bottom: 68px;
+      button{
+        width: 313px;
+        height: 40px;
+        line-height: 28px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// --------------otc订单发布 end---------------------

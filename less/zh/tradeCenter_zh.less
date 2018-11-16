@@ -1,0 +1,483 @@
+@import "../../css/base.css";
+// 交易中心页面
+.red{
+    color: #ff0101;
+}
+.green{
+    color: #009e73;
+}
+.maincolor{
+    color: #00557d;
+}
+.main{
+    height: 1067px;
+    padding: 10px 0 16px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    // 左侧币种行情
+    .left{
+        width: 347px;
+        height: 1045px;
+        margin-right: 13px;
+        background-color: #fff;
+       float: left;
+       box-sizing: border-box;
+       
+        .serch_box{
+           overflow: hidden;
+            span{
+                height: 80px;
+                line-height: 80px;
+                margin-right: 52px;
+                margin-left: 43px;
+            }
+            .box{
+                display: inline-block;
+                position: relative;
+                
+                input{
+                    width: 142px;
+                    height: 26px;
+                    box-sizing: border-box;
+                    border: 1px solid #bbbbbb;
+                    border-radius: 4px;
+                    position: absolute;
+                }
+                .img{
+                    top: 0;
+                    left: 112px;
+                    cursor: pointer;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .title{
+            height: 48px;
+            line-height: 48px;
+            border-bottom: 1px solid #e5e5e5;
+            span{
+                width: 50px;
+                cursor: pointer;
+                height: 48px;
+                line-height: 48px;
+                display: inline-block;
+                text-align: center;
+                &:first-child{
+                    margin-left: 36px;
+                    margin-right: 58px;
+                }
+                &:last-child{
+                    margin-left: 58px;
+                    
+                }
+            }
+            .active{
+                border-bottom: 1px solid #00557d;
+            }
+        }
+        .money_list{
+            .list_title{
+                margin-top: 22px;
+                .category{
+                    li{
+                        font-size: 14px;
+                        display: inline-block;
+                        
+                        &:nth-child(1){
+                            margin-left: 38px;
+                            width: 115px;
+                        }
+                        &:nth-child(2){
+                            width: 102px;
+                        }
+                        em {
+                            position: relative;
+                            i {
+                                position: absolute;
+                                font-size: 0;
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                left: 10px;
+                                cursor: pointer;
+                            }
+                            .up {
+                                top: 3px;
+                                border-width: 0 5px 5px;
+                                border-color: transparent transparent #93929c;
+                            }
+                            .down {
+                                bottom: 3px;
+                                border-width: 5px 5px 0;
+                                border-color: #93929c transparent transparent;
+                            }
+                            .active {
+                                border-bottom-color: #5e5e5e;
+                            }
+                        }
+                    }
+                }
+            }
+            .list{
+                
+                ul{
+                    margin-top: 10px;
+                    height: 825px;
+                    overflow-y:auto;
+                   
+                    li{
+                        font-size: 14px;
+                        
+                        span{
+                            display: inline-block;
+                            height: 34px;
+                            line-height: 34px;
+                            &:nth-child(1){
+                                margin-left: 38px;
+                                width: 115px;
+                                img{
+                                    vertical-align: middle;
+                                    width: 14px;
+                                    height: 14px;
+                                    margin-top: -4px;
+                                    margin-right: 8px;
+                                }
+                            }
+                            &:nth-child(2){
+                                width: 102px;
+                            }
+                        }
+                        .red{
+                            color: #ff0101;
+                        }
+                        .green{
+                            color: #009e73;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // tradingView 图表
+   .middle_top{
+        background-color: #fff;
+        height: 550px;
+        margin-bottom: 10px;
+        width: 1531px;
+        box-sizing: border-box;
+        float: left;
+        .title{
+            border-bottom: 1px solid #e5e5e5;
+            line-height: 80px;
+            height: 80px;
+            .category{
+               display: inline-block;
+               a{
+                   margin-left: 32px;
+                   margin-right: 13px;
+                   img{
+                       margin-top: -4px;
+                    vertical-align: middle
+                }
+               }
+               span{
+                    font-size: 24px;
+                    display: inline-block;
+                    margin-right: 25px;
+               }
+                i{
+                    margin-left: 38px;
+                }
+
+            }
+            .message{
+                display: inline-block;
+                i{
+                    margin-left: 38px;
+                }
+                .red{
+                    color: #ff0101;
+                }
+                .green{
+                    color: #009e73;
+                }
+            }
+        }
+   }
+//   --底部三块----
+   .middle_bottom{
+    float: left;
+    width: 1542px;
+    box-sizing: border-box;
+    height: 485px;
+    // background-color: red;
+        .business{
+            background-color: #ffffff;
+            width: 330px;
+            height: 484px;
+            margin-right: 10px;
+          
+            float: left;
+            .title{
+                width: 330px;
+                line-height: 40px;
+                height: 40px;
+                border-bottom: 1px solid #e5e5e5e5;
+                span{
+                    text-align: center;
+                    display: inline-block;
+                }
+            span:nth-child(1){
+                width: 90px;
+
+            }
+            span:nth-child(2){
+                width: 110px;
+                }
+                span:nth-child(3){
+                    width: 96px;
+                }
+            }
+            .list{
+                width: 330px;
+                height: 438px;
+                overflow-y: auto;
+                ul{
+                    li{
+                        line-height: 40px;
+                        height: 40px;
+                        span{
+                            text-align: center;
+                            display: inline-block;
+                        }
+                    span:nth-child(1){
+                        width: 90px;
+            
+                    }
+                    span:nth-child(2){
+                        width: 126px;
+                        }
+                        span:nth-child(3){
+                            width: 90px;
+                        }
+                    }
+                }
+            }
+        }
+        .buy_sell{
+            
+            float: left;
+            width: 660px;
+            height: 484px;
+            background-color: #fff;
+            margin-right: 10px;
+            .title{
+                height: 40px;
+                border-bottom: 1px solid #e5e5e5e5;
+                span:nth-child(1){
+                    margin-left: 33px;
+                    margin-right: 26px;
+                    padding: 0 5px;
+                    height: 40px;
+                    line-height: 40px;
+                    display: inline-block;
+                }
+                span:nth-child(2){
+                    display: inline-block;
+                    padding: 0 5px;
+                    height: 40px;
+                    line-height: 40px;
+                    
+                }
+                span:nth-child(3){
+                    display: inline-block;
+                    padding: 0 5px;
+                    height: 40px;
+                    line-height: 40px;
+                    margin-left: 26px;
+                }
+                .active{
+                    border-bottom: 1px solid #00557d;
+                    color: #00557d
+                }
+            }
+            .buy{
+                .left,.right{
+                    float: left;
+                    height: 334px;
+                    width: 318px;
+                    margin: 0;
+                   p{
+                       line-height: 32px;
+                       height: 32px;
+                       margin-top: 32px;
+                        input{
+                            width: 170px;
+                            height: 30px;
+                            border: 1px solid #5e5e5e5e;
+                            padding-left: 8px;
+                        }
+                        span:first-child{
+                            margin-left: 31px;
+                            margin-right: 22px;
+                        }
+                        i{
+                            color: #00557d;
+                        }
+                   }
+                }
+                .buy_btn{
+                    margin-left: 167px;
+                    width: 325px;
+                    height: 36px;
+                    button{
+                        background-color: #f55858;
+                        width: 325px;
+                        a{
+                            height: 36px;
+                            font-size: 18px;
+                            line-height: 36px;
+                            
+                        }
+                        
+                    }
+                }
+            }
+            .entrust_conte{
+                .title_list{
+                    cursor: pointer;
+                    margin-top: 12px;
+                    .active{
+                        color: #00557d;
+                       
+                    }
+                    span{
+                        margin-left: 32px;
+                        line-height: 46px;
+                        height: 46px;
+                        display: inline-block;
+
+                        &:nth-child(2){
+                            margin-left: 48px;
+                        }
+                    }
+                }
+                .list{
+                    ul{
+                        li{
+                            line-height: 40px;
+                            height: 40px;
+                            span{
+                                display: inline-block;
+                                text-align: center;
+                                font-size: 14px;
+                                &:nth-child(1){
+                                    width: 140px;
+                                }
+                                &:nth-child(2){
+                                    width: 100px;
+                                }
+                                &:nth-child(3){
+                                    width: 121px;
+                                }
+                                &:nth-child(4){
+                                    width: 137px;
+                                }
+                                &:nth-child(5){
+                                    width: 112px;
+                                    i{
+                                        cursor: pointer;
+                                       
+                                    }
+                                    i:first-child{
+                                        margin-right: 20px;
+                                        color: #00557d
+                                    }
+                                    i:last-child{
+                                        
+                                        color: #ff4545;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .property{
+            height: 484px;
+            float: left;
+            width: 532px;
+            background-color: #fff;
+            .title{
+                height: 40px;
+                line-height: 40px;
+                display: block;
+                border-bottom: 1px solid #e5e5e5;
+                padding-left: 33px;
+            }
+            .property_conte{
+                .title_list{
+                    height: 46px;
+                    margin-top: 12px;
+                    .active{
+                        color: #00557d;
+                       
+                    }
+                    span{
+                        
+                        line-height: 46px;
+                        height: 46px;
+                        display: inline-block;
+                        font-size: 16px;
+                        float: left;
+                        &:nth-child(1){
+                            margin-left: 32px;
+                            
+                        }
+                        &:nth-child(3){
+                            float:right;
+                            margin-right: 32px;
+                            a{
+                                font-size: 12px;
+                                color: #00557d
+                            }
+                            
+                        }
+                    }
+                }
+                .list{
+                    margin-top: 6px;
+                    ul{
+                        li{
+                            line-height: 40px;
+                            height: 40px;
+                            span{
+                                display: inline-block;
+                                text-align: center;
+                                font-size: 14px;
+                                &:nth-child(1){
+                                    width: 93px;
+                                }
+                                &:nth-child(2){
+                                    width: 166px;
+                                }
+                                &:nth-child(3){
+                                    width: 156px;
+                                }
+                                &:nth-child(4){
+                                    width: 90px;
+                                }
+                                 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+   }
+}

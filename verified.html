@@ -5,11 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>手机认证</title>
+    <title>实名认证</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
     <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
     <script type="text/javascript" src="./libs/less/less.min.js"></script>
+    <style>
+        .box {
+            padding-bottom: 100px!important;
+        }
+        
+        .main .content .box .addPic .updata .button {
+            position: relative;
+        }
+    </style>
 
 </head>
 
@@ -23,7 +32,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -31,7 +40,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -39,7 +48,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -47,68 +56,78 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -130,29 +149,29 @@
                     <h3>实名认证</h3>
                     <div class="control">
                         <span>证件类型：</span>
-                        <input type="radio" name="type" id="idCode">
+                        <input type="radio" name="type" id="idCode" value="SFZ">
                         <em class="idCode">身份证</em>
-                        <input type="radio" name="type" id="passport">
+                        <input type="radio" name="type" id="passport" value="HZ">
                         <em class="passport">护照</em>
                     </div>
                     <div class="control width">
                         <span>真实姓名：</span>
-                        <input type="text">
+                        <input type="text" id="name">
                     </div>
                     <div class="control width">
                         <span>证件号码：</span>
-                        <input type="text">
+                        <input type="text" id="IDnumber">
                     </div>
                     <button type="button" id="enter">确认</button>
                 </div>
-                <div class="pass">
+                <div class="pass yesPass">
                     <div class="pic">
                         <img src="./imgs/pass.png" alt="">
                     </div>
                     <div class="info">
                         <p>已通过实名认证</p>
-                        <a href="">查看</a>
-                        <a href="">关闭</a>
+                        <a id="look">查看</a>
+                        <!-- <a id="closeBtn">关闭</a> -->
                     </div>
                 </div>
                 <div class="pass notPass">
@@ -166,10 +185,10 @@
                 </div>
                 <div class="passInfo">
                     <h3>已通过初级实名认证</h3>
-                    <p>证件类型：<span>身份证</span></p>
-                    <p>真实姓名：<span>嘻嘻嘻</span></p>
-                    <p>证件号码：<span>231321321312321321</span></p>
-                    <button type="button">去高级实名认证</button>
+                    <p>证件类型：<span id="info1">身份证</span></p>
+                    <p>真实姓名：<span id="info2">嘻嘻嘻</span></p>
+                    <p>证件号码：<span id="info3">231321321312321321</span></p>
+                    <button type="button" id="goUp">去高级实名认证</button>
                 </div>
                 <div class="addPic">
                     <div class="updata">
@@ -179,7 +198,7 @@
 
                             </div>
                             <a>点击添加图片</a>
-                            <input type="file" accept="image/*" class="addPicBtn1">
+                            <input type="file" accept="image/*" class="addPicBtn1" id="addPicBtn1">
                             <span>手持证件正面照（不大于1M）</span>
 
                         </div>
@@ -188,11 +207,11 @@
                                 <img src="" alt="" class="addPic2">
                             </div>
                             <a>点击添加图片</a>
-                            <input type="file" accept="image/*" class="addPicBtn2">
+                            <input type="file" accept="image/*" class="addPicBtn2" id="addPicBtn2">
                             <span>手持证件反面照（不大于1M）</span>
 
                         </div>
-                        <button type="button">上传</button>
+                        <button type="button" id="upPic">上传</button>
                     </div>
                     <div class="loading">
                         <div class="loading">
@@ -213,48 +232,102 @@
 
     <!-- footer -->
     <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/CoinHome-LOGO2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
+        <div class="list_title">
 
-                </ul>
-            </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">联系我们</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span>客服QQ：3601558306</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href=""></a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span></span></li>
-                </ul>
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04
+                </p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
             </div>
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+
     </footer>
 
     <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
     <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/arttemplate/template.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
+        $("#upPic").click(function() { //
+            let frontFile = $(".addPicBtn1").val()
+            let afterFile = $(".addPicBtn2").val()
+            let IdNumber = 11111111111111111;
+            let userId = localStorage.getItem("user_id");
+
+            var fileinput = Document.getElementById('id');
+            var File = fileinput.files[0];
+
+            let param = {
+                frontFile,
+                afterFile,
+                IdNumber,
+                userId,
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/Authentication/filesUpload.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data)
+                        // for (let i = 0; i < data.data.length; i++) {
+                        //     // console.log(data.data[i].code)
+                        //     questions(data.data[i].code)
+                        // }
+
+                    // console.log(data)
+                    // var html = template('test', data);
+                    // document.getElementById('list').innerHTML = html;
+                    // console.log(data.data.length)
+
+                }
+            });
+        })
+        $("#goUp").click(function() { //upPic
+            $(".passInfo").hide();
+            $(".addPic").show();
+        })
+        $("#look").click(function() { //
+            $(".yesPass").hide();
+            $(".passInfo").show();
+        })
+        $("#enter").click(function() {
+            Certification() //实名认证
+        })
+
+
         var file = $(".addPicBtn1");
         var file1 = $(".addPicBtn2");
         file.change(function() {
@@ -263,6 +336,103 @@
         file1.change(function() {
             $(".addPic2").attr("src", getObjectURL(file1[0].files[0]));
         });
+
+        function getUserInfo() {
+
+        }
+        // console.log(GetQueryString("type"))
+
+
+        function GetQueryString(name) { //获取地址栏参数
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        function isAuthenticationById() { //判断是否实名认证
+            let param = {
+                id: localStorage.getItem("user_id")
+                    // id: 1
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/Authentication/isAuthenticationById.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.data.name == undefined) { //没有实名认证
+                        $(".verified").show();
+                    } else { //去高级实名认证 
+                        $(".verified").hide();
+                        $(".yesPass").show();
+                        if (data.data.type == "SFZ") {
+                            $("#info1").html("身份证");
+
+                        } else {
+                            $("#info1").text("护照");
+                        }
+                        $("#info2").html(data.data.name);
+                        $("#info3").text(data.data.idNumber);
+                        if (GetQueryString("type") == 1) {
+                            $(".yesPass").hide();
+                            $(".addPic").show();
+                        }
+                    }
+                }
+            });
+        }
+
+        function Certification() {
+            let certificateType = $("input[name='type']:checked").val();
+            console.log(certificateType)
+            if (certificateType == '' || certificateType == undefined) {
+                layer.msg("请选择您的证件类型")
+                return
+            }
+            let realName = $("#name").val();
+            if (realName == '') {
+                layer.msg("真实姓名不能为空")
+                return
+            }
+            let idNumber = $("#IDnumber").val();
+            if (idNumber == '') {
+                layer.msg("证件号码不能为空")
+                return
+            } else if (idNumber.length != 18 && idNumber.length != 9) {
+                layer.msg("请正确输入证件号码")
+                return
+            }
+
+            let param = {
+                id: localStorage.getItem("user_id"),
+                // id: 1,
+                realName: realName, //真实姓名
+                idNumber: idNumber, //身份证号码
+                certificateType: certificateType, //SFZ HZ
+            }
+            console.log(param)
+                // return
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/Authentication/Certification.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log("实名认证结果")
+                    console.log(data)
+                    if (data.retcode == 10001) {
+                        layer.msg(data.msg)
+                        $(".verified").hide() //verified
+                        $(".notPass").show() //verified
+                    } else {
+                        $(".verified").hide()
+                        $(".yesPass").show()
+                    }
+                }
+            });
+        }
 
         function getObjectURL(file) {
             var url = null;
@@ -275,6 +445,12 @@
             }
             return url;
         }
+        $(function() {
+            console.log(localStorage.getItem("user_id"))
+            isAuthenticationById(); //判断是否实名认证 
+
+
+        })
     </script>
 </body>
 

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-    //     rem()
-    //     // 实现弹性布局
-    // // 这个函数是为了解决，当进行浏览器窗口大小操作时，rem还是之前的值，如果想要看到效果，需要进行一次手动刷新
-    // // 所以，为了解决不手动刷新我们需要在浏览器窗口变化的时候，进行监听，如果浏览器窗口变化了，就进行rem的重新计算
-    // // （也算是一个bug）
+    // 实现弹性布局
+    // 这个函数是为了解决，当进行浏览器窗口大小操作时，rem还是之前的值，如果想要看到效果，需要进行一次手动刷新
+    // 所以，为了解决不手动刷新我们需要在浏览器窗口变化的时候，进行监听，如果浏览器窗口变化了，就进行rem的重新计算
+    // （也算是一个bug）
     // window.onresize = function () {
     //     rem()
     // }
-    // rem()
     // // 进行rem的计算 因为是已1920px为基准进行计算的，所以为了方便，把1rem等于100px
     // function rem() {
     //     var width = document.body.clientWidth
@@ -23,16 +21,35 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title data-i18n="index.title">Document</title>
+
     <!-- <link rel="stylesheet" href="base.css"> -->
     <!-- <link rel="stylesheet" href="./libs/swiper/swiper.min.css"> -->
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
-    <script type="text/javascript" src="./libs/less/less.min.js"></script>
-</head>
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
 
-<body>
+</head>
+<script type="text/javascript">
+    // 根据存储的语言 选择加载不同语言的CSS
+    var url;
+    var lng = window.localStorage.getItem('language');
+    if (lng == null) {
+        url = "./less/zh/index_zh.less"
+    } else if (lng == "zh") {
+        url = "./less/zh/index_zh.less"
+    } else if (lng == "en") {
+        url = "./less/en/index_en.less"
+    }
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/less';
+    link.href = url;
+    document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+<script type="text/javascript" src="./libs/less/less.min.js"></script>
+
+<body style="background-color:#ffffff">
     <!-- 头部 -->
-    <header class="navbar">
+    <header class="navbar" style="background-color: #ffffff;">
         <div class="navbar-top">
             <ul>
                 <li>
@@ -40,7 +57,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -48,7 +65,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -56,7 +73,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -64,68 +81,78 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo3.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a><img src="./imgs/pull.png"></li>
-                    <li><a href="">c2c交易</a><img src="./imgs/pull.png"></li>
-                    <li><a href="">区块商城</a><img src="./imgs/pull.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/pull.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/pull.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img src="./imgs/pull.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/pull.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -151,10 +178,10 @@
     <section class="main container">
         <div class="thead">
             <ul>
-                <li class="thead-item active"><a href="javasript:;">CNT</a></li>
-                <li class="thead-item"><a href="javasript:;">BTC</a></li>
-                <li class="thead-item"><a href="javasript:;">自选</a></li>
-                <li class="thead-item"><a href="javasript:;">涅槃交易区</a></li>
+                <li class="thead-item active" id="cnt-market"><a href="javasript:;">CNT</a></li>
+                <li class="thead-item" id="btc-market"><a href="javasript:;">BTC</a></li>
+                <li class="thead-item" id="choose-market"><a data-i18n="index.main.select" href="javasript:;">自选</a></li>
+                <li class="thead-item" id="btc-nirvana"><a data-i18n="index.main.nirvana" href="javasript:;">涅槃交易区</a></li>
             </ul>
             <!-- <div class="sear_box">
                 <input type="text" name="" id="searchParams" value="" placeholder="请输入交易币种" class="sear_in">
@@ -163,29 +190,28 @@
         </div>
         <div class="thead_title">
             <ul>
-                <li>名称</li>
-                <li>默认排序</li>
-                <li class="tips">
-                    最新价
+                <li data-i18n="index.main.name">名称</li>
+                <li class="selectd item-click" id="default-sort" data-i18n="index.main.default">默认排序</li>
+                <li class="tips item-click" id="price-sort" data-category="dqj">
+                    <em data-i18n="index.main.new">最新价</em>
+                    <em><i class="up"></i><i class="down"></i></em>
+                </li>
+                <li data-i18n="index.main.yuan">折合CNY</li>
+                <li class="tips item-click" id="rise-sort" data-category="rzd"><em data-i18n="index.main.change">24H涨跌幅</em>
                     <em><i class="up active"></i><i class="down"></i></em>
                 </li>
-                <li>折合CNY</li>
-                <li>折合CNY</li>
-                <li class="tips"><em>24H涨跌幅</em>
-                    <em><i class="up"></i><i class="down"></i></em>
+                <li data-i18n="index.main.highest">24H最高价
                 </li>
-                <li>24H最高价
-                </li>
-                <li>24H最低价</li>
-                <li class="tips">
-                    <em>24H成交量</em>
-                    <em><i class="up"></i><i class="down"></i></em>
+                <li data-i18n="index.main.lowest">24H最低价</li>
+                <li class="tips item-click" id="make-sort" data-category="cje">
+                    <em data-i18n="index.main.deal">24H成交量</em>
+                    <em><i class="up active"></i><i class="down"></i></em>
                 </li>
             </ul>
         </div>
         <!-- cnt -->
-        <ul class="price seleted price_anmated">
-            <li>
+        <ul id="cnt-list" class="price seleted price_anmated">
+            <!-- <li>
                 <i></i>
                 <a href="">
                     <span>BTC/CNT</span>
@@ -194,92 +220,14 @@
                     <span>12.00%</span>
                     <span>0.0000</span>
                     <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
+
                     <span>15553</span>
                 </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
+            </li> -->
         </ul>
         <!-- btc -->
-        <ul class="price">
-            <li>
+        <ul class="price" id="btc-list">
+            <!-- <li>
                 <i></i>
                 <a href="">
                     <span>BTC/CNT</span>
@@ -288,92 +236,14 @@
                     <span>12.00%</span>
                     <span>0.0000</span>
                     <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
+
                     <span>15553</span>
                 </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
+            </li> -->
         </ul>
         <!-- 自选 -->
         <ul class="price">
-            <li>
+            <!-- <li>
                 <i></i>
                 <a href="">
                     <span>BTC/CNT</span>
@@ -382,92 +252,14 @@
                     <span>12.00%</span>
                     <span>0.0000</span>
                     <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
+
                     <span>15553</span>
                 </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
+            </li> -->
         </ul>
         <!-- 涅槃交交易区 -->
-        <ul class="price">
-            <li>
+        <ul class="price" id="nirvana-list">
+            <!-- <li>
                 <i></i>
                 <a href="">
                     <span>BTC/CNT</span>
@@ -476,92 +268,14 @@
                     <span>12.00%</span>
                     <span>0.0000</span>
                     <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
+
                     <span>15553</span>
                 </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
-            <li>
-                <i></i>
-                <a href="">
-                    <span>BTC/CNT</span>
-                    <span>1700.00000</span>
-                    <span>175555663</span>
-                    <span>12.00%</span>
-                    <span>0.0000</span>
-                    <span>0.255</span>
-                    <span>15553</span>
-                    <span>15553</span>
-                </a>
-            </li>
+            </li> -->
         </ul>
         <!-- loading 加载框 -->
         <div class="loading_box">
-            <div class="">
+            <div class="loading">
                 <i></i>
                 <i></i>
                 <i></i>
@@ -578,8 +292,8 @@
         <div class="device_box">
 
             <div class="device_text">
-                <h2>多平台终端接入</h2>
-                <h5>覆盖IOS、Android、Windows、Mac多个平台，支持全业务功能</h5>
+                <h2 data-i18n="index.device.end">加入我们并开始交易！</h2>
+                <h5 data-i18n="index.device.cover">覆盖IOS、Android、Windows、Mac多个平台，支持全业务功能</h5>
             </div>
             <ul class="img_list">
                 <li class="ios">
@@ -604,57 +318,130 @@
         </div>
         <div class="mobile">
             <img src="./imgs/num.png" alt="">
+            <span data-i18n="index.device.wallet" class="text">扫码下载钱包</span>
         </div>
         <div class="mobile_text">
-            <h2>数字资产 尽在掌控</h2>
-            <h5>私钥自持,无信任第三方即可完成操作;智能合约撮合,即时交易,高效透明</h5>
+            <h2 data-i18n="index.device.digital">数字资产 尽在掌控</h2>
+            <h5 data-i18n="index.device.key">私钥自持,无信任第三方即可完成操作;智能合约撮合,即时交易,高效透明</h5>
         </div>
     </section>
     <!-- 合作伙伴 -->
     <section class="partner">
         <img src="./imgs/cooperation.png" alt="">
+        <div data-i18n="index.device.companion" class="title">战略合作伙伴</div>
     </section>
-    <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/logo2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
-
-                </ul>
+    <!-- 新闻 -->
+    <section class="news">
+        <div class="news_box clearfix">
+            <div class="left">
+                <div class="title">中新网客户端北京11月13日电(记者李金磊)国家统计局近日公布了全国31个省(区、市)10月份居民消费价格指数(CPI)。数据显示，14个省份10月份CPI同比涨幅超过全国水平</div>
+                <div class="content">从地方层面来看，广西、山东、青海、北京、江苏、山西、湖南、浙江、河北、广东、重庆、宁夏、陕西、云南这14个省份10月份CPI同比涨幅超过全国水平。湖北、吉林、贵州这3地10月<a href="">>></a></div>
             </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span>客服QQ：3601558306</span></li>
-                </ul>
+            <div class="middle">
+                <div class="title">中新网客户端北京11月13日电(记者李金磊)国家统计局近日公布了全国31个省(区、市)10月份居民消费价格指数(CPI)。数据显示，14个省份10月份CPI同比涨幅超过全国水平</div>
+                <div class="content">从地方层面来看，广西、山东、青海、北京、江苏、山西、湖南、浙江、河北、广东、重庆、宁夏、陕西、云南这14个省份10月份CPI同比涨幅超过全国水平。湖北、吉林、贵州这3地10月<a href="">>></a></div>
+            </div>
+            <div class="right">
+                <div class="title">中新网客户端北京11月13日电(记者李金磊)国家统计局近日公布了全国31个省(区、市)10月份居民消费价格指数(CPI)。数据显示，14个省份10月份CPI同比涨幅超过全国水平</div>
+                <div class="content">从地方层面来看，广西、山东、青海、北京、江苏、山西、湖南、浙江、河北、广东、重庆、宁夏、陕西、云南这14个省份10月份CPI同比涨幅超过全国水平。湖北、吉林、贵州这3地10月<a href="">>></a></div>
             </div>
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+    </section>
+    <footer class="footer">
+        <div class="list_title">
+
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04
+                </p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
+            </div>
+        </div>
+
     </footer>
+    <!-- cnt -->
+    <script type="text/html" id="cntTemp">
+        {{each msg as value i}}
+        <li>
+            <i></i>
+            <a href="tradeCenter.html?id={{scid}}">
+                <span>{{value.ywm_s}}/{{value.zwm_s}}</span>
+                <span>{{value.dqj}}</span>
+                <span>{{value.dqj}}</span>
+                <span>{{value.rzd}}</span>
+                <span>{{value.zgj}}</span>
+                <span>{{value.zdj}}</span>
+                <span>{{value.cje}}</span>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- btc -->
+    <script type="text/html" id="btcTemp">
+        {{each msg as value i}}
+        <li>
+            <i></i>
+            <a href="tradeCenter.html?id={{scid}}">
+                <span>{{value.ywm_s}}/{{value.zwm_s}}</span>
+                <span>{{value.dqj}}</span>
+                <span>{{value.dqj}}</span>
+                <span>{{value.rzd}}</span>
+                <span>{{value.zgj}}</span>
+                <span>{{value.zdj}}</span>
+                <span>{{value.cje}}</span>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 涅槃 -->
+    <script type="text/html" id="nirvanaTemp">
+        {{each msg as value i}}
+        <li>
+            <i></i>
+            <a href="tradeCenter.html?id={{scid}}">
+                <span>{{value.ywm_s}}/{{value.zwm_s}}</span>
+                <span>{{value.dqj}}</span>
+                <span>{{value.dqj}}</span>
+                <span>{{value.rzd}}</span>
+                <span>{{value.zgj}}</span>
+                <span>{{value.zdj}}</span>
+                <span>{{value.cje}}</span>
+            </a>
+        </li>
+        {{/each}}
+    </script>
     <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
+    <script src="./libs/arttemplate/template.js"></script>
     <script src="./libs/swiper/swiper.min.js"></script>
+    <script src="./libs/layer/layer.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
+        var baseLink = "http://192.168.2.31:6969";
         $(function() {
+            $('body').bind("selectstart", function () { return false; }); //阻止点击过快页面变成蓝色
+
             //轮播图初始化
             var mySwiper = new Swiper('.swiper-container', {
                 direction: 'vertical', // 垂直切换选项
@@ -672,42 +459,41 @@
                 },
             })
 
-//监听屏幕滚动的高度 执行动画
-$(window).scroll(function (event) {
-        var winPos = $(window).scrollTop();
-        var computer = $('.computer').offset().top; //获取盒子偏移量top
-        var computerBox = $(".computer").height(); //获取电脑图片盒子的高度
-        var maxTop = computerBox + computer;
-        var minTop = computer - computerBox;
-        if (minTop < winPos < maxTop) {
-            $(".computer").attr("class", "computer com_anmated");
-            $(".device_box").attr("class", "device_box device_box_anmated");
-        };
-        if (winPos < minTop || winPos > maxTop) {
-            console.log('111111111111');
+            //监听屏幕滚动的高度 执行动画
+            $(window).scroll(function(event) {
+                var winPos = $(window).scrollTop();
+                var computer = $('.computer').offset().top; //获取盒子偏移量top
+                var computerBox = $(".computer").height(); //获取电脑图片盒子的高度
+                var maxTop = computerBox + computer;
+                var minTop = computer - computerBox;
+                if (minTop < winPos < maxTop) {
+                    $(".computer").attr("class", "computer com_anmated");
+                    $(".device_box").attr("class", "device_box device_box_anmated");
+                };
+                if (winPos < minTop || winPos > maxTop) {
+                    
+                    $(".computer").attr("class", "computer")
+                    $(".device_box").attr("class", "device_box")
+                }
+                console.log("电脑滚动的高度:" + winPos + "最小" + minTop + "最大" + maxTop + "盒子的top" + computer +
+                    "盒子自己的高度" + computerBox);
 
-            $(".computer").attr("class", "computer")
-            $(".device_box").attr("class", "device_box")
-        }
-        console.log("电脑滚动的高度:" + winPos + "最小" + minTop + "最大" + maxTop + "盒子的top" + computer + "盒子自己的高度" + computerBox);
+                var minTop2 = maxTop - computerBox / 2; //到这个高度动画执行
+                var mobBox = $(".mobile").height(); //获取手机图片盒子的高度
+                var mobTop = $('.mobile').offset().top; //获取手机图片盒子偏移量top
+                var maxTop2 = mobBox + mobTop;
+                if (minTop2 < winPos < maxTop2) {
+                    console.log('添加类名');
+                    $(".mobile").attr("class", "mobile mobile_anmated");
+                    $(".mobile_text").attr("class", "mobile_text mobile_text_anmated");
+                };
+                if (winPos < minTop2 || winPos > maxTop2) {
+                    console.log('移除类名');
 
-        var minTop2 = maxTop - computerBox / 2; //到这个高度动画执行
-        var mobBox = $(".mobile").height(); //获取手机图片盒子的高度
-        var mobTop = $('.mobile').offset().top; //获取手机图片盒子偏移量top
-        var maxTop2 = mobBox + mobTop;
-        if (minTop2 < winPos < maxTop2) {
-            console.log('添加类名');
-            $(".mobile").attr("class", "mobile mobile_anmated");
-            $(".mobile_text").attr("class", "mobile_text mobile_text_anmated");
-        };
-        if (winPos < minTop2 || winPos > maxTop2) {
-            console.log('移除类名');
-
-            $(".mobile").attr("class", "mobile")
-            $(".mobile_text").attr("class", "mobile_text")
-        }
-
-    });
+                    $(".mobile").attr("class", "mobile")
+                    $(".mobile_text").attr("class", "mobile_text")
+                }
+            });
 
             // 二维码显示隐藏
             $('.ios').mouseenter(function() {
@@ -722,12 +508,501 @@ $(window).scroll(function (event) {
                 $(this).stop().find('.android_code').stop().fadeOut();
             })
 
-            // tab栏切换
-            $('.thead-item').on('click', function() {
-                $(this).addClass('active').siblings().removeClass('active');
+            // CNT
+            var timeCNT,timeBTC,timeChoose,timeNirvana;
+            var arrTime=[];
+            clearTime();//清除所有计时器
+            //清除计时器
+            function clearTime (){
+                for(var i =0; i<arrTime.length; i++){
+                    clearInterval(arrTime[i]);
+                    }
+                }
+            // timeCNT = setInterval(function(){
+                    getCNT();
+                    console.log('cnt');
+                // },2000) 
+            //cnt分区
+            $("#cnt-market").on("click",function(){
+
+                clearTime();
+                var that= $(this);
+                that.parents('.thead').siblings('.thead_title').find('li').removeClass('selectd').find('i').removeClass('selectd');//清除所有active红色
+                
+                that.parents('.thead').siblings('.thead_title').find('li').eq(1).addClass('selectd');//切换时 默认 默认排序为红色
+                that.addClass('active').siblings().removeClass('active');
+                $('#cnt-list').addClass('seleted price_anmated').siblings('.price').removeClass("seleted price_anmated");
+                // timeCNT = setInterval(function(){
+                    // getCNT();
+                    console.log('cnt');
+                // },2000)  
+                
             })
-              
+
+            //btc分区
+            $("#btc-market").on("click",function(){
+                var that= $(this);
+                that.parents('.thead').siblings('.thead_title').find('li').removeClass('selectd').find('i').removeClass('selectd');
+                that.parents('.thead').siblings('.thead_title').find('li').eq(1).addClass('selectd');
+                clearTime();
+                that.addClass('active').siblings().removeClass('active');
+                $('#btc-list').addClass('seleted price_anmated').siblings('.price').removeClass("seleted price_anmated");
+                // timeBTC = setInterval(function(){
+                    getBTC();
+                     console.log('btc');
+
+                // },2000)  
+            })
+
+            //自选分区
+            $("#choose-market").on("click",function(){
+
+                if(!USER_ID){
+                    if(LNG=='zh'){
+                        layer.msg('请登录后操作');
+                    }else{
+                        layer.msg('Please login later');
+                    }
+                    return
+                }
+                var that= $(this);
+                that.parents('.thead').siblings('.thead_title').find('li').removeClass('selectd').find('i').removeClass('selectd');
+                that.parents('.thead').siblings('.thead_title').find('li').eq(1).addClass('selectd');//切换时 默认 默认排序为红色
+                console.log('0000000000000000000');
+                
+                clearInterval(timeCNT);
+                that.addClass('active').siblings().removeClass('active');
+                $('#btc-list').addClass('seleted price_anmated').siblings('.price').removeClass("seleted price_anmated");
+                // timeBTC = setInterval(function(){
+                    getBTC();
+                     console.log('btc');
+                // },2000)  
+            })
+
+            //涅槃交易信息
+            $("#btc-nirvana").on("click",function(){
+                var that= $(this);
+                that.parents('.thead').siblings('.thead_title').find('li').removeClass('selectd').find('i').removeClass('selectd');
+                that.parents('.thead').siblings('.thead_title').find('li').eq(1).addClass('selectd');//切换时 默认 默认排序为红色
+                clearInterval(timeCNT);
+                that.addClass('active').siblings().removeClass('active');
+                $('#nirvana-list').addClass('seleted price_anmated').siblings('.price').removeClass("seleted price_anmated");
+                // timeBTC = setInterval(function(){
+                    getNirvana();
+                     console.log('ni');
+                    
+                // },2000)  
+            })
+            
+            //默认排序
+            // $('#default-sort').on('click',function(){
+            //     var that = $(this);
+            //     that.addClass("selectd").siblings(".item-click").removeClass('selectd').find('i').removeClass('active');
+            // })
+
+            //所有分类的排序
+            $('.item-click').on('click',function(){
+                
+                var that = $(this);
+                //上下排序箭头变红 如果原来上箭头红就让下箭头红
+                var hasRed = that.find('.up').hasClass('active');
+                if(!hasRed){
+                    that.find('.up').addClass('active');
+                    that.find('.down').removeClass('active');
+                }else{
+                    that.find('.up').removeClass('active');
+                    that.find('.down').addClass('active');
+                }
+
+                that.addClass("selectd").siblings(".item-click").removeClass('selectd').find('i').removeClass('active');
+                var ulList =that.parents('.thead_title').siblings('.price');
+                var hasSelectd,url,id,riseNumber;
+                //判断当前点击对应的ul 大盒子 方便传到heightPriceCNT()方法里插入查询的列表
+                for(var i=0; i<ulList.length; i++){
+                    // console.log($(ulList[i]));
+                    
+                    if($(ulList[i]).hasClass('seleted')){
+                        hasSelectd = $(ulList[i]);
+                    }
+                }
+                //根据类名判断该传什么url 和 fqid
+                if(hasSelectd.attr('id')=='cnt-list'){
+                    url = '/getMarketList';
+                    id='1'
+                }else if(hasSelectd.attr('id')=='btc-list'){
+                    url = '/getMarketList';
+                    id='2'
+                }else if(hasSelectd.attr('id')=='nirvana-list'){
+                    url = '/getSbMarket';
+                    id='99'
+                }
+                
+                //根据上箭头 传入1（升序） or -1（降序）  
+                if(that.find('em').length){
+                    if(that.find('.up').hasClass('active')){
+                        riseNumber = 1
+                    }else{
+                        riseNumber = -1
+                    }
+                }
+                console.log(that.find('.up').hasClass('active'));
+                
+                //判断传什么类型排序
+               var category = that.attr('data-category');
+               console.log(category,riseNumber,url,id,hasSelectd);
+               
+                heightPriceCNT(category,riseNumber,url,id,hasSelectd);
+            })
+
+            //24H涨跌幅排序
+            // $('#rise-sort').on('click',function(){
+            //     var that = $(this);
+            //     that.addClass("selectd").siblings(".item-click").removeClass('selectd');
+                
+            // })
+
+            //24H成交量排序
+            // $('#make-sort').on('click',function(){
+            //     var that = $(this);
+            //     that.addClass("selectd").siblings(".item-click").removeClass('selectd');
+            // })
         })
+
+        // 获取cnt 信息
+        function getCNT(){
+            $('.loading_box').show();
+            var url = baseLink + '/getMarketList';
+            var param = {fqid:'1'};
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: 'JSON',
+                data: param,
+                success: function(data) {
+                    $('.loading_box').hide();
+                    var html = template('cntTemp', data);
+                    
+                    // console.log(html);
+                    
+                    $('#cnt-list').html(html);
+                //    console.log(data);
+                }
+            });
+        }
+        
+        var data={
+        num:"1",
+        msg:[
+            {
+            dqj_usd: 544,
+            ywm_s: 53,
+            cjl: 55445,
+            dqj_cny: 354,
+            zwm_s: 43,
+            cjlAll: 435,
+            spj: 453,
+            mr_yj_cny: 43534,
+            mc_yj_cny: 4334543,
+            zwm_m: 53,
+            zdj_cny: 0.5,
+            zgj_cny: 0.8,
+            mc_yj: 74,
+            fqid: 1,
+            tblj: 5434,
+            ws: 5,
+            dqj: 5313,
+            zgj: 3455,
+            ywm_m: 34,
+            rzd: 6543,
+            mr_yj: 3554,
+            scid: 1,
+            zdj: 6874,
+            cje: 687
+    },{
+            dqj_usd: 543,
+            ywm_s: 435,
+            cjl: 354,
+            dqj_cny: 435,
+            zwm_s: 435,
+            cjlAll: 786,
+            spj: 345,
+            mr_yj_cny: 768,
+            mc_yj_cny: 345,
+            zwm_m: 876,
+            zdj_cny: 0.786,
+            zgj_cny: 78.8,
+            mc_yj: 738,
+            fqid: 1738,
+            tblj: 54834,
+            ws: 35,
+            dqj: 53133,
+            zgj: 34355,
+            ywm_m: 334,
+            rzd: 6533,
+            mr_yj: 35354,
+            scid: 31,
+            zdj: 68374,
+            cje: 6387
+    },{
+            dqj_usd: 5344,
+            ywm_s: 353,
+            cjl: 53445,
+            dqj_cny: 3354,
+            zwm_s: 453,
+            cjlAll: 4535,
+            spj: 5453,
+            mr_yj_cny: 435534,
+            mc_yj_cny: 43345543,
+            zwm_m: 553,
+            zdj_cny: 0.55,
+            zgj_cny: 0.58,
+            mc_yj: 744,
+            fqid: 14,
+            tblj: 45434,
+            ws: 55,
+            dqj: 53513,
+            zgj: 34455,
+            ywm_m: 384,
+            rzd: 65443,
+            mr_yj: 35554,
+            scid: 155,
+            zdj: 685574,
+            cje: 65587
+    },
+
+{
+            dqj_usd: 55544,
+            ywm_s: 5553,
+            cjl: 5545545,
+            dqj_cny: 35554,
+            zwm_s: 4553,
+            cjlAll: 43555,
+            spj: 45553,
+            mr_yj_cny: 4353554,
+            mc_yj_cny: 43354543,
+            zwm_m: 553,
+            zdj_cny: 50.5,
+            zgj_cny:50.8,
+            mc_yj: 754,
+            fqid: 551,
+            tblj: 555434,
+            ws: 555,
+            dqj: 55313,
+            zgj: 35455,
+            ywm_m: 354,
+            rzd: 655543,
+            mr_yj: 355554,
+            scid: 551,
+            zdj: 68574,
+            cje: 6857
+    }
+]
+};
+        //cnt排序最新价从高到低
+        /*
+        *@method heightPriceCNT 排序
+        *@param 全部 必传(参数除了hasSelectd(jq对象)全部字符串类型) category 要排序的类型,riseNumber 传-1代表降序 1代表升序,url 请求路径,id请求参数id
+        *@return
+        */
+        function heightPriceCNT(category,riseNumber,url,id,hasSelectd){
+            $.ajax({
+                type: "GET",
+                url: baseLink + url,
+                dataType: 'JSON',
+                data: {fqid: id},
+                success: function(data) {
+                    $('.loading_box').hide();
+                  var data={
+        num:"1",
+        msg:[
+            {
+            dqj_usd: 544,
+            ywm_s: 53,
+            cjl: 55445,
+            dqj_cny: 354,
+            zwm_s: 43,
+            cjlAll: 435,
+            spj: 453,
+            mr_yj_cny: 43534,
+            mc_yj_cny: 4334543,
+            zwm_m: 53,
+            zdj_cny: 0.5,
+            zgj_cny: 0.8,
+            mc_yj: 74,
+            fqid: 1,
+            tblj: 5434,
+            ws: 5,
+            dqj: 5313,
+            zgj: 3455,
+            ywm_m: 34,
+            rzd: 6543,
+            mr_yj: 3554,
+            scid: 1,
+            zdj: 6874,
+            cje: 687
+    },{
+            dqj_usd: 543,
+            ywm_s: 435,
+            cjl: 354,
+            dqj_cny: 435,
+            zwm_s: 435,
+            cjlAll: 786,
+            spj: 345,
+            mr_yj_cny: 768,
+            mc_yj_cny: 345,
+            zwm_m: 876,
+            zdj_cny: 0.786,
+            zgj_cny: 78.8,
+            mc_yj: 738,
+            fqid: 1738,
+            tblj: 54834,
+            ws: 35,
+            dqj: 53133,
+            zgj: 34355,
+            ywm_m: 334,
+            rzd: 6533,
+            mr_yj: 35354,
+            scid: 31,
+            zdj: 68374,
+            cje: 6387
+    },{
+            dqj_usd: 5344,
+            ywm_s: 353,
+            cjl: 53445,
+            dqj_cny: 3354,
+            zwm_s: 453,
+            cjlAll: 4535,
+            spj: 5453,
+            mr_yj_cny: 435534,
+            mc_yj_cny: 43345543,
+            zwm_m: 553,
+            zdj_cny: 0.55,
+            zgj_cny: 0.58,
+            mc_yj: 744,
+            fqid: 14,
+            tblj: 45434,
+            ws: 55,
+            dqj: 53513,
+            zgj: 34455,
+            ywm_m: 384,
+            rzd: 65443,
+            mr_yj: 35554,
+            scid: 155,
+            zdj: 685574,
+            cje: 65587
+    },
+
+{
+            dqj_usd: 55544,
+            ywm_s: 5553,
+            cjl: 5545545,
+            dqj_cny: 35554,
+            zwm_s: 4553,
+            cjlAll: 43555,
+            spj: 45553,
+            mr_yj_cny: 4353554,
+            mc_yj_cny: 43354543,
+            zwm_m: 553,
+            zdj_cny: 50.5,
+            zgj_cny:50.8,
+            mc_yj: 754,
+            fqid: 551,
+            tblj: 555434,
+            ws: 555,
+            dqj: 55313,
+            zgj: 35455,
+            ywm_m: 354,
+            rzd: 655543,
+            mr_yj: 355554,
+            scid: 551,
+            zdj: 68574,
+            cje: 6857
+    }
+]
+};
+                    //升序降序判断
+                    if(riseNumber==1){
+                        data.msg.sort(function(a,b){
+                            return  b[category] - a[category];
+                        })
+                    }else if(riseNumber==-1){
+                        data.msg.sort(function(a,b){
+                            return a[category] - b[category];
+                        })
+                    }
+                    var html = template('cntTemp', data);
+                    // console.log(html);
+                    
+                    hasSelectd.html(html);
+                //    console.log(data);
+                }
+            });
+            // console.log(riseNumber);
+            
+        }
+       
+
+        //cnt排序最新价从低到高
+        function lowPriceCNT(){
+            
+        }
+
+         //cnt排序从涨到跌
+         function risePriceCNT(){
+
+         }
+
+         //cnt排序从跌到涨
+         function pallPriceCNT(){
+            
+        }
+
+        //获取btc 信息
+        function getBTC(){
+            $('.loading_box').show();
+            var url = baseLink + '/getMarketList';
+            var param = {fqid:'2'};
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: 'JSON',
+                data: param,
+                success: function(data) {
+                    $('.loading_box').hide();
+                    console.log('2222');
+                   console.log(data);
+                   console.log('2222');
+                   var html = template('btcTemp', data);
+                   $('#btc-list').html(html);
+                }
+            });
+        }
+
+        //获取涅槃交易 信息
+        function getNirvana(){
+                    $('.loading_box').show();
+                    var url = baseLink + '/getSbMarket';
+                    var param = {fqid:'99'};
+                    console.log(param)
+                    $.ajax({
+                        type: "GET",
+                        url: url,
+                        dataType: 'JSON',
+                        data: param,
+                        success: function(data) {
+                            $('.loading_box').hide();
+                            console.log('2222');
+                            console.log(data);
+                            console.log('2222');
+                            var html = template('nirvanaTemp', data);
+                            $('#nirvana-list').html(html);
+                        }
+                    });
+        }
+
+        
     </script>
 </body>
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>转入数字资产</title>
     <link rel="stylesheet/less" type="text/css" href="./css/base.css" />
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
     <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
     <script type="text/javascript" src="./libs/less/less.min.js"></script>
 </head>
@@ -22,7 +22,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -30,7 +30,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -38,7 +38,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -46,68 +46,79 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img
+                            src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -124,17 +135,17 @@
                 </ul>
             </div>
             <div class="box">
-                <select name="jSelect" class="bj-input-box">
-                            <option value="2012-01-01">比特币</option> 
-                            <option value="2012-01-01">比特币</option> 
-                            <option value="2012-01-01">比特币</option> 
-                            <option value="2012-01-01">比特币</option> 
-                            <option value="2012-01-01">比特币</option> 
+                <select name="jSelect" class="bj-input-box" id="select">
+
+                          
+
                     </select>
                 <p class="balance">可用：<span>0.0000</span></p>
                 <div class="recharge">
                     <p>充值地址：</p>
-                    <p>5555555555555sssssssssss<span><a>复制</a><a>二维码</a></span></p>
+                    <p><textarea id="address" readonly></textarea><span><a id="copy" onclick="copy()">复制</a><a class="qrcode">二维码</a></span>
+                        <div id="qrcode"></div>
+                    </p>
                     <p class="warning">注意：确保转入币种与接收地址信息一致，否则资产将不可找回</p>
                 </div>
                 <div class="description">
@@ -145,39 +156,8 @@
                 </div>
                 <div class="form">
                     <h3>转入明细</h3>
-                    <table>
-                        <tr>
-                            <th>转入时间</th>
-                            <th>转入币种</th>
-                            <th>转出地址</th>
-                            <th>转入数量</th>
-                            <th>到账数量</th>
-                            <th>状态</th>
-                        </tr>
-                        <tr>
-                            <td>2018-10-02 15：37：26</td>
-                            <td>USDT</td>
-                            <td>3DbbKBMN8R3EGPECnPMhEwmegSTUaF9CGS</td>
-                            <td>1.2564</td>
-                            <td>1.2564</td>
-                            <td class="failure"><em>失败</em></td>
-                        </tr>
-                        <tr>
-                            <td>2018-10-02 15：37：26</td>
-                            <td>USDT</td>
-                            <td>3DbbKBMN8R3EGPECnPMhEwmegSTUaF9CGS</td>
-                            <td>1.2564</td>
-                            <td>1.2564</td>
-                            <td><em>成功</em></td>
-                        </tr>
-                        <tr>
-                            <td>2018-10-02 15：37：26</td>
-                            <td>USDT</td>
-                            <td>3DbbKBMN8R3EGPECnPMhEwmegSTUaF9CGS</td>
-                            <td>1.2564</td>
-                            <td>1.2564</td>
-                            <td><em>成功</em></td>
-                        </tr>
+                    <table id="list">
+
                     </table>
                 </div>
             </div>
@@ -187,51 +167,193 @@
 
     <!-- 底部 -->
     <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/logo2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
+        <div class="list_title">
 
-                </ul>
-            </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                            href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                            href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                            href=""></a></span><span>客服QQ：3601558306</span></li>
-                </ul>
-            </div>
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span
+                        data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span
+                        data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家|
+                            新加坡新达塔双淡马锡大道9号04</p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
+            </div>   
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+        
     </footer>
+    <script id="test" type="text/html">
+        {{each data as value i}}
+        <option value="{{value.virtualCoinId}}">{{value.chinaName}}</option>
+        <!-- <option value="{{value.virtualCoinId}}">{{i}}</option> -->
+
+        {{/each}}
+    </script>
+    <script id="site" type="text/html">
+        {{each data as value i}}
+        <tr>
+            <th>转入时间</th>
+            <th>转入币种</th>
+            <th>转出地址</th>
+            <th>转入数量</th>
+            <th>到账数量</th>
+            <th>状态</th>
+        </tr>
+        <tr>
+            <td>{{value.exchangeTime}}</td>
+            <td>{{value.currencyEnglish}}</td>
+            <td>{{value.incomeWalletUrl}}</td>
+            <td>{{value.exchangeCount}}</td>
+            <td>{{value.successCount}}</td>
+            {{if value.exchangeStatus == "S"}}
+            <td class="failure"><em>成功</em></td>
+            {{else}}
+            <td><em>失败</em></td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </script>
     <script src="./libs/jquery/jquery.min.js"></script>
     <script src="./libs/common/jSelect.js"></script>
     <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/arttemplate/template.js"></script>
+    <script src="./libs/qrcode.min.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
+        function copy() {
+            var Url2 = document.getElementById("address");
+            Url2.select();
+            document.execCommand("Copy");
+        }
+        $(".qrcode").hover(function() {
+            $("#qrcode").toggleClass("active");
+        })
+        $(".bj-input-box").change(function() {
+            layer.closeAll();
+            getWalletUrl($(this).val()); //更新钱包地址
+            getUsableVirtualCoin($(this).val()); //更新余额
+        })
+
+        function getWalletUrl(data) { //临时钱包地址
+            if (data == undefined || data == "undefined") {
+                data = 1;
+            }
+            data = data.toString();
+            var param = {
+                userId: localStorage.getItem("user_id"),
+                // userId: 1,
+                currencyId: data
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/consignation/getWalletUrl.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data)
+                    if (data.data.virtualCoinUrl == undefined || data.data.virtualCoinUrl == "") {
+                        $("#address").html("")
+                        $("#qrcode").html("");
+                        layer.msg("缺少相应的币种信息")
+                    } else {
+                        $("#address").html(data.data.virtualCoinUrl)
+                        $("#qrcode").html("");
+                        new QRCode(document.getElementById("qrcode"), data.data.virtualCoinUrl);
+                    }
+                }
+            });
+        }
+
+        function getAssetExchangeList() { //转入明细列表
+            var param = {
+                userId: localStorage.getItem("user_id"),
+                // userId: 1,
+                currencyId: 2, //币种ID
+                start: 1,
+                pageSize: 999 //每页展示
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/consignation/getAssetExchangeList.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    // console.log(data);
+                    var html = template('site', data.data);
+                    document.getElementById('list').innerHTML = html;
+                }
+            });
+        }
+
+        function getVirtualCoinList() { //币种列表 
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/consignation/getVirtualCoinList.action",
+                dataType: 'json',
+                data: '',
+                success: function(data) {
+                    if (data.retcode == 0) {
+                        console.log(data);
+                        var html = template('test', data.data);
+                        document.getElementById('select').innerHTML = html;
+                        // console.log(data.data.data[0].virtualCoinId)
+                        getUsableVirtualCoin(data.data.data[0].virtualCoinId) //可用资产
+                        $(".bj-input-box").jSelect(); //加载完币种初始化选择框
+                    } else {
+                        layer.msg(data.msg)
+                    }
+                }
+            });
+        }
+
+        function getUsableVirtualCoin(currencyId) { //可用资产
+            let param = {
+                userId: localStorage.getItem("user_id"),
+                // userId: 1,
+                currencyId: currencyId,
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/consignation/getUsableVirtualCoin.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    // console.log("余额");
+                    // console.log(data.data.respCode)
+                    if (data.data.respCode == 000208) {
+                        // layer.msg(data.msg)
+                        $(".balance").find("span").text("0.00");
+                    } else {
+                        // console.log(data.data.availableFund);
+                        $(".balance").find("span").text(data.data.availableFund);
+                    }
+                }
+            });
+
+        }
         $(function() {
-            $(".bj-input-box").jSelect();
-            //自定页
-
-
+            getVirtualCoinList(); //币种类型 
+            getWalletUrl(); //首次加载充值地址
+            getAssetExchangeList(); //转入明细
         })
     </script>
 </body>

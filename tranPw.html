@@ -7,9 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>交易密码</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
     <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
     <script type="text/javascript" src="./libs/less/less.min.js"></script>
+    <style>
+        .forgetBtn {
+            display: block;
+            margin-left: 20px;
+            margin-left: 100px;
+            margin-top: 20px;
+            color: #00557d;
+        }
+    </style>
 
 </head>
 
@@ -23,7 +32,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -31,7 +40,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -39,7 +48,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -47,68 +56,79 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img
+                            src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -129,82 +149,437 @@
                 <div class="pw">
                     <div class="control">
                         <span>交易密码：</span>
-                        <input type="password">
+                        <input type="password" id="setPW">
                     </div>
                     <div class="control">
                         <span>确认密码：</span>
-                        <input type="password">
+                        <input type="password" id="rePW">
                     </div>
-                    <button type="button">保存</button>
+                    <button type="button" id="setPwBtn">保存</button>
                     <p class="warning">为保障您的资金安全，请设置交易密码，请务必牢记</p>
+                </div>
+                <div class="changePW">
+                    <div class="control">
+                        <span>旧密码：</span>
+                        <input type="password" id="old">
+                    </div>
+                    <div class="control">
+                        <span>新密码：</span>
+                        <input type="password" id="new">
+                    </div>
+                    <div class="control">
+                        <span>确认密码：</span>
+                        <input type="password" id="repeat">
+                    </div>
+                    <button type="button" id="chPwBtn">保存</button>
+                    <a class="forgetBtn">忘记交易密码</a>
+                    <p class="warning">为保障您的资金安全，请设置交易密码，请务必牢记</p>
+                </div>
+                <div class="form forgetPW">
+                    <div class="login forget">
+                        <div class="control icon number">
+                            <input placeholder="邮箱/手机" type="text" id="account">
+                        </div>
+                        <div class="control code">
+                            <input placeholder="图形验证码" type="text" id="verification">
+                            <img id="getVerificationImg" title="点击更换验证码">
+                        </div>
+
+                        <div class="control code verification">
+                            <input placeholder="验证码" type="text" id="verificationText">
+                            <!-- <span id="getVerificationText">获取短信验证码</span> -->
+                            <input value="获取验证码" id="getVerificationText" class="getVerificationText" type="button">
+                        </div>
+                        <div class="control icon password">
+                            <input placeholder="请设置6-16位数字或字母的登陆密码" type="password" id="password">
+                            <i class="secret"></i>
+                        </div>
+                        <div class="control icon password">
+                            <input placeholder="重复密码" type="password" id="confirm">
+                        </div>
+                        <button id="reset"><a>找回交易密码</a></button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- footer -->
     <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/CoinHome-LOGO2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
+        <div class="list_title">
 
-                </ul>
-            </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">联系我们</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span>客服QQ：3601558306</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href=""></a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span></span></li>
-                </ul>
-            </div>
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span
+                        data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span
+                        data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家|
+                            新加坡新达塔双淡马锡大道9号04</p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
+            </div>   
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+        
     </footer>
 
     <script src="./libs/jquery/jquery.min.js"></script>
     <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/arttemplate/template.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
-        var file = $(".addPicBtn1");
-        var file1 = $(".addPicBtn2");
-        file.change(function() {
-            $(".addPic1").attr("src", getObjectURL(file[0].files[0]));
-        });
-        file1.change(function() {
-            $(".addPic2").attr("src", getObjectURL(file1[0].files[0]));
-        });
+        $(".forgetBtn").click(function() {
+            $(".changePW,.pw").hide();
+            $(".forgetPW").show();
+        })
+        var countdown = 60; //倒计时
+        $("#getVerificationImg").click(function() {
+            let num = Math.random()
+            $(this).attr("src", baseLink + "/user/imageCode.action?d=" + num)
+        })
 
-        function getObjectURL(file) {
-            var url = null;
-            if (window.createObjcectURL != undefined) {
-                url = window.createOjcectURL(file);
-            } else if (window.URL != undefined) {
-                url = window.URL.createObjectURL(file);
-            } else if (window.webkitURL != undefined) {
-                url = window.webkitURL.createObjectURL(file);
+        $("#getVerificationText").click(function() {
+            getCode()
+        })
+        $(".secret").click(function() {
+            $(this).toggleClass("active");
+            $("#confirm").toggleClass("active");
+            var typeOf = $(this).siblings("input").attr("type")
+            if (typeOf == "text") {
+                $(this).siblings("input").attr("type", "password");
+                $("#confirm").attr("type", "password");
+            } else {
+                $(this).siblings("input").attr("type", "text");
+                $("#confirm").attr("type", "text");
+
             }
-            return url;
+        })
+        $("#reset").click(function() {
+            var account = $('#account').val();
+            if (account == '') {
+                layer.tips('请输入账号', '#account', {
+                    tips: 3
+                });
+                return
+            }
+            var password = $('#password').val();
+            if (password == '') {
+                layer.tips('请输入密码', '#password', {
+                    tips: 3
+                });
+                return
+            }
+            var confirm = $('#confirm').val();
+            if (confirm == '') {
+                layer.tips('请重复密码', '#confirm', {
+                    tips: 3
+                });
+                return
+            } else if (confirm != password) {
+                layer.tips('两次输入的密码不一致', '#confirm', {
+                    tips: 3
+                });
+                return
+            }
+            var verification = $('#verification').val();
+            if (verification == '') {
+                layer.tips('请输入图片验证码', '#verification', {
+                    tips: 3
+                });
+                return
+            }
+            // if (verification == '') {
+            //     layer.msg('验证码错误，请重新输入');
+            //     return
+            // }
+            var verificationText = $('#verificationText').val();
+            if (verificationText == '') {
+                layer.tips('请输入验证码', '#verificationText', {
+                    tips: 3
+                });
+                return
+            }
+            var param = {
+                phone: account,
+                newpassword: password,
+                repassword: confirm,
+                code: verificationText
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/user/findDealPwd.action",
+                dataType: 'JSON',
+                data: param,
+                success: function(data) {
+                    // console.log(data)
+                    if (data.retcode == 10000) {
+                        layer.msg(data.msg);
+                        setTimeout(function() {
+                            window.location.href = 'myAssets.html'
+                        }, 3000)
+                    } else {
+                        layer.msg(data.msg);
+
+                    }
+                }
+            });
+        })
+
+        function getCode() { //获取验证码
+            var account = $('#account').val(); //账号
+            var verificationImg = $('#verification').val(); //图片
+            // var reg = /^1[3|4|5|6|7|8|9][0-9]\d{4,8}$/; //定义手机号正则表达式
+            // var regEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            console.log(verificationImg);
+            if (account == '') {
+                layer.tips('请输入账号', '#account', {
+                    tips: 3
+                });
+                return
+            }
+            // if (!(reg.test(account)) && !(regEmail.test(account))) {
+            //     layer.tips('账号格式不正确1', '#account', {
+            //         tips: 3
+            //     });
+            //     return false;
+            // }
+            // if (!(regEmail.test(account))) {
+            //     layer.tips('账号格式不正确2', '#account', {
+            //         tips: 3
+            //     });
+            //     return false;
+            // }
+
+            if (verificationImg == '') {
+                layer.tips('请输入图片验证码', '#verification', {
+                    tips: 3
+                });
+                return
+            }
+
+            var param = {
+                userid: localStorage.getItem("user_id"),
+                phone: account,
+                type: 2, //1:注册,2:找回密码
+                imageCodes: verificationImg //图片验证码
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/user/getCode.action",
+                dataType: 'JSON', //JSON
+                data: param,
+                success: function(data) {
+                    console.log(data)
+                    if (data.retcode == 10001) {
+                        layer.msg(data.msg);
+                        let num = Math.random()
+                        $("#getVerificationImg").attr("src", baseLink + "/user/imageCode.action?d=" + num)
+                        $("#verification").val("");
+                    } else {
+                        layer.msg(data.msg);
+                        settime($("#getVerificationText"));
+                    }
+                }
+            });
         }
+
+        function settime(obj) {
+            if (countdown == 0) {
+                // $(this).removeClass("disabled");
+                obj.attr('disabled', false);
+                obj.removeClass("disabled");
+                obj.val("免费获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                obj.attr('disabled', true);
+                obj.addClass("disabled");
+                obj.val("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                settime(obj)
+            }, 1000)
+        };
+
+        $("#setPwBtn").click(function() { //设置交易密码
+            let setPW = $("#setPW").val(); //交易密码
+            if (setPW == '') {
+                layer.msg("请输入新的交易密码")
+                return
+            }
+            if (setPW.length < 6 || setPW.length > 16) {
+                layer.msg("密码限制6-16位")
+                return
+            }
+            let rePW = $("#rePW").val(); //确认密码
+            if (rePW == '') {
+                layer.msg("请重复密码")
+                return
+            }
+            if (rePW != setPW) {
+                layer.msg("两次输入的密码不一致")
+                return
+            }
+            let param = {
+                id: localStorage.getItem("user_id"),
+                password: setPW
+            }
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/setDealPwd.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.retcode == 10000) {
+                        layer.msg(data.msg)
+                        setTimeout(function() {
+                            window.location.href = "myAssets.html"
+                        }, 2000)
+                    } else {
+                        layer.msg(data.msg)
+                        $("#setPW").val("") //rePW
+                        $("#rePW").val("") //rePW
+                    }
+
+                }
+            });
+
+        })
+        $("#chPwBtn").click(function() { //修改交易密码
+            let oldPw = $("#old").val(); //旧的
+            if (oldPw == '') {
+                layer.msg("请输入旧的密码")
+                return
+            }
+            let newPw = $("#new").val(); //交易密码
+            if (newPw == '') {
+                layer.msg("请输入新的交易密码")
+                return
+            }
+            if (newPw.length < 6 || newPw.length > 16) {
+                layer.msg("密码限制6-16位")
+                return
+            }
+            let repeatPw = $("#repeat").val(); //确认密码
+            if (repeatPw == '') {
+                layer.msg("请重复密码")
+                return
+            }
+            if (repeatPw != newPw) {
+                layer.msg("两次输入的密码不一致")
+                return
+            }
+            let param = {
+                id: localStorage.getItem("user_id"),
+                // id: 1,
+                oldpassword: oldPw,
+                newpassword: newPw,
+                repassword: repeatPw
+            }
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/updateDealPwd.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    if (data.retcode == 10001) {
+                        layer.msg(data.msg)
+                    } else {
+                        console.log(data);
+                        layer.msg(data.msg)
+                        setTimeout(function() {
+                            window.location.href = "myAssets.html"
+                        }, 2000)
+                    }
+
+                }
+            });
+
+        })
+
+        function isSetTranPsd() { //判断是否设置了交易密码
+            var param = {
+                id: localStorage.getItem("user_id")
+            }
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/user/isSetTranPsd.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.data == true) {
+                        $(".pw").hide()
+                        $(".changePW").show()
+                    } else {
+                        $(".pw").show()
+                        $(".changePW").hide()
+                    }
+                    // var html = template('test', data.data);
+                    // document.getElementById('select').innerHTML = html;
+                    // console.log("余额")
+                    // $("#select").val();
+                    // console.log(data.data.data[0].availableAmount)
+
+                    // console.log($("#select").attr("balance"))
+                    // console.log($("#select").val())
+                    // console.log(data.data);
+                    // $(".balance").find("span").text(data.data.data[0].availableAmount)
+                    // $(".bj-input-box").jSelect(); //加载完币种初始化选择框
+                }
+            });
+        }
+
+        $(function() {
+                console.log(localStorage.getItem("user_id"))
+                isSetTranPsd() //判断
+                $("#getVerificationImg").attr("src", baseLink + "/user/imageCode.action")
+
+            })
+            // var file = $(".addPicBtn1");
+            // var file1 = $(".addPicBtn2");
+            // file.change(function() {
+            //     $(".addPic1").attr("src", getObjectURL(file[0].files[0]));
+            // });
+            // file1.change(function() {
+            //     $(".addPic2").attr("src", getObjectURL(file1[0].files[0]));
+            // });
+
+        // function getObjectURL(file) {
+        //     var url = null;
+        //     if (window.createObjcectURL != undefined) {
+        //         url = window.createOjcectURL(file);
+        //     } else if (window.URL != undefined) {
+        //         url = window.URL.createObjectURL(file);
+        //     } else if (window.webkitURL != undefined) {
+        //         url = window.webkitURL.createObjectURL(file);
+        //     }
+        //     return url;
+        // }
     </script>
 </body>
 

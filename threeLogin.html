@@ -5,11 +5,24 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content='298325498298-uda23eld5hidap9ok10por6sacrmb4k6.apps.googleusercontent.com'>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+        .tradingview-widget-container,
+        .box {
+            height: 500px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
+    <div class="box">
+        <!-- TradingView Widget BEGIN -->
+        <iframe src="https://trans.zb.cn/markets/kline?symbol=zbqc" id="marketFrame" class="marketFrame" name="marketFrame" onload="" frameborder="0" width="100%" style="height:500px" hspace="0" scrolling="no"></iframe>
+
+        <!-- TradingView Widget END -->
+    </div>
+
     <script>
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();

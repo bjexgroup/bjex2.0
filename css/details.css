@@ -1,12 +1,6 @@
 body {
   background: #f2f2f2;
 }
-.navbar {
-  background: #00557d;
-}
-.navbar a {
-  color: #fff;
-}
 .navbar.log {
   background: #00557d;
   height: auto;
@@ -14,9 +8,6 @@ body {
 .navbar.log .login a {
   color: #fff;
   cursor: pointer;
-}
-.footer {
-  background: #fff;
 }
 .form .login {
   margin: 205px auto 100px;
@@ -626,8 +617,8 @@ body {
 }
 .details .installation {
   display: inline-block;
-  cursor: pointer;
   color: #fff;
+  cursor: context-menu;
   background: #00557d;
   padding: 4px 10px;
 }
@@ -672,15 +663,55 @@ body {
 .main .content .box .select .j-container {
   margin-right: 40px;
 }
-.main .content .box .info {
-  margin: 0px 100px 100px 0;
+.main .content .box .infoList {
+  width: 100%;
+  border: none;
+  margin-bottom: 70px;
+}
+.main .content .box .infoList ul {
+  border: none;
+}
+.main .content .box .infoList li {
+  width: 33.33%;
+  float: left;
+}
+.main .content .box .infoList .info {
+  box-shadow: 0px -1px 10px #ccc;
+  border-bottom: none;
+  height: 200px;
+  margin: 0 20px;
+  border-radius: 4px;
+  position: relative;
+}
+.main .content .box .infoList .info .text {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  line-height: 1.6;
+}
+.main .content .box .infoList .info .text p span {
   display: inline-block;
+  width: 40px;
+  text-align-last: justify;
 }
-.main .content .box .info p {
-  font-size: 26px;
+.main .content .box .infoList .info .text p:nth-child(1) {
+  color: #ff820e;
 }
-.main .content .box .info span {
+.main .content .box .infoList .info .text p:nth-child(2) {
   color: #00557d;
+}
+.main .content .box .infoList li:nth-child(1) .info {
+  background-size: cover;
+  background: url(../imgs/info1.png) no-repeat center;
+}
+.main .content .box .infoList li:nth-child(2) .info {
+  background-size: cover;
+  background: url(../imgs/info2.png) no-repeat center;
+}
+.main .content .box .infoList li:nth-child(3) .info {
+  background-size: cover;
+  background: url(../imgs/info3.png) no-repeat center;
 }
 .main .content .box .form h3 {
   color: #00557d;
@@ -711,7 +742,7 @@ body {
   border: 1px solid #00557d;
   color: #00557d;
 }
-.main .content .box .form table tr .failure {
+.main .content .box .form table tr .failure em {
   color: #e54b4b;
 }
 .main .content .box .form table tr:first-child {
@@ -735,7 +766,8 @@ body {
   font-size: 16px;
   margin: 50px 0;
   line-height: 2;
-  width: 600px;
+  width: 800px;
+  position: relative;
 }
 .main .content .box .recharge span {
   display: inline-block;
@@ -745,6 +777,31 @@ body {
   font-size: 14px;
   margin: 0 10px;
   color: #00557d;
+}
+.main .content .box .recharge #address {
+  width: 400px;
+  height: 21px;
+  display: inline-block;
+  padding-top: 18px;
+  line-height: 32px;
+  overflow: hidden;
+}
+.main .content .box .recharge #qrcode {
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  top: -20px;
+  left: 650px;
+}
+.main .content .box .recharge #qrcode.active {
+  opacity: 1;
+}
+.main .content .box .recharge button {
+  margin: 30px 0 0 200px;
+}
+.main .content .box .recharge img {
+  width: 180px;
+  position: absolute;
 }
 .main .content .box .recharge .control {
   position: relative;
@@ -769,12 +826,12 @@ body {
 .main .content .box .recharge .verification a {
   color: #00557d;
   position: absolute;
-  right: 120px;
+  right: 320px;
 }
 .main .content .box .recharge .verification em {
   color: #00557d;
   position: absolute;
-  right: 0;
+  right: 200px;
 }
 .main .content .box .warning {
   color: #e54b4b;
@@ -805,7 +862,7 @@ body {
   text-align: center;
 }
 .main .content .box .verified .control {
-  width: 240px;
+  width: 280px;
   text-align: left;
   margin: auto;
   line-height: 3;
@@ -863,9 +920,11 @@ body {
   line-height: 30px;
   height: 30px;
 }
+.main .content .box .yesPass {
+  display: none;
+}
 .main .content .box .pass {
   text-align: center;
-  display: none;
 }
 .main .content .box .pass .info {
   margin: auto;
@@ -914,9 +973,9 @@ body {
 }
 .main .content .box .addPic {
   text-align: center;
+  display: none;
 }
 .main .content .box .addPic .updata {
-  display: none;
   margin-bottom: 80px;
 }
 .main .content .box .addPic .updata .button {
@@ -970,11 +1029,56 @@ body {
   font-size: 24px;
   color: #00557d;
 }
-.main .content .box .pw {
+.main .content .box .forgetPW {
+  display: none;
+}
+.main .content .box .forgetPW .login {
+  margin-top: 40px;
+  padding-bottom: 50px;
+}
+.main .content .box .changePW {
   width: 600px;
   margin: auto;
   text-align: center;
   display: none;
+  padding-bottom: 40px;
+}
+.main .content .box .changePW .control {
+  width: 380px;
+  margin: auto;
+  line-height: 3;
+}
+.main .content .box .changePW .control span {
+  display: inline-block;
+  width: 96px;
+  font-size: 16px;
+  text-align-last: justify;
+}
+.main .content .box .changePW .control input {
+  border-bottom: 1px solid #ccc;
+  width: 270px;
+}
+.main .content .box .changePW button {
+  height: 40px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+.main .content .box .changePW .forget {
+  color: #00557d;
+  display: block;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.main .content .box .changePW .warning {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 30px;
+  background: url(../imgs/prompt.png) no-repeat 100px;
+}
+.main .content .box .pw {
+  width: 600px;
+  margin: auto;
+  text-align: center;
   padding-bottom: 40px;
 }
 .main .content .box .pw .control {
@@ -991,10 +1095,12 @@ body {
 .main .content .box .pw .control input {
   border-bottom: 1px solid #ccc;
   width: 270px;
+  height: 40px;
+  line-height: 40px;
 }
 .main .content .box .pw button {
-  height: 30px;
-  line-height: 30px;
+  height: 50px;
+  line-height: 50px;
   margin-top: 40px;
   margin-left: 80px;
 }
@@ -1003,7 +1109,7 @@ body {
   margin-left: 50px;
   line-height: 40px;
   padding-left: 30px;
-  background: url(../imgs/prompt.png) no-repeat 100px;
+  background: url(../imgs/prompt.png) no-repeat 70px;
 }
 .main .content .option .h20 {
   height: 40px;
@@ -1042,11 +1148,17 @@ body {
 }
 .main .content .option .optList {
   line-height: 3;
+  padding-bottom: 50px;
 }
 .main .content .option .optList li {
   padding-left: 120px;
   cursor: pointer;
   position: relative;
+}
+.main .content .option .optList li span {
+  font-size: 14px;
+  color: #999;
+  display: none;
 }
 .main .content .option .optList li em {
   position: absolute;
@@ -1065,6 +1177,12 @@ body {
 }
 .main .content .option .optList .active em {
   display: block;
+}
+.main .content .option .optList .selected {
+  background: #ccc;
+}
+.main .content .option .optList .selected:hover {
+  background: #ccc;
 }
 .main .content .invite .title h3 {
   padding-top: 20px;
@@ -1110,6 +1228,7 @@ body {
 }
 .main .content .invite .picCode {
   height: 280px;
+  position: relative;
 }
 .main .content .invite .picCode em {
   margin-left: 240px;
@@ -1118,6 +1237,243 @@ body {
 .main .content .invite .picCode p {
   margin-top: 80px;
   display: inline-block;
+}
+.main .helpLeft {
+  float: left;
+  width: 90px;
+  padding-bottom: 100px;
+}
+.main .helpLeft ul {
+  border: none;
+}
+.main .helpLeft li {
+  height: 80px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .helpLeft li a {
+  display: block;
+  height: 80px;
+}
+.main .helpLeft li a span {
+  display: inline-block;
+  margin-top: 80px;
+}
+.main .helpLeft li:hover a {
+  color: #8ac4f4;
+}
+.main .helpLeft li:nth-child(1) a {
+  background: url(../imgs/help_icon1.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(1):hover a {
+  background: url(../imgs/help_icon2.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(1).active a {
+  background: url(../imgs/help_icon2.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(2) a {
+  background: url(../imgs/help_icon3.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(2):hover a {
+  background: url(../imgs/help_icon4.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(2).active a {
+  background: url(../imgs/help_icon4.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(3) a {
+  background: url(../imgs/help_icon5.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(3):hover a {
+  background: url(../imgs/help_icon6.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(3).active a {
+  background: url(../imgs/help_icon6.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(4) a {
+  background: url(../imgs/help_icon7.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(4):hover a {
+  background: url(../imgs/help_icon8.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(4).active a {
+  background: url(../imgs/help_icon8.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(5) a {
+  background: url(../imgs/help_icon9.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(5):hover a {
+  background: url(../imgs/help_icon10.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(5).active a {
+  background: url(../imgs/help_icon10.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(6) a {
+  background: url(../imgs/help_icon11.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(6):hover a {
+  background: url(../imgs/help_icon12.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(6).active a {
+  background: url(../imgs/help_icon12.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(7) a {
+  background: url(../imgs/help_icon13.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(7):hover a {
+  background: url(../imgs/help_icon14.png) no-repeat center;
+}
+.main .helpLeft li:nth-child(7).active a {
+  background: url(../imgs/help_icon14.png) no-repeat center;
+}
+.main .helpRight {
+  width: 1100px;
+  float: right;
+  position: relative;
+}
+.main .helpRight ul {
+  padding: 0 -100px;
+}
+.main .helpRight li {
+  float: left;
+  width: 33.333%;
+}
+.main .helpRight li .item {
+  margin: 30px 46px;
+  font-size: 16px;
+  height: 300px;
+  position: relative;
+}
+.main .helpRight li .item .befor {
+  background: #8ac4f4;
+  height: 100%;
+  position: relative;
+}
+.main .helpRight li .item .pic {
+  text-align: center;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.main .helpRight li .item h3 {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #00557d;
+  border-radius: 20px;
+  padding: 8px 20px;
+  color: #00557d;
+  position: absolute;
+  top: 230px;
+  width: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.main .helpRight li .item .info {
+  line-height: 2.4;
+  text-align: left;
+  opacity: 0;
+  transition: 0.5s;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 40px;
+  padding-left: 50px;
+  height: 200px;
+  overflow: hidden;
+}
+.main .helpRight li .item .info a {
+  display: block;
+  color: #00557d;
+}
+.main .helpRight li .item .more {
+  position: absolute;
+  right: 80px;
+  bottom: -10px;
+  font-size: 16px;
+  color: #00557d;
+}
+.main .helpRight li .item:hover {
+  margin: 30px 36px;
+  text-align: center;
+  position: relative;
+}
+.main .helpRight li .item:hover .befor {
+  background: url(../imgs/item_bg.png) no-repeat center;
+  background-size: cover;
+}
+.main .helpRight li .item:hover .pic {
+  display: none;
+}
+.main .helpRight li .item:hover h3 {
+  display: none;
+}
+.main .helpRight li .item:hover .info {
+  opacity: 1;
+}
+.main .helpRight::after {
+  content: '';
+  display: inline-block;
+  height: 10000px;
+  width: 10px;
+  background: #f2f2f2;
+  position: absolute;
+  left: -10px;
+  z-index: 9;
+  top: 0;
+}
+.main .titleList {
+  width: 1100px;
+  float: right;
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.main .titleList h3 {
+  font-size: 24px;
+  color: #00557d;
+}
+.main .titleList .time {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+.main .titleList .details {
+  margin-top: 50px;
+}
+.main .titleList .list {
+  margin: 40px 0;
+}
+.main .titleList .list ul {
+  border: none;
+}
+.main .titleList .list li {
+  position: relative;
+  float: none;
+  width: 100%;
+  line-height: 3;
+}
+.main .titleList .list li a {
+  font-size: 16px;
+  display: block;
+  position: relative;
+  padding-left: 20px;
+}
+.main .titleList .list li a span {
+  position: absolute;
+  right: 0;
+}
+.main .titleList .list li:after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #8ac4f4;
+  position: absolute;
+  left: 0;
+  top: 22px;
+  border-radius: 50px;
 }
 .layui-layer-title {
   text-align: center;

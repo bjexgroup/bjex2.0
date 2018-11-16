@@ -7,10 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>谷歌认证</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet/less" type="text/css" href="./css/index.less" />
     <link rel="stylesheet/less" type="text/css" href="./css/details.less" />
     <script type="text/javascript" src="./libs/less/less.min.js"></script>
-
+    <style>
+        #googleSecret {
+            border: none;
+            cursor: auto;
+            text-align: center;
+        }
+        
+        #authPw {
+            border: none;
+            margin-left: -46px;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +33,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -31,7 +41,7 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -39,7 +49,7 @@
                     <span class="red">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
                 <li>
@@ -47,68 +57,78 @@
                     <span class="green">5.6845%</span>
                     <span>6810.497</span>
                     <span>￥6437.922</span>
-                    <span>24H量:</span>
+                    <span data-i18n="index.header.volume">24H量:</span>
                     <span>2899.5221</span>
                 </li>
             </ul>
         </div>
         <div class="toolBar indexBar container">
             <div class="logo">
-                <a>
+                <a href="index.html">
                     <img src="./imgs/logo1.png" alt="">
                 </a>
             </div>
             <div class="top_list">
                 <ul>
-                    <li><a href="">交易中心</a></li>
-                    <li><a href="">c2c交易</a></li>
-                    <li><a href="">区块商城</a><img src="./imgs/down.png"></li>
-                    <li><a href="">消息中心</a><img src="./imgs/down.png"></li>
-                    <li><a href="">帮助中心</a><img src="./imgs/down.png"></li>
+                    <li><a class="text" data-i18n="index.header.trade" href="tradeCenter.html">交易中心</a></li>
+                    <li><a class="text" data-i18n="index.header.c2c" href="otcCenter.html">c2c交易</a></li>
+                    <li><a class="text" data-i18n="index.header.block" href="">区块商城</a></li>
+                    <li class="list_position" id="messageCenter"><a class="text" data-i18n="index.header.information" href="">消息中心</a><img src="./imgs/down.png">
+                        <div class="mes_center" id="messageCenterBox">
+                            <i class="arrow_icon">
+                            </i>
+                            <div class="mes_lsit">
+                                <ul class="clearfix">
+                                    <li><a data-i18n="index.header.proclamation" href="">最新公告</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li><a class="text" data-i18n="index.header.help" href="helpCenter.html">帮助中心</a></li>
                 </ul>
 
             </div>
             <div class="login">
                 <ul>
-                    <li><a href="login.html">登录</a></li>
-                    <li><a href="registration.html">注册</a></li>
-                    
+                    <li><a data-i18n="index.header.login" href="login.html">登录</a></li>
+                    <li><a data-i18n="index.header.sign" href="registration.html">注册</a></li>
+
                     <li class="national-mouse">
-                        <a class="china" href=""><img src="./imgs/china.png" alt=""></a>
+                        <a class="china" href=""><img id="showNational" src="./imgs/china.png" alt=""></a>
 
                         <div class="national">
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
-                            <a class="china" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
+                            <a class="china" id="en" href="javascript:;"><img src="./imgs/amrc.png" alt=""></a>
+                            <a class="china" id="zh" href="javascript:;"><img src="./imgs/china.png" alt=""></a>
                         </div>
                     </li>
                     <li class="">
                         <a href=""><img class="up-down" src="./imgs/down.png" alt=""></a>
-
                     </li>
                 </ul>
 
             </div>
             <div class="personal_center">
                 <div class="info_img">
-                        <img src="./imgs/personalname.png" alt="">
+                    <img src="./imgs/personalname1.png" alt="">
                 </div>
-                
+
                 <div class="accont_numb">
                     <div class="text">
-                            <a href="">182****3452</a>
+                        <a href="">182****3452</a>
                     </div>
-                     
+
                     <div class="personal_list">
-                            <ul>
-                                <li><a href="">个人中心</a></li>
-                                <li><a href="">财务中心</a></li>
-                                <li><a href="">安全中心</a></li>
-                                <li><a href="">推荐好友</a></li>
-                            </ul>
+                        <ul>
+                            <li><a data-i18n="index.header.personal" href="personalMessage.html">个人信息</a></li>
+                            <li><a data-i18n="index.header.finance" href="myAssets.html">财务中心</a></li>
+                            <li><a data-i18n="index.header.safe" href="verified.html">安全中心</a></li>
+                            <li><a data-i18n="index.header.friend" href="Invitation.html">推荐好友</a></li>
+                            <li><a data-i18n="index.header.out" href="Invitation.html">安全退出</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -133,19 +153,18 @@
                         <div class="form">
                             <div class="control">
                                 <span>秘钥</span>
-                                <input>
+                                <input id="googleSecret" readonly>
                             </div>
                             <div class="control">
                                 <span>认证码</span>
-                                <input>
+                                <input id="authentication">
                             </div>
                             <div class="control">
                                 <button id="post">提交</button>
                             </div>
                         </div>
                         <div class="qrcode">
-                            <div class="pic">
-                                <img src="./imgs/code.png">
+                            <div class="pic" id="qrcode">
                             </div>
                             <span>谷歌验证器扫一扫既可绑定</span>
                         </div>
@@ -175,7 +194,7 @@
                     <p>谷歌认证查看</p>
                     <div class="control">
                         <span>Google认证码：</span>
-                        <input>
+                        <input id="lookAuth">
                     </div>
                     <button id="enter">确认</button>
                 </div>
@@ -187,11 +206,11 @@
                     <p>谷歌认证关闭</p>
                     <div class="control">
                         <span>账号登陆密码：</span>
-                        <input>
+                        <input id="password" type="password">
                     </div>
                     <div class="control">
                         <span>Google认证码：</span>
-                        <input>
+                        <input id="authClose">
                     </div>
                     <button id="enterCLose">确认</button>
                 </div>
@@ -199,13 +218,13 @@
                 <div class="qrcodePage">
                     <div class="conteol">
                         <span>秘钥</span>
-                        <input type="text">
+                        <input type="text" id="authPw" readonly>
                     </div>
                     <div class="qrcode">
-                        <div class="pic">
-                            <img src="./imgs/code.png" alt="">
+                        <div class="pic" id="authCode">
+                            <!-- <img src="./imgs/code.png" alt=""> -->
                         </div>
-                        <p>谷歌验证器扫一扫即可绑定</p>
+                        <!-- <p>谷歌验证器扫一扫即可绑定</p> -->
                     </div>
                 </div>
             </div>
@@ -215,67 +234,208 @@
 
     <!-- footer -->
     <footer class="footer">
-        <div class="list_title container">
-            <div class="link">
-                <div class="logo"><img src="./imgs/CoinHome-LOGO2.png" alt=""></div>
-                <p>全球领先的数字资产金融服务商</p>
-                <ul>
-                    <li><img src="./imgs/wchat.png" alt=""></li>
-                    <li><img src="./imgs/QQ.png" alt=""></li>
-                    <li><img src="./imgs/facebook.png" alt=""></li>
-                    <li><img src="./imgs/bird.png" alt=""></li>
-                    <li class="five"><img src="./imgs/weibo.png" alt=""></li>
-                    <li><img src="./imgs/navigation.png" alt=""></li>
+        <div class="list_title">
 
-                </ul>
-            </div>
-            <div class="about">
-                <ul class="title">
-                    <li>平台相关</li>
-                    <li>法律条款</li>
-                    <li>服务支持</li>
-                    <li>友情链接</li>
-                    <li>联系我们</li>
-                </ul>
-                <ul class="list">
-                    <li><span><a href="">平台简介</a></span><span><a href="">用户协议</a></span><span><a href="">商务合作</a></span><span><a
-                                href="">支汇通官网</a></span><span>工作时间：09:30-18:00 ( GMT + 8 )</span></li>
-                    <li><span><a href="">联系我们</a></span><span><a href="">隐私政策</a></span><span><a href="">API支持</a></span><span><a
-                                href=""></a></span><span>联系邮箱：service@bjex.vip</span></li>
-                    <li><span><a href="">平台费率</a></span><span><a href="">防洗钱</a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span>客服QQ：3601558306</span></li>
-                    <li><span><a href="">加入我们</a></span><span><a href=""></a></span><span><a href=""></a></span><span><a
-                                href=""></a></span><span></span></li>
-                </ul>
+            <ul class="title">
+                <li class="size clearfix"><span data-i18n="index.footer.relate">平台相关</span><span data-i18n="index.footer.legal">法律条款</span>
+                    <span data-i18n="index.footer.service">服务支持</span>
+                    <span data-i18n="index.footer.contact">联系我们</span>
+                    <span data-i18n="index.footer.link">友情链接</span></li>
+
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.introduction" href="">平台简介</a></span><span><a data-i18n="index.footer.info"
+                            href="">用户协议</a></span><span><a data-i18n="index.footer.business" href="">商务合作</a></span><span data-i18n="index.footer.worktime">工作时间:09:30-18:00(GMT+8)</span><span><a href="" data-i18n="index.footer.website">支汇通官网</a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.fee" href="">平台费率</a></span><span><a data-i18n="index.footer.privacy"
+                            href="">隐私政策</a></span><span><a data-i18n="index.footer.support" href="">API支持</a></span><span data-i18n="index.footer.email">联系邮箱：service@bjex.vip</span><span><a href=""></a></span>
+                </li>
+                <li class="clearfix">
+                    <span><a data-i18n="index.footer.join" href="">加入我们</a></span><span><a data-i18n="index.footer.anti"
+                            href="">防洗钱</a></span><span><a href="">&nbsp;</a></span><span data-i18n="index.footer.customer">客服QQ：3601558306</span><span><a
+                            href=""></a></span>
+                </li>
+            </ul>
+            <div class="address">
+                <p data-i18n="index.footer.coin">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04
+                </p>
+                <div class="logo_list">
+                    <i></i><i></i><i></i><i></i><i></i><i></i> <i></i>
+                </div>
             </div>
         </div>
-        <hr>
-        <p class="address">© 2018 https://www.bjex.vip All Rights Reserved 币家| 新加坡新达塔双淡马锡大道9号04</p>
+
     </footer>
 
     <script src="./libs/jquery/jquery.min.js"></script>
+    <script src="./libs/i18next-1.11.2/i18next-1.11.2.min.js"></script>
     <script src="./libs/layer/layer.js"></script>
+    <script src="./libs/arttemplate/template.js"></script>
+    <script src="./libs/qrcode.min.js"></script>
     <script src="./libs/common/common.js"></script>
     <script>
-        $("#post").click(function() {
-            $(".start").hide()
-            $(".state").show();
+        //authentication认证码
+        var googleSecret = '';
+        var googleUrl = '';
+
+        function list() { //获取二维码 
+            var param = {
+                userid: localStorage.getItem("user_id"),
+                // userid: 1
+            }
+            console.log(param)
+            $.ajax({
+                type: "GET",
+                url: baseLink + "/google/list.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log("现有")
+                    console.log(googleSecret)
+                    console.log(data.data);
+                    googleSecret = data.data.googleSecret
+                    googleUrl = data.data.googleUrl
+                    if (data.data.isnick == "S") {
+                        $(".start").hide()
+                        $(".state").show();
+                    } else {
+                        $("#googleSecret").val(data.data.googleSecret)
+                        new QRCode(document.getElementById("qrcode"), data.data.googleUrl);
+                    }
+                }
+            });
+        }
+
+        function renz() { //认证 
+            let nickcode = $("#authentication").val();
+            // let nickcode = $("#lookAuth").val();//authentication
+            if (nickcode == '') {
+                layer.msg("请输入google认证码")
+                return
+            }
+            var param = {
+                userid: localStorage.getItem("user_id"),
+                // userid: 1,
+                one: googleSecret, //私钥
+                two: googleUrl, //路径
+                nickcode: nickcode
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/google/renz.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.retcode == 0) {
+                        $(".start").hide()
+                        $(".state").show();
+                    } else {
+                        layer.msg("认证码错误，请重新输入")
+                    }
+                }
+            });
+        }
+
+        function view() { //查看认证 
+            let nickcode = $("#lookAuth").val();
+            if (nickcode == '') {
+                layer.msg("请输入google认证码")
+                return
+            }
+            var param = {
+                userid: localStorage.getItem("user_id"),
+                // userid: 1,
+                one: googleSecret, //私钥
+                two: googleUrl, //路径
+                nickcode: nickcode
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/google/view.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.retcode == 0) {
+                        $("#authPw").val(googleSecret)
+                        new QRCode(document.getElementById("authCode"), googleUrl);
+                        $(".pop").hide()
+                        $(".qrcodePage").show();
+
+                    } else {
+                        layer.msg("认证码错误，请重新输入")
+                    }
+                }
+            });
+        }
+
+        function gb() { //关闭认证 
+            let password = $("#password").val();
+            if (password == '') {
+                layer.msg("请输入登录密码")
+                return
+            }
+            let nickcode = $("#authClose").val();
+            if (nickcode == '') {
+                layer.msg("请输入google认证码")
+                return
+            }
+
+            var param = {
+                userid: localStorage.getItem("user_id"),
+                // userid: 1,
+                one: googleSecret, //私钥
+                password: password, //密码
+                nickcode: nickcode
+            }
+            console.log(param)
+            $.ajax({
+                type: "POST",
+                url: baseLink + "/google/gb.action",
+                dataType: 'json',
+                data: param,
+                success: function(data) {
+                    console.log(data);
+                    if (data.retcode == 0) {
+                        layer.msg("认证已关闭")
+                        setTimeout(function() {
+                            // $(".close").hide(); //关闭认证之后的动作
+
+                            window.location.reload()
+                        }, 2000)
+                    } else {
+                        layer.msg(data.msg)
+                    }
+                }
+            });
+        }
+        $("#post").click(function() { //认证
+            renz()
+
         })
-        $("#look").click(function() {
+        $("#look").click(function() { //看
             $(".state").hide()
             $(".pop").show();
+
         })
-        $("#close").click(function() {
+        $("#enter").click(function() { //看到认证
+            view()
+
+        })
+        $("#close").click(function() { //关
             $(".state").hide()
             $(".close").show();
         })
-        $("#enter").click(function() {
-            $(".pop").hide()
-            $(".qrcodePage").show();
+        $("#enterCLose").click(function() { //关了认证
+            gb()
+
         })
-        $("#enterCLose").click(function() {
-            $(".close").hide();
-            $(".start").show();
+        $(function() {
+            // alert(localStorage.getItem("user_id"))
+            list() //google验证 
         })
     </script>
 </body>
