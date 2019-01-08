@@ -1,0 +1,9 @@
+https://segmentfault.com/a/1190000010928302  JavaScript各种排序算法的实现及其速度性能分析 
+
+https://www.jianshu.com/p/459e6d141aef   javascript array.sort兼容性问题  
+
+https://www.cnblogs.com/webcabana/p/7460038.html    javascript中对一个对象数组按照对象某个属性进行排序
+
+https://www.cnblogs.com/miaoqing/p/5586995.html    对JavaScript对象数组按指定属性和排序方向进行排序
+
+https://blog.csdn.net/wang521gang/article/details/79510563   js数组排序，根据数组中对象的某一属性进行排序 支持数字和字符串的排序，也支持按两个属性进行排序
